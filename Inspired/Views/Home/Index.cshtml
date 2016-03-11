@@ -1,0 +1,219 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="ui page centered celled grid">
+
+    <div class="ui left aligned segment" style="width:70%">
+        <div class="ui left close rail" style="width:30%">
+            <div class="ui card">
+                <div class="ui centered small image">
+                    <img src="~/Content/pic/cat07.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">Kristy</a>
+                    <div class="meta">
+                        <span class="date">Joined in 2013</span>
+                    </div>
+                    <div class="description">
+                        Chiang Mai
+                    </div>
+                </div>
+                <div class="extra content">
+                    <a>
+                        <i class="fa fa-heart"></i>
+                        Cats lover
+                    </a>
+                </div>
+            </div>
+
+
+            <div class=" ui orange vertical fluid tabular menu">
+                <a class=" contropanel_menu item active">
+                    Home
+                </a>
+                <a class=" contropanel_menu item">
+                    Diary
+                </a>
+                <a class=" contropanel_menu item">
+                    Cat's Census
+                </a>
+                <a class=" contropanel_menu item">
+                    Cat's Timeline
+                </a>
+                <a class=" contropanel_menu item">
+                    My board
+                </a>
+                <a class=" contropanel_menu item">
+                    Profile
+                </a>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="ui right close rail">
+            <div class="ui info message" id="dialy_tip">
+
+                <div class="header">
+                    <i class="icon" style="float:right;cursor:pointer" id="close_dialy_tip"><i class="fa fa-times"></i></i>
+                    Did you know?
+                </div>
+                <ul class="list">
+                    <li>It's good to see you again.</li>
+                    <li>Did you know it's been a while?</li>
+                </ul>
+            </div>
+
+            <div class="ui warning message">
+                <div class="header">
+                    In coming event!
+                </div>
+                <ul class="list">
+                    <li>It's good to see you again.</li>
+                    <li>Did you know it's been a while?</li>
+                </ul>
+            </div>
+            <div class="ui segment">
+                <div class="ui large teal label">
+                    <i class="icon"><i class="fa fa-book"></i></i>Recently update diary
+                </div>
+                <div class="ui relaxed divided selection list">
+                    <a class="item">
+                        <img class="ui avatar image" src="~/Content/pic/cat1.png">
+                        <div class="content">
+                            <div class="header">Snickerdoodle</div>
+                            An excellent companion
+                        </div>
+                    </a>
+                    <a class="item">
+                        <img class="ui avatar image" src="~/Content/pic/cat2.png">
+                        <div class="content">
+                            <div class="header">Poodle</div>
+                            A poodle, its pretty basic
+                        </div>
+                    </a>
+                    <a class="item">
+                        <img class="ui avatar image" src="~/Content/pic/cat3.png">
+                        <div class="content">
+                            <div class="header">Paulo</div>
+                            He's also a dog
+                        </div>
+                    </a>
+                    <a class="item">
+                        <img class="ui avatar image" src="~/Content/pic/cat1.png">
+                        <div class="content">
+                            <div class="header">Snickerdoodle</div>
+                            An excellent companion
+                        </div>
+                    </a>
+                    <a class="item">
+                        <img class="ui avatar image" src="~/Content/pic/cat2.png">
+                        <div class="content">
+                            <div class="header">Poodle</div>
+                            A poodle, its pretty basic
+                        </div>
+                    </a>
+                    <a class="item">
+                        <img class="ui avatar image" src="~/Content/pic/cat3.png">
+                        <div class="content">
+                            <div class="header">Paulo</div>
+                            He's also a dog
+                        </div>
+                    </a>
+                    <a class="item" href="#">
+                        <div class="content">
+                            <div class="header" style="color:#00b5ad">View all diary <i class="fa fa-angle-double-right"></i></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="ui pointing menu">
+            <a class="active item">
+                Home
+            </a>
+            <a class="item">
+                Messages
+            </a>
+            <a class="item">
+                Friends
+            </a>
+            <div class="right menu">
+                <div class="item">
+                    <div class="ui transparent icon input">
+                        <input type="text" placeholder="Search...">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ui accordion " id="missing_cat_row">
+            <div class="title active">
+
+                <a class=" ui red right corner label">
+                    <i class="dropdown icon"></i>
+                </a>
+
+                <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px">
+                    Missing cat
+                </h4>
+            </div>
+
+            <div class="content active">
+                <div class="ui orange floating message">
+                    <p>Those cats are missing in your province. If your saw them plases contact the owner, thanks you :)</p>
+                </div>
+                <div class="ui four doubling cards">
+                    <div class="orange card">
+                        <div class="image">
+                            <img src="~/Content/pic/cat01.jpg">
+                        </div>
+                    </div>
+                    <div class="orange card">
+                        <div class="image">
+                            <img src="~/Content/pic/cat02.jpg">
+                        </div>
+                    </div>
+                    <div class="orange card">
+                        <div class="image">
+                            <img src="~/Content/pic/cat03.jpg">
+                        </div>
+                    </div>
+                    <div class="orange card">
+                        <div class="image">
+                            <img src="~/Content/pic/cat04.jpg">
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="ui teal right floated button" tabindex="0">
+                    View all missing cat
+                    <i class="right icon"><i class="fa fa-angle-double-right"></i></i>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="ui left aligned segment" style="width:70%">
+        <div class="ui divided items">
+
+        </div>
+
+
+    </div>
+
+</div>
+
+

@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "AdoptonDetail";
+}
+
+
+<div class="ui celled grid">
+  
+    <div class="row">
+        <div class="three wide column grid">
+            <div class="ui secondary vertical pointing menu">
+                <a class="active item " data-tab="adopt_1">
+                    Home
+                </a>
+                <a class="item" data-tab="adopt_2">
+                    Sansa's profile
+                </a>
+                <a class="item" data-tab="adopt_3">
+                    Vaccines
+                </a>
+            </div>
+        </div>
+        <div class="seven wide column grid">
+
+
+            <div class="ui active tab" data-tab="adopt_1">
+                <div class="ui fluid image">
+                    <a class="ui red left corner label">
+                        <i class=" icon"><i style="color:white" class="fa fa-heart"></i></i>
+                    </a>
+                    <img  src="~/Content/pic/cat01.jpg" />
+                </div>
+
+            </div>
+
+            <div class="ui tab" data-tab="adopt_2">
+                <h1 class="ui orange header">Sansa profile</h1>
+            </div>
+
+            <div class="ui tab" data-tab="adopt_3">
+                <h1 class="ui orange header"> Vaccines </h1>
+            </div>
+
+        </div>
+
+        <div class="six wide column grid">
+            <div class="ui orange attached segment">
+                <h1 class="ui orange header"> Meet Sansa </h1>
+                <p>
+                    Meet Sansa, a gorgeous cat who has completely charmed her foster family, humans and cats alike. She has gone from a shy, timid cat to being the first to the food bowl. She has not yet allowed anyone to pick her up, and still shies from being touched, but will sit nearby people, and has even eaten direct from a hand. Sansa loves to play with 'feathers on a stick' and will sit patiently beside the toy while she waits for the game to start!
+                </p>
+                <p>
+                    She will do best in a house that will be patient with her progress and as she learns from other cats. If you already have a friendly cat her improvement may be a little quicker. If you haven't fallen in love with Sansa yet, just wait until you hear her meow - it's a squeak!
+                </p>
+                <br />
+            </div>
+
+            <div class="ui inverted orange bottom attached button" tabindex="0" style="margin:-2px" id="call_adopt_modal">Want to adopt me?</div>
+            <br />
+            <br />
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div id="adopt_modal" class="ui modal">
+    <div class="header" style="color:#0e566c">
+        Adoption inquiry from owner
+    </div>
+    <div class="image content">
+        <div class="ui medium image">
+            <img src="~/Content/pic/cat2.png">
+        </div>
+        <div class="description">
+            <div class="ui info message">
+                <div class="header" style="color:#0e566c">
+                    I want to check your cat diary
+                </div>
+                <ul class="list">
+                    <li>I just want to know about you and your cat which will gonna be Susan's family.</li>
+                    <li>If you dont have diary, can you tell me about your cat and your house?</li>
+                </ul>
+                <br />
+                <div class="header">
+                    I may ask some question about cat such as :
+                </div>
+                <ul class="list">
+                    <li>Do you give your cat vaccines?.</li>
+                    <li>What kind of food that you give to your cat?</li>
+                </ul>
+                <br />
+                <div class="header">
+                    After you adopt Susan, I want to know about her.
+                </div>
+                <ul class="list">
+                    <li>You can create her diary and update, maybe one in a month.</li>
+                    <li>I may come to visit Susan sometimes, are you okey with that?</li>
+                </ul>
+                <br />
+                <div class="header">
+                    I am also gonna ask for a copy of your citizen card.
+                    <br />
+                    <p>We both love cats, I just want to make sure that you are the right one :)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui black deny button">
+            Nope
+        </div>
+        <div class="ui positive right button" id="confirm_adoption">
+            I'm ok with it
+        </div>
+    </div>
+</div>
