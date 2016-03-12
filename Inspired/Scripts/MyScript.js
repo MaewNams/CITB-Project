@@ -20,6 +20,12 @@ $(document).ready(function () {
         $(this).addClass('active');
     });
 
+    $(function () {
+        $("#service-dropdown").dropdown({
+            allowLabels: true
+        });
+    });
+
 
     $('.ui.sticky')
       .sticky({
@@ -27,8 +33,9 @@ $(document).ready(function () {
       });
 
 
-
-
+    $('.ui.labeled.icon.sidebar')
+      .sidebar('toggle')
+    ;
     $('.pointing.menu .item').tab();
 
     
