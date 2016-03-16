@@ -171,7 +171,7 @@
 
 
 
-            <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px">
+            <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px;overflow:auto!important">
                 Hello Kristy :)
             </h4>
 
@@ -230,24 +230,13 @@
             </div>
         </div>
 
-        <div class="ui active tab" data-tab="index_tab2">
+        <div class="ui tab" data-tab="index_tab2">
 
-            <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px">
-                Adoption
+            <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px; overflow:auto!important">
+                <a href="#">34</a> cats in your province still waiting for owner
             </h4>
 
-            <div class="ui orange floating message">
-                <p>There are 34 cats in your province that still waiting for owner</p>
-            </div>
-
-
-
-
-
-
             <form class="ui form">
-                <h4 class="ui dividing header">Shipping Information</h4>
-
 
                 <div class="three fields">
                     <div class="field">
@@ -342,7 +331,8 @@
                     </div>
 
                 </div>
-                <div class="two fields">
+
+                <div class="three fields">
                     <div class="field">
                         <label>Eye color</label>
                         <select class="ui fluid dropdown">
@@ -373,133 +363,24 @@
                             <option value="female">Short</option>
                         </select>
                     </div>
-                </div>
-                <h4 class="ui dividing header">Billing Information</h4>
-                <div class="field">
-                    <label>Card Type</label>
-                    <div class="ui selection dropdown">
-                        <input type="hidden" name="card[type]">
-                        <div class="default text">Type</div>
-                        <i class="dropdown icon"></i>
-                        <div class="menu">
-                            <div class="item" data-value="visa">
-                                <i class="visa icon"></i>
-                                Visa
-                            </div>
-                            <div class="item" data-value="amex">
-                                <i class="amex icon"></i>
-                                American Express
-                            </div>
-                            <div class="item" data-value="discover">
-                                <i class="discover icon"></i>
-                                Discover
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="fields">
-                    <div class="seven wide field">
-                        <label>Card Number</label>
-                        <input type="text" name="card[number]" maxlength="16" placeholder="Card #">
-                    </div>
-                    <div class="three wide field">
-                        <label>CVC</label>
-                        <input type="text" name="card[cvc]" maxlength="3" placeholder="CVC">
-                    </div>
-                    <div class="six wide field">
-                        <label>Expiration</label>
-                        <div class="two fields">
-                            <div class="field">
-                                <select class="ui fluid search dropdown" name="card[expire-month]">
-                                    <option value="">Month</option>
-                                    <option value="1">January</option>
-                                    <option value="2">February</option>
-                                    <option value="3">March</option>
-                                    <option value="4">April</option>
-                                    <option value="5">May</option>
-                                    <option value="6">June</option>
-                                    <option value="7">July</option>
-                                    <option value="8">August</option>
-                                    <option value="9">September</option>
-                                    <option value="10">October</option>
-                                    <option value="11">November</option>
-                                    <option value="12">December</option>
-                                </select>
-                            </div>
-                            <div class="field">
-                                <input type="text" name="card[expire-year]" maxlength="4" placeholder="Year">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <h4 class="ui dividing header">Receipt</h4>
-                <div class="field">
-                    <label>Send Receipt To:</label>
-                    <div class="ui fluid multiple search selection dropdown">
-                        <input type="hidden" name="receipt">
-                        <i class="dropdown icon"></i>
-                        <div class="default text">Saved Contacts</div>
-                        <div class="menu">
-                            <div class="item" data-value="jenny" data-text="Jenny">
-                                <img class="ui mini avatar image" src="/images/avatar/small/jenny.jpg">
-                                Jenny Hess
-                            </div>
-                            <div class="item" data-value="elliot" data-text="Elliot">
-                                <img class="ui mini avatar image" src="/images/avatar/small/elliot.jpg">
-                                Elliot Fu
-                            </div>
-                            <div class="item" data-value="stevie" data-text="Stevie">
-                                <img class="ui mini avatar image" src="/images/avatar/small/stevie.jpg">
-                                Stevie Feliciano
-                            </div>
-                            <div class="item" data-value="christian" data-text="Christian">
-                                <img class="ui mini avatar image" src="/images/avatar/small/christian.jpg">
-                                Christian
-                            </div>
-                            <div class="item" data-value="matt" data-text="Matt">
-                                <img class="ui mini avatar image" src="/images/avatar/small/matt.jpg">
-                                Matt
-                            </div>
-                            <div class="item" data-value="justen" data-text="Justen">
-                                <img class="ui mini avatar image" src="/images/avatar/small/justen.jpg">
-                                Justen Kitsune
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ui segment">
                     <div class="field">
-                        <div class="ui toggle checkbox">
-                            <input type="checkbox" name="gift" tabindex="0" class="hidden">
-                            <label>Do not include a receipt in the package</label>
-                        </div>
+                        <br />
+                        <button class="fluid ui button" style="background-color:#34495e !important;color:white !important;font-weight:bold;margin-top:4px">Search</button>
                     </div>
                 </div>
-                <div class="ui button" tabindex="0">Submit Order</div>
+
             </form>
 
+            <div class="ui section divider"></div>
 
-            <div style="float:right">
-                <div class="ui action input">
-                    <input type="text" placeholder="Search...">
-                    <select class="ui compact selection dropdown" style="padding:5px !important">
-                        <option selected="" value="all">All</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-                    <div type="submit" class="ui button">Search</div>
-                </div>
-                <br />
-
-            </div>
             <div class="ui four doubling cards">
                 <div class="orange card">
                     <a class="ui blue right corner label">
                         <i class="icon"><i class="fa fa-mars"></i></i>
                     </a>
-                    <div class="image">
+                    <a class="image" href="/home/AdoptonDetail">
                         <img src="~/Content/pic/cat01.jpg">
-                    </div>
+                    </a>
                 </div>
                 <div class="orange card">
                     <a class="ui right corner label" style="border-color:#e74c3c !important">
@@ -531,55 +412,120 @@
                 View all missing cat
                 <i class="right icon"><i class="fa fa-angle-double-right"></i></i>
             </div>
+
         </div>
 
-        <div class="ui tab" data-tab="index_tab3">
+        <div class="ui active tab" data-tab="index_tab3">
 
-            <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px">
+            <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px;overflow:auto!important" ">
                 Discusstion
             </h4>
 
-            <div class="ui orange floating message">
-                <p>Those cats are missing in your province. If your saw them plases contact the owner, thanks you :)</p>
+            <div class="ui large label" style="background-color:#0077C0!important;color:white!important;font-weight:bold!important">
+                Top 5 of the day
             </div>
-            <div class="ui four doubling cards">
-                <div class="orange card">
-                    <div class="image">
-                        <img src="~/Content/pic/cat01.jpg">
+            <div class="ui relaxed divided list">
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI</a>
+                        <div class="description">Updated 10 mins ago</div>
+                        <div class="extra">Admin</div>
                     </div>
                 </div>
-                <div class="orange card">
-                    <div class="image">
-                        <img src="~/Content/pic/cat02.jpg">
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Docs</a>
+                        <div class="description">Updated 22 mins ago</div>
+                        <div class="extra">User</div>
                     </div>
                 </div>
-                <div class="orange card">
-                    <div class="image">
-                        <img src="~/Content/pic/cat03.jpg">
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Docs</a>
+                        <div class="description">Updated 22 mins ago</div>
+                        <div class="extra">User</div>
                     </div>
                 </div>
-                <div class="orange card">
-                    <div class="image">
-                        <img src="~/Content/pic/cat04.jpg">
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Docs</a>
+                        <div class="description">Updated 22 mins ago</div>
+                        <div class="extra">User</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Docs</a>
+                        <div class="description">Updated 22 mins ago</div>
+                        <div class="extra">User</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Docs</a>
+                        <div class="description">Updated 22 mins ago</div>
+                        <div class="extra">User</div>
+                    </div>
+                </div>
+                <br />
+            </div>
+
+            <div class="ui large label" style="background-color:#0077C0!important;color:white!important;font-weight:bold!important">
+                5 latest update
+            </div>
+            <div class="ui relaxed divided list">
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI</a>
+                        <div class="description">Updated 10 mins ago</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Docs</a>
+                        <div class="description">Updated 22 mins ago</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Meteor</a>
+                        <div class="description">Updated 34 mins ago</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Meteor</a>
+                        <div class="description">Updated 34 mins ago</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Meteor</a>
+                        <div class="description">Updated 34 mins ago</div>
                     </div>
                 </div>
             </div>
-            <br />
             <div class="ui teal right floated button" tabindex="0">
-                View all missing cat
+                View all discuss topic
                 <i class="right icon"><i class="fa fa-angle-double-right"></i></i>
             </div>
         </div>
-
         <div class="ui tab" data-tab="index_tab4">
 
-            <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px">
-                Find owner
+            <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px;overflow:auto!important">
+                <a href="#">34</a>  cats in your province found as a lost cat
             </h4>
-
-            <div class="ui orange floating message">
-                <p>Those cats are missing in your province. If your saw them plases contact the owner, thanks you :)</p>
-            </div>
             <div class="ui four doubling cards">
                 <div class="orange card">
                     <div class="image">
@@ -611,13 +557,9 @@
 
         <div class="ui tab" data-tab="index_tab5">
 
-            <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px">
-                Lost cat
+            <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px;overflow:auto!important">
+                <a href="#">34</a> cats in your province is missing
             </h4>
-
-            <div class="ui orange floating message">
-                <p>Those cats are missing in your province. If your saw them plases contact the owner, thanks you :)</p>
-            </div>
             <div class="ui four doubling cards">
                 <div class="orange card">
                     <div class="image">
@@ -649,38 +591,108 @@
 
         <div class="ui tab" data-tab="index_tab6">
 
-            <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px">
-                SOS
+            <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px;overflow:auto!important">
+                <a href="#">22</a>  cats in your province need help
             </h4>
 
-            <div class="ui orange floating message">
-                <p>Those cats are missing in your province. If your saw them plases contact the owner, thanks you :)</p>
+
+            <div class="ui large label" style="background-color:#0077C0!important;color:white!important;font-weight:bold!important">
+                Top 5 of the day
             </div>
-            <div class="ui four doubling cards">
-                <div class="orange card">
-                    <div class="image">
-                        <img src="~/Content/pic/cat01.jpg">
+            <div class="ui relaxed divided list">
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI</a>
+                        <div class="description">Updated 10 mins ago</div>
+                        <div class="extra">Admin</div>
                     </div>
                 </div>
-                <div class="orange card">
-                    <div class="image">
-                        <img src="~/Content/pic/cat02.jpg">
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Docs</a>
+                        <div class="description">Updated 22 mins ago</div>
+                        <div class="extra">User</div>
                     </div>
                 </div>
-                <div class="orange card">
-                    <div class="image">
-                        <img src="~/Content/pic/cat03.jpg">
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Docs</a>
+                        <div class="description">Updated 22 mins ago</div>
+                        <div class="extra">User</div>
                     </div>
                 </div>
-                <div class="orange card">
-                    <div class="image">
-                        <img src="~/Content/pic/cat04.jpg">
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Docs</a>
+                        <div class="description">Updated 22 mins ago</div>
+                        <div class="extra">User</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Docs</a>
+                        <div class="description">Updated 22 mins ago</div>
+                        <div class="extra">User</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Docs</a>
+                        <div class="description">Updated 22 mins ago</div>
+                        <div class="extra">User</div>
+                    </div>
+                </div>
+                <br />
+            </div>
+
+            <div class="ui large label" style="background-color:#0077C0!important;color:white!important;font-weight:bold!important">
+                5 latest update
+            </div>
+            <div class="ui relaxed divided list">
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI</a>
+                        <div class="description">Updated 10 mins ago</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Docs</a>
+                        <div class="description">Updated 22 mins ago</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Meteor</a>
+                        <div class="description">Updated 34 mins ago</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Meteor</a>
+                        <div class="description">Updated 34 mins ago</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Meteor</a>
+                        <div class="description">Updated 34 mins ago</div>
                     </div>
                 </div>
             </div>
-            <br />
             <div class="ui teal right floated button" tabindex="0">
-                View all missing cat
+                View all discuss topic
                 <i class="right icon"><i class="fa fa-angle-double-right"></i></i>
             </div>
         </div>

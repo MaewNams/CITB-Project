@@ -20132,7 +20132,7 @@ Floated Menu / Item
 
 .ui.vertical.menu .item > i.icon {
   width: 1.18em;
-  float: right;
+  float: left;
   margin: 0em 0em 0em 0.5em;
 }
 

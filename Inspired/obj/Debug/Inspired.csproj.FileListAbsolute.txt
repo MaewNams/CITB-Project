@@ -135,3 +135,4 @@ D:\Zz\Inspired\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Zz\Inspired\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Zz\Inspired\obj\Debug\Inspired.dll
 D:\Zz\Inspired\obj\Debug\Inspired.pdb
+D:\Zz\Inspired\obj\Debug\Inspired.csprojResolveAssemblyReference.cache

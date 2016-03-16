@@ -26,19 +26,24 @@ $(document).ready(function () {
         });
     });
 
+    $('.special.cards .image').dimmer({
+        on: 'hover'
+    });
 
     $('.ui.sticky')
       .sticky({
           context: '#example1'
       });
 
+    $('#click1').click(function () {
+        $('.shape').shape('flip back');
+    });
 
     $('.ui.labeled.icon.sidebar')
       .sidebar('toggle')
     ;
     $('.pointing.menu .item').tab();
 
-    
 
     $("#call_adopt_modal").click(function () {
         $('#adopt_modal').modal('show');
