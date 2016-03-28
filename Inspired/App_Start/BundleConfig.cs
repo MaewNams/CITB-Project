@@ -14,6 +14,7 @@ namespace Inspired
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -24,7 +25,9 @@ namespace Inspired
                       "~/Scripts/semantic.js",
                       "~/Scripts/alertify.js",
                       "~/Scripts/MyScript.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                             "~/Scripts/ckeditor/ckeditor.js",
+                             "~/ckeditor/adapters/jquery.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

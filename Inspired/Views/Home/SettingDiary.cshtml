@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Diary | setting";
+    Layout = "~/Views/Shared/_CPLayout.cshtml";
+}
+
+<div class="ui centered  grid">
+    <div class="twelve wide column" style="padding-right:30px">
+        <div class="ui segment" style="background-color:white!important">
+
+            <div class="ui form">
+                <div class="field">
+                    <label>Cover page</label>
+                    <input type='file' />
+                </div>
+
+                <div class="fields">
+                    <div class="sixteen wide field">
+                        <label>Diary name</label>
+                        <input type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Short description</label>
+                    <textarea rows="2"></textarea>
+                </div>
+                <div class="field">
+                    <label>Cat owner</label>
+
+                    <div class="ui four special cards">
+
+                        <div class="card">
+                            <div class="blurring dimmable image">
+                                <div class="ui inverted dimmer">
+                                    <div class="content">
+                                        <div class="center">
+                                            <div class="ui red basic button">Delete</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <img src="~/Content/pic/cat01.jpg">
+                            </div>
+
+                            <div class="content">
+                                <h5 class="ui header" style="text-align:center">Team Hess</h5>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="blurring dimmable image">
+                                <div class="ui inverted dimmer">
+                                    <div class="content">
+                                        <div class="center">
+                                            <div class="ui blue button">Add new</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <img src="~/Content/pic/add.png">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="ui divider"></div>
+                    <button class="ui right floated primary button">
+                        Save
+                    </button>
+                    <button class="ui right floated button">
+                        Cancel
+                    </button>
+                    <br />
+                    <br />
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

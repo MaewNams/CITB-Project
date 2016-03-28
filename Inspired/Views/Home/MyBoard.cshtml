@@ -1,0 +1,237 @@
+﻿
+@{
+    ViewBag.Title = "My board";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="ui page centered celled grid">
+
+
+
+    <div class="ui left aligned segment" style="width:70%">
+        <div class="ui left close rail" style="width:30%">
+            <div class=" ui orange vertical fluid tabular menu">
+                <a href="/Home/Index" class=" contropanel_menu item">
+                    Home
+                </a>
+
+                <div class="ui card">
+                    <br />
+                    <div class="ui centered small image">
+                        <img src="~/Content/pic/cat07.jpg">
+                    </div>
+                    <br />
+                    <div class="content">
+                        <a class="header">Kristy</a>
+                        <div class="meta">
+                            <span class="date">Joined in 2013</span>
+                        </div>
+                        <div class="description">
+                            Chiang Mai
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <a style="color:#e74c3c !important">
+                            <i class="fa fa-heart"></i>
+                            Cats lover
+                        </a>
+                    </div>
+                </div>
+
+
+                <a href="/Home/MyDiary" class=" contropanel_menu item">
+                    Diary
+                </a>
+                <a href="/Home/CatCensus" class=" contropanel_menu item">
+                    Cat's Census
+                </a>
+                <a href="/Home/CatTimeline" class=" contropanel_menu item">
+                    Cat's Timeline
+                </a>
+                <a href="/Home/MyBoard" class=" contropanel_menu item active">
+                    My board
+                </a>
+                <a href="/Home/Profile" class=" contropanel_menu item">
+                    Profile
+                </a>
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+
+        <div class="ui right close rail">
+            <div class="ui warning message" id="dialy_tip">
+
+                <div class="header">
+                    <i class="icon" style="float:right;cursor:pointer" id="close_dialy_tip"><i class="fa fa-times"></i></i>
+                    Did you know?
+                </div>
+                <ul class="list">
+                    <li>It's good to see you again.</li>
+                    <li>Did you know it's been a while?</li>
+                </ul>
+            </div>
+
+            <div class="ui large label" style="width:100%;background-color:#3498db !important;border-color:#3498db !important;color:white !important;font-weight:bold">
+                <div class="header" style="padding-top:5px">
+                    Event in this month
+                </div>
+                <ul class="list">
+                    <li>Rabie's vaccine for Sashi.</li>
+                </ul>
+            </div>
+            <div class="ui segment">
+                <div class="ui large teal label">
+                    <i class="icon"><i class="fa fa-book"></i></i>Recently update diary
+                </div>
+                <div class="ui relaxed divided selection list">
+                    <a class="item">
+                        <img class="ui avatar image" src="~/Content/pic/cat1.png">
+                        <div class="content">
+                            <div class="header">Snickerdoodle</div>
+                            An excellent companion
+                        </div>
+                    </a>
+                    <a class="item">
+                        <img class="ui avatar image" src="~/Content/pic/cat2.png">
+                        <div class="content">
+                            <div class="header">Poodle</div>
+                            A poodle, its pretty basic
+                        </div>
+                    </a>
+                    <a class="item">
+                        <img class="ui avatar image" src="~/Content/pic/cat3.png">
+                        <div class="content">
+                            <div class="header">Paulo</div>
+                            He's also a dog
+                        </div>
+                    </a>
+                    <a class="item">
+                        <img class="ui avatar image" src="~/Content/pic/cat1.png">
+                        <div class="content">
+                            <div class="header">Snickerdoodle</div>
+                            An excellent companion
+                        </div>
+                    </a>
+                    <a class="item">
+                        <img class="ui avatar image" src="~/Content/pic/cat2.png">
+                        <div class="content">
+                            <div class="header">Poodle</div>
+                            A poodle, its pretty basic
+                        </div>
+                    </a>
+                    <a class="item">
+                        <img class="ui avatar image" src="~/Content/pic/cat3.png">
+                        <div class="content">
+                            <div class="header">Paulo</div>
+                            He's also a dog
+                        </div>
+                    </a>
+                    <a class="item" href="#">
+                        <div class="content">
+                            <div class="header" style="color:#00b5ad">View all diary <i class="fa fa-angle-double-right"></i></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="ui inverted pointing menu">
+            <a class="active teal item" data-tab="index_tab1">
+                All diary
+            </a>
+            <a class="teal item" data-tab="index_tab2">
+                Manage diary
+            </a>
+
+        </div>
+        <br />
+
+        <div class="ui active tab" data-tab="index_tab1">
+
+
+            <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px;overflow:auto!important">
+                Manage your diary
+            </h4>
+            <div class="ui divided link items">
+                <a class="item" href="/Home/StatisticDiary">
+                    <div class="ui tiny image">
+                        <img src="~/Content/pic/cat01.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="header">Arrowhead Valley Camp</div>
+                        <div class="meta">
+                            <span class="price">$1200</span>
+                            <span class="stay">1 Month</span>
+                        </div>
+                        <div class="description">
+                            <p></p>
+                        </div>
+                        <div class="extra">
+                            Owner name
+
+                        </div>
+                    </div>
+                </a>
+                <a class="item" href="#">
+                    <div class="ui tiny image">
+                        <img src="~/Content/pic/cat02.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="header">Arrowhead Valley Camp</div>
+                        <div class="meta">
+                            <span class="price">$1200</span>
+                            <span class="stay">1 Month</span>
+                        </div>
+                        <div class="description">
+                            <p></p>
+                        </div>
+                        <div class="extra">
+                            Owner name
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="ui tab" data-tab="index_tab2">
+
+            <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px; overflow:auto!important">
+                <a href="#">34</a> cats in your province still waiting for owner
+            </h4>
+
+
+
+            <div class="ui section divider"></div>
+
+
+
+        </div>
+
+    </div>
+
+
+    <div class="ui left aligned segment" style="width:70%">
+        <div class="ui divided items">
+
+        </div>
+
+
+    </div>
+
+</div>
+
+

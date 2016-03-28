@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+
+
+    <div class="ui visible sidebar inverted vertical menu" style="background-color:white !important">
+        <a class="item"  href="/Home/"  style="background-color:#2C3E50 !important">
+            <i class="home icon" style="padding-right:35px" ></i>
+            Home
+        </a>
+        <a class="item" style="color:#2C3E50">
+            <i class="external icon" style="padding-right:35px;"></i>
+            Diary name
+        </a>
+        <a class=" item"  href="/Home/StatisticDiary"  style="color:#2C3E50;background-color:#ecf0f1!important">
+            <i class="block layout icon" style="padding-right:35px"></i>
+            Statistic
+        </a>
+        <a class="item" href="/Home/ChapterDiary"   style="color:#2C3E50">
+            <i class="write square icon" style="padding-right:35px"></i>
+            Chapter
+        </a>
+        <a href="/Home/SettingDiary" class="item" style="color:#2C3E50">
+            <i class="setting icon" style="padding-right:35px"></i>
+            Setting
+        </a>
+    </div>
+
+    <div class="pusher" style="background-color:#ecf0f1">
+
+        <div class="ui fixed inverted menu" style="background-color:#1297E0;border-color:wheat">
+            <a href="#" class="header item" style="border:none;">
+                <i class="paw icon"></i>  Cats In The Box
+            </a>
+            <a href="/Home/Index" class="item">Home</a>
+            <div class="ui simple dropdown item">
+                Webboard <i class="dropdown icon"></i>
+                <div class="menu">
+                    <a class="item" href="#">Link Item</a>
+                    <a class="item" href="#">Link Item</a>
+                    <div class="divider"></div>
+                    <div class="header">Header Item</div>
+                    <div class="item">
+                        <i class="dropdown icon"></i>
+                        Sub Menu
+                        <div class="menu">
+                            <a class="item" href="#">Link Item</a>
+                            <a class="item" href="#">Link Item</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="right menu" style="padding-right:260px">
+
+                <a class=" item">
+                    Logout
+                </a>
+            </div>
+        </div>
+
+        <br />
+        <br />
+        <div class="ui basic segment" style="padding-right:260px">
+            @RenderBody()
+
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,8 +1,16 @@
 ﻿
 
 
-
 $(document).ready(function () {
+    $(function () {
+        CKEDITOR.replace('ckeditor',
+                            {
+                                toolbar: 'Basic', /* this does the magic */
+                                uiColor: '#9AB8F3'
+                            });
+    });
+
+
     $('.ui.accordion').accordion();
 
     $('#close_dialy_tip').on('click', function () {
@@ -11,20 +19,41 @@ $(document).ready(function () {
     ;
 
     $('#close_missing_cat').on('click', function () {
-      $(this).closest('#missing_cat_row').transition('fade');
-  })
+        $(this).closest('#missing_cat_row').transition('fade');
+    })
     ;
 
-    $('.contropanel_menu').on('click', function () {
-        $('.contropanel_menu').removeClass('active');
-        $(this).addClass('active');
-    });
 
     $(function () {
         $("#service-dropdown").dropdown({
             allowLabels: true
         });
+        $("#service-dropdown2").dropdown({
+            allowLabels: true
+        });
     });
+
+    $('.ui.checkbox')
+  .checkbox()
+    ;
+
+    $('.coupled.modal')
+  .modal({
+      allowMultiple: true
+  })
+    ;
+
+    $('#coat')
+    .popup({
+        inline: true,
+        hoverable: true,
+        position: 'top left',
+        delay: {
+            show: 300,
+            hide: 200
+        }
+    })
+    ;
 
     $('.special.cards .image').dimmer({
         on: 'hover'
@@ -34,20 +63,58 @@ $(document).ready(function () {
       .sticky({
           context: '#example1'
       });
+    $('.pointing.menu .item').tab();
+
+    $('#reset_adoption').click(function () {
+        $('#adoption_form').trigger('reset');
+    });
 
     $('#click1').click(function () {
         $('.shape').shape('flip back');
     });
 
-    $('.ui.labeled.icon.sidebar')
-      .sidebar('toggle')
-    ;
-    $('.pointing.menu .item').tab();
+    $('.ui.sidebar').sidebar({
+    });
+
+
+    $('.special.cards .image').dimmer({
+        on: 'hover'
+    });
+
+
+
+    $("#switch_sidebar").click(function () {
+        var padding = $('#my_content').css('padding-left');
+        var newPadding = (padding == '260px') ? '1em' : '260px';
+        $('#my_content').css('padding-left', newPadding);
+    });
 
 
     $("#call_adopt_modal").click(function () {
-        $('#adopt_modal').modal('show');
+        $('#adopt_modal')
+            .modal('show')
+              .modal('setting', 'transition', 'scale');
     });
+
+
+
+    $("#call_cat_profile_modal").click(function () {
+        $('#cat_profile_modal')
+            .modal('show')
+            .modal({
+                blurring: true
+            })
+              .modal('setting', 'transition', 'fade up');
+    });
+
+    $("#coat").click(function () {
+        $('#coat_modal')
+
+              .modal('setting', 'transition', 'fade up');
+
+    });
+
+
 
     $("#confirm_adoption").click(function () {
         alertify.set('notifier', 'position', 'top-right');
@@ -67,3 +134,16 @@ $(document).ready(function () {
 
 
 
+$(function () {
+    $(":file").change(function () {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = imageIsLoaded;
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+});
+
+function imageIsLoaded(e) {
+    $('#myCat').attr('src', e.target.result);
+};

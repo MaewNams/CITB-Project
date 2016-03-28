@@ -2,7 +2,6 @@
     ViewBag.Title = "Home Page";
 }
 
-
 <div class="ui page centered celled grid">
 
 
@@ -10,7 +9,7 @@
     <div class="ui left aligned segment" style="width:70%">
         <div class="ui left close rail" style="width:30%">
             <div class=" ui orange vertical fluid tabular menu">
-                <a class=" contropanel_menu item active">
+                <a href="/Home/Index" class=" contropanel_menu item active">
                     Home
                 </a>
 
@@ -38,19 +37,19 @@
                 </div>
 
 
-                <a class=" contropanel_menu item">
+                <a href="/Home/MyDiary" class=" contropanel_menu item">
                     Diary
                 </a>
-                <a class=" contropanel_menu item">
+                <a href="/Home/CatCensus" class=" contropanel_menu item">
                     Cat's Census
                 </a>
-                <a class=" contropanel_menu item">
+                <a href="/Home/CatTimeline" class=" contropanel_menu item">
                     Cat's Timeline
                 </a>
-                <a class=" contropanel_menu item">
+                <a href="/Home/MyBoard" class=" contropanel_menu item">
                     My board
                 </a>
-                <a class=" contropanel_menu item">
+                <a href="/Home/Profile" class=" contropanel_menu item">
                     Profile
                 </a>
             </div>
@@ -236,7 +235,7 @@
                 <a href="#">34</a> cats in your province still waiting for owner
             </h4>
 
-            <form class="ui form">
+            <form class="ui form" id="adoption_form">
 
                 <div class="three fields">
                     <div class="field">
@@ -317,20 +316,18 @@
 
                 <div class="field">
                     <label>Color</label>
+                    <select name="color" multiple="" class="ui fluid dropdown" id="service-dropdown">
+                        <option value="">Select color, you can select multi color</option>
+                        <option value="af">Black</option>
+                        <option value="ax">Blue</option>
+                        <option value="ax">Orange</option>
+                        <option value="al">Yellow</option>
 
-                    <div class="ui fluid multiple search normal selection dropdown" id="service-dropdown">
-
-                        <input type="hidden" name="color">
-                        <div class="default text">Select color, you can select multi color</div>
-                        <div class="menu">
-                            <div class="item" data-value="af">Black</div>
-                            <div class="item" data-value="ax">Blue</div>
-                            <div class="item" data-value="ax">Orange</div>
-                            <div class="item" data-value="al">Yellow</div>
-                        </div>
-                    </div>
+                    </select>
 
                 </div>
+
+
 
                 <div class="three fields">
                     <div class="field">
@@ -365,6 +362,7 @@
                     </div>
                     <div class="field">
                         <br />
+
                         <button class="fluid ui button" style="background-color:#34495e !important;color:white !important;font-weight:bold;margin-top:4px">Search</button>
                     </div>
                 </div>
@@ -698,7 +696,6 @@
         </div>
     </div>
 
-
     <div class="ui left aligned segment" style="width:70%">
         <div class="ui divided items">
 
@@ -707,6 +704,6 @@
 
     </div>
 
+
+
 </div>
-
-
