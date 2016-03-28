@@ -2,13 +2,13 @@
 
 
 $(document).ready(function () {
-    $(function () {
-        CKEDITOR.replace('ckeditor',
+
+   $(function () {
+        CKEDITOR.replace('editor',
                             {
-                                toolbar: 'Basic', /* this does the magic */
-                                uiColor: '#9AB8F3'
+                                customConfig: '/Scripts/ckeditor/config.js'
                             });
-    });
+   });
 
 
     $('.ui.accordion').accordion();

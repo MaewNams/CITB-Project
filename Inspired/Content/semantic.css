@@ -5,7 +5,7 @@
  *
  * Copyright 2014 Contributors
  * Released under the MIT license
- * http://opensource.org/licenses/MIT
+ * http://opensource.org/licenses/MI
  *
  */
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin');
@@ -35313,4 +35313,9 @@ margin-right: 10px;
 padding: 0px;
 margin: 0px;
 line-height: 43px;
+}
+
+.adminRichText
+{
+width:450px;
 }
