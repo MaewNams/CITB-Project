@@ -12,7 +12,7 @@ namespace Inspired.Models
         public string name { get; set; }
 
         [InverseProperty("Coatcolor")]
-        public virtual ICollection<Catcoatcolors> coatcolors { get; set; }
+        public virtual ICollection<Catcoatcolor> Coatcolors { get; set; }
 
     }
 }

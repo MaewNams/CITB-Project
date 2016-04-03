@@ -13,11 +13,11 @@ namespace Inspired.Controllers
             return View();
         }
 
-        public ActionResult AdoptonDetail()
+        public ActionResult AdoptionDetail()
         {
             return View();
         }
-        public ActionResult Adopton()
+        public ActionResult Adoption()
         {
             return View();
         }
@@ -40,21 +40,6 @@ namespace Inspired.Controllers
             return View();
         }
         public ActionResult Profile()
-        {
-            return View();
-        }
-
-        public ActionResult StatisticDiary()
-        {
-            return View();
-        }
-        public ActionResult ChapterDiary()
-        {
-            return View();
-        }
-
-
-        public ActionResult SettingDiary()
         {
             return View();
         }

@@ -1,22 +1,11 @@
 ﻿@model Inspired.Models.Coatpattern
 
 @{
-    Layout = null;
+    ViewBag.Title = "Coatpattenr create";
+    Layout = "~/Views/Shared/_CRUDLayout.cshtml";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
-
-    <script src="//cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
-
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
 
     @using (Html.BeginForm()) 
     {
@@ -56,8 +45,3 @@
     <div>
         @Html.ActionLink("Back to List", "Index")
     </div>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-</body>
-</html>
-

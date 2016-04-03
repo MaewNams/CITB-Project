@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,7 +45,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -169,23 +169,51 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BreedsController.cs" />
+    <Compile Include="Controllers\CatsController.cs" />
     <Compile Include="Controllers\CoatpatternsController.cs" />
+    <Compile Include="Controllers\DiariesController.cs" />
+    <Compile Include="Controllers\EyecolorsController.cs" />
+    <Compile Include="Controllers\ForumsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProvincesController.cs" />
+    <Compile Include="Controllers\TailsController.cs" />
     <Compile Include="DAL\CatsInTheBoxContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Adopter.cs" />
+    <Compile Include="Models\Adoption.cs" />
     <Compile Include="Models\Breed.cs" />
     <Compile Include="Models\Cat.cs" />
-    <Compile Include="Models\Catbreeds.cs" />
-    <Compile Include="Models\Catcoatcolors.cs" />
+    <Compile Include="Models\Catbreed.cs" />
+    <Compile Include="Models\Catcoatcolor.cs" />
+    <Compile Include="Models\Catdiary.cs" />
+    <Compile Include="Models\Chapter.cs" />
+    <Compile Include="Models\Chaptercomment.cs" />
     <Compile Include="Models\Coatcolor.cs" />
     <Compile Include="Models\Coatpattern.cs" />
+    <Compile Include="Models\Diary.cs" />
+    <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Eyecolor.cs" />
+    <Compile Include="Models\Favoritetopic.cs" />
+    <Compile Include="Models\Findowner.cs" />
+    <Compile Include="Models\Followdiary.cs" />
+    <Compile Include="Models\Followtopic.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Lostcat.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\News.cs" />
+    <Compile Include="Models\Province.cs" />
+    <Compile Include="Models\Reporttopic.cs" />
+    <Compile Include="Models\SOS.cs" />
+    <Compile Include="Models\Tail.cs" />
+    <Compile Include="Models\Topic.cs" />
+    <Compile Include="Models\Topiccomment.cs" />
+    <Compile Include="Models\Topictype.cs" />
+    <Compile Include="Models\Usertype.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -893,7 +921,9 @@
     <None Include="Scripts\_references.js" />
     <Content Include="themes\default\assets\fonts\icons.svg" />
     <Content Include="themes\default\assets\images\flags.png" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -927,18 +957,18 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\AdoptonDetail.cshtml" />
-    <Content Include="Views\Home\Adopton.cshtml" />
+    <Content Include="Views\Home\AdoptionDetail.cshtml" />
+    <Content Include="Views\Home\Adoption.cshtml" />
     <Content Include="themes\default\assets\fonts\icons.eot" />
     <Content Include="themes\default\assets\fonts\icons.otf" />
     <Content Include="themes\default\assets\fonts\icons.ttf" />
     <Content Include="themes\default\assets\fonts\icons.woff" />
     <Content Include="themes\default\assets\fonts\icons.woff2" />
     <Content Include="Views\Home\MyDiary.cshtml" />
-    <Content Include="Views\Home\StatisticDiary.cshtml" />
+    <Content Include="Views\Diaries\StatisticDiary.cshtml" />
     <Content Include="Views\Shared\_CPLayout.cshtml" />
-    <Content Include="Views\Home\SettingDiary.cshtml" />
-    <Content Include="Views\Home\ChapterDiary.cshtml" />
+    <Content Include="Views\Diaries\SettingDiary.cshtml" />
+    <Content Include="Views\Diaries\ChapterDiary.cshtml" />
     <Content Include="Views\Home\CatCensus.cshtml" />
     <Content Include="Views\Home\CatTimeline.cshtml" />
     <Content Include="Views\Home\MyBoard.cshtml" />
@@ -953,6 +983,28 @@
     <Content Include="Views\Coatpatterns\Details.cshtml" />
     <Content Include="Views\Coatpatterns\Edit.cshtml" />
     <Content Include="Views\Coatpatterns\Index.cshtml" />
+    <Content Include="Views\Shared\_CRUDLayout.cshtml" />
+    <Content Include="Views\Provinces\Create.cshtml" />
+    <Content Include="Views\Provinces\Delete.cshtml" />
+    <Content Include="Views\Provinces\Details.cshtml" />
+    <Content Include="Views\Provinces\Edit.cshtml" />
+    <Content Include="Views\Provinces\Index.cshtml" />
+    <Content Include="Views\Tails\Create.cshtml" />
+    <Content Include="Views\Tails\Delete.cshtml" />
+    <Content Include="Views\Tails\Details.cshtml" />
+    <Content Include="Views\Tails\Edit.cshtml" />
+    <Content Include="Views\Tails\Index.cshtml" />
+    <Content Include="Views\Eyecolors\Create.cshtml" />
+    <Content Include="Views\Eyecolors\Delete.cshtml" />
+    <Content Include="Views\Eyecolors\Details.cshtml" />
+    <Content Include="Views\Eyecolors\Edit.cshtml" />
+    <Content Include="Views\Eyecolors\Index.cshtml" />
+    <Content Include="Views\Forums\Index.cshtml" />
+    <Content Include="Views\Diaries\Index.cshtml" />
+    <Content Include="Views\Cats\Index.cshtml" />
+    <Content Include="Views\Cats\Detail.cshtml" />
+    <Content Include="Views\Cats\Edit.cshtml" />
+    <Content Include="Views\Cats\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -998,7 +1050,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

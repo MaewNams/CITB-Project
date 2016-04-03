@@ -1,17 +1,10 @@
 ﻿@model Inspired.Models.Breed
 
 @{
-    Layout = null;
+    ViewBag.Title = "Breed create";
+    Layout = "~/Views/Shared/_CRUDLayout.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
-</head>
-<body>
     @using (Html.BeginForm()) 
     {
         @Html.AntiForgeryToken()
@@ -27,6 +20,15 @@
                     @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
                 </div>
             </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.detail, htmlAttributes: new { @class = "control-label col-md-12" })
+
+                <form>
+                    @Html.TextAreaFor(model => model.detail, new { @id = "editor" })
+                </form>
+            </div>
+
     
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
@@ -39,5 +41,3 @@
     <div>
         @Html.ActionLink("Back to List", "Index")
     </div>
-</body>
-</html>
