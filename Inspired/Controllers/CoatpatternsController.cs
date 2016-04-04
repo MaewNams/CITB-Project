@@ -48,7 +48,7 @@ namespace Inspired.Controllers
         [HttpPost]
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,name,detail")] Coatpattern coatpattern)
+        public ActionResult Create([Bind(Include = "id,name,detail,pic")] Coatpattern coatpattern)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace Inspired.Controllers
         [HttpPost]
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,name,detail")] Coatpattern coatpattern)
+        public ActionResult Edit([Bind(Include = "id,name,detail,pic")] Coatpattern coatpattern)
         {
             if (ModelState.IsValid)
             {

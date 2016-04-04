@@ -1,7 +1,11 @@
-﻿@{
-    ViewBag.Title = "About";
+﻿
+@{
+    ViewBag.Title = "Test upload";
+    Layout = "~/Views/Shared/_CRUDLayout.cshtml";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<form id="up-form">
+    <input type="file" multiple />
+    <button type="submit">Upload</button>
+</form>
+

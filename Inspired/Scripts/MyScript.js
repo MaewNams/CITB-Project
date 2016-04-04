@@ -1,4 +1,28 @@
-﻿
+﻿var ospry = new Ospry('pk-test-mm3nyd399te4tplr3ewv29n3');
+
+var onUpload = function(err, metadata) {
+  ospry.get({
+    url: metadata.url,
+    maxHeight: 400,
+    imageReady: function(err, domImage) {
+      $('body').append(domImage);          
+    },
+  });
+};
+
+$('#up-form').submit(function (e) {
+    e.preventDefault();
+    ospry.up({
+        form: this,
+        imageReady: function (err, metadata, i) {
+            if (err === null) {
+                console.log('Image uploaded to: ' + metadata.url);
+                var picurl = metadata.url;
+            }
+        },
+    });
+});
+
 
 
 $(document).ready(function () {
