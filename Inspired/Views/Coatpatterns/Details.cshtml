@@ -30,6 +30,20 @@
             </dd>
 
         </dl>
+
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.pic)
+            </dt>
+
+            <dd>
+                @Html.Raw(@Model.pic)
+            </dd>
+
+        </dl>
+
+
     </div>
     <p>
         @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |

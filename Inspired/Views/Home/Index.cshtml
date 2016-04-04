@@ -1,12 +1,14 @@
-﻿@{
+﻿@model Inspired.Models.Account
+@{
     ViewBag.Title = "Home Page";
 }
 
-<div class="ui page centered celled grid">
-
-
-
-    <div class="ui left aligned segment" style="width:70%">
+@{
+    if (Session["Authen"] != null)
+    {
+    <div class="ui page centered celled grid">
+        
+        <div class="ui left aligned segment" style="width:70%">
         <div class="ui left close rail" style="width:30%">
             <div class=" ui orange vertical fluid tabular menu">
                 <a href="/Home/Index" class=" contropanel_menu item active">
@@ -415,7 +417,7 @@
 
         <div class="ui active tab" data-tab="index_tab3">
 
-            <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px;overflow:auto!important" ">
+            <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px;overflow:auto!important">
                 Discusstion
             </h4>
 
@@ -704,6 +706,45 @@
 
     </div>
 
+    </div>
+    }
+    else 
+    {
+        <div>
+            <div class="ui two column middle aligned very relaxed stackable grid">
+                <div class="column">
+                    <div class="ui form">
+                        <div class="field">
+                            <label>Username</label>
+                            <div class="ui left icon input">
+                                <input type="text" placeholder="Username">
+                                <i class="user icon"></i>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Password</label>
+                            <div class="ui left icon input">
+                                <input type="password">
+                                <i class="lock icon"></i>
+                            </div>
+                        </div>
+                        <div class="ui blue submit button">Login</div>
+                    </div>
+                </div>
+                <div class="ui vertical divider">
+                    Or
+                </div>
+                <div class="center aligned column">
+                    <div class="ui big green labeled icon button">
+                        <i class="signup icon"></i>
+                        Sign Up
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
 
 
-</div>
+
+

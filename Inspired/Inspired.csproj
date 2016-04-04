@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\BreedsController.cs" />
     <Compile Include="Controllers\CatsController.cs" />
     <Compile Include="Controllers\CoatpatternsController.cs" />
@@ -186,6 +187,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Adopter.cs" />
     <Compile Include="Models\Adoption.cs" />
+    <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Breed.cs" />
     <Compile Include="Models\Cat.cs" />
     <Compile Include="Models\Catbreed.cs" />
@@ -1005,6 +1007,8 @@
     <Content Include="Views\Cats\Detail.cshtml" />
     <Content Include="Views\Cats\Edit.cshtml" />
     <Content Include="Views\Cats\Create.cshtml" />
+    <Content Include="Views\Accounts\Login.cshtml" />
+    <Content Include="Views\Accounts\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

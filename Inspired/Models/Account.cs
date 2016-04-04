@@ -25,6 +25,10 @@ namespace Inspired.Models
         [ForeignKey("usertypeid")]
         public virtual Usertype Usertype { get; set; }
 
+
+        [InverseProperty("Account")]
+        public virtual ICollection<Article> Articles { get; set; }
+
         [InverseProperty("Account")]
         public virtual ICollection<Adopter> Adopters { get; set; }
 

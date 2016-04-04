@@ -13,6 +13,8 @@ namespace Inspired.Controllers
             return View();
         }
 
+
+
         public ActionResult AdoptionDetail()
         {
             return View();
