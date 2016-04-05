@@ -18,6 +18,9 @@
             <a href="#" class="header item" style="border:none;">
               <i class="paw icon"></i>  Cats In The Box
             </a>
+@{
+    if (Session["Authen"] != null)
+    {
             <a href="/Home/Index" class="item">Home</a>
             <div class="ui simple dropdown item">
                 Webboard <i class="dropdown icon"></i>
@@ -44,7 +47,25 @@
                     Logout
                 </a>
             </div>
+
+    }
+    else
+    {
+        <div class="right menu">
+
+            <a href="/Accounts/Login" class="ui item">
+                Login
+            </a>
+            <a href="/Accounts/Register" class="ui item">
+                Register
+            </a>
         </div>
+    }
+}
+
+
+        </div>
+
     </div>
 
 

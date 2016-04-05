@@ -19,6 +19,8 @@ namespace Inspired.Models
 
         public int usertypeid { get; set; }
 
+        public string pic { get; set; }
+
         [ForeignKey("provinceid")]
         public virtual Province Province { get; set; }
 

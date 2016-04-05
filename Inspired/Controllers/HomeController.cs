@@ -1,13 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using CatsInTheBox.DAL;
+using Inspired.Models;
+
 
 namespace Inspired.Controllers
 {
     public class HomeController : Controller
     {
+        private CatsInTheBoxContext db = new CatsInTheBoxContext();
         public ActionResult Index()
         {
             return View();
