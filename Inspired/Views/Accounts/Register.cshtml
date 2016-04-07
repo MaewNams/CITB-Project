@@ -1,45 +1,71 @@
 ﻿@model Inspired.Models.Account
+
 @{
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="ui page centered celled grid">
+<div class="ui middle aligned center aligned grid" style="padding-top:100px">
+    <div class="column">
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+   
 
-        <div class="form-horizontal">
-            <h4>Account</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.username, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+            <div class="ui three column centered grid">
+                <div class="column">
+                    <div class="ui large center aligned grey header">Register</div>
+
+
+
+                    <div class="ui large form">
+                        <div class="ui stacked segment">
+
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <input type="text" placeholder="Username" name="username">
+                                    <i class="user icon"></i>
+                                    @Html.ValidationMessageFor(model => model.username, "", new { @name = "username" })
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <input type="password" placeholder="Password" name="password">
+                                    @Html.ValidationMessageFor(model => model.password, "", new { @name = "password" })
+                                    <i class="lock icon"></i>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <input type="password" placeholder="Re-password" name="repassword">
+                                    <i class="lock icon"></i>
+                                </div>
+                            </div>
+                          
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <input type="email" placeholder="Email" name="email">
+                                    <i class="mail icon"></i>         
+                                    @Html.ValidationMessageFor(model => model.email, "", new { @name = "email" })                     
+                                </div>
+                            </div>
+                            <button class="fluid ui blue submit button">Register</button>
+                            @if (ViewBag.RegisterError != null)
+                            { <div class="ui center aligned basic segment" style="margin-top:-10px;margin-bottom:-5px">
+                                <div class="ui red basic label">
+                                    <strong>Sorry!</strong> @ViewBag.RegisterError
+                                </div>
+                            </div>
+                            }
+
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
-                </div>
-            </div>
+        }
 
-
-
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
-            </div>
-        </div>
-    }
-
-
+    </div>
 </div>

@@ -14,6 +14,7 @@ namespace CatsInTheBox.DAL
         public virtual DbSet<Account> Account { get; set; }
         public virtual DbSet<Adopter> Adopter { get; set; }
         public virtual DbSet<Adoption> Adoption { get; set; }
+        public virtual DbSet<Article> Aricle { get; set; }
         public virtual DbSet<Breed> Breed { get; set; }
         public virtual DbSet<Cat> Cat { get; set; }
         public virtual DbSet<Catbreed> Catbreed { get; set; }

@@ -70,26 +70,51 @@ namespace Inspired.Controllers
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Register([Bind(Include = "id,username,password,email,usertypeid")] Account account)
-        {
-            if (ModelState.IsValid)
-            {
-                account.usertypeid = 2;
+        { 
+            account.usertypeid = 2;
+            if (ModelState.IsValid) {
                 var CheckUserNameDup = db.Account.Where(a => a.username == account.username).FirstOrDefault<Account>();
-                var CheckEmailDup = db.Account.Where(a => a.username == account.email).FirstOrDefault<Account>();
+                var CheckEmailDup = db.Account.Where(a => a.email == account.email).FirstOrDefault<Account>();
+                var repassword = Request.Form["repassword"];
 
                 if (CheckUserNameDup != null)
                 {
-                    ViewBag.RegisterError = "Sorry, this username is already in use.";
+                    ViewBag.RegisterError = "This username is already in use.";
                     return View();
                 }
                 if (CheckEmailDup != null)
                 {
-                    ViewBag.RegisterError = "Sorry, this email adress is already in use.";
+                    ViewBag.RegisterError = "This email adress is already in use.";
+                    return View();
+                }
+                if (account.username == null)
+                {
+                    ViewBag.RegisterError = "Please input username.";
+                    return View();
+                }
+                if (account.password == null)
+                {
+                    ViewBag.RegisterError = "Please input password.";
+                    return View();
+                }
+                if (repassword == null)
+                {
+                    ViewBag.RegisterError = "Please input re-password.";
+                    return View();
+                }
+                if (account.email == null)
+                {
+                    ViewBag.RegisterError = "Please input password.";
+                    return View();
+                }
+                if ((account.password != null) && (repassword != null) && (account.password != repassword))
+                {
+                    ViewBag.RegisterError = "Password does not match the re-password";
                     return View();
                 }
                 db.Account.Add(account);
                 db.SaveChanges();
-                return RedirectToAction("/Accounts/Login");
+                return RedirectToAction("Login");
             }
 
             return View(account);

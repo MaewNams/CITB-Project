@@ -20,12 +20,12 @@ $(document).ready(function () {
     });
 
 
-   $(function () {
-       CKEDITOR.replace('editor',
-        {
-            customConfig: '/Scripts/ckeditor/config.js'
-        });
-   });
+    $(function () {
+        CKEDITOR.replace('editor',
+         {
+             customConfig: '/Scripts/ckeditor/config.js'
+         });
+    });
 
 
     $('.ui.accordion').accordion();
@@ -41,13 +41,12 @@ $(document).ready(function () {
     ;
 
 
-    $(function () {
-        $("#service-dropdown").dropdown({
-            allowLabels: true
-        });
-        $("#service-dropdown2").dropdown({
-            allowLabels: true
-        });
+    $("#service-dropdown").dropdown({
+        allowLabels: true
+    });
+
+    $("#service-dropdown2").dropdown({
+        allowLabels: true
     });
 
     $('.ui.checkbox')
@@ -113,15 +112,16 @@ $(document).ready(function () {
               .modal('setting', 'transition', 'scale');
     });
 
-
-
-    $("#call_cat_profile_modal").click(function () {
-        $('#cat_profile_modal')
+    $('#cat_profile_modal')
             .modal('show')
             .modal({
                 blurring: true
             })
               .modal('setting', 'transition', 'fade up');
+
+
+    $("#call_cat_profile_modal").click(function () {
+
     });
 
     $("#coat").click(function () {
@@ -137,6 +137,11 @@ $(document).ready(function () {
         alertify.set('notifier', 'position', 'top-right');
         alertify.notify('You will get in touch soon', 'success', 5, function () { console.log('dismissed'); });
     });
+
+
+
+
+
 
 });
 ///*ไดอารี่1*/

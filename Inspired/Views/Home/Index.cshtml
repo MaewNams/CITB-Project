@@ -23,7 +23,8 @@
                     <br />
                     <div class="content">
                         <a class="header">
-                        
+                         @Html.Raw(Session["username"].ToString())
+                            @Html.Raw(Session["accountid"].ToString())
                         </a>
                         <div class="meta">
                             <span class="date">Joined in 2013</span>
