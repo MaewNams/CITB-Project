@@ -81,9 +81,7 @@ $(document).ready(function () {
       });
     $('.pointing.menu .item').tab();
 
-    $('#reset_adoption').click(function () {
-        $('#adoption_form').trigger('reset');
-    });
+
 
     $('#click1').click(function () {
         $('.shape').shape('flip back');
@@ -112,16 +110,14 @@ $(document).ready(function () {
               .modal('setting', 'transition', 'scale');
     });
 
-    $('#cat_profile_modal')
+
+    $("#call_cat_profile_modal").click(function () {
+    $('#create_cat_modal')
             .modal('show')
             .modal({
                 blurring: true
             })
               .modal('setting', 'transition', 'fade up');
-
-
-    $("#call_cat_profile_modal").click(function () {
-
     });
 
     $("#coat").click(function () {

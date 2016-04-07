@@ -27,7 +27,7 @@ namespace Inspired.Models
         public string disliked { get; set; }
         public string description { get; set; }
         public string note { get; set; }
-
+        public int status { get; set; }
 
         [ForeignKey("userid")]
         public virtual Account Account { get; set; }

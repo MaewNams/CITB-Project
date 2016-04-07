@@ -39,8 +39,8 @@ namespace Inspired.Controllers
                 else
                     Session["Autho"] = false;
 
-                Session["username"] = account.username;
-                Session["accountid"] = account.id;
+                Session["username"] = Authentication.username;
+                Session["accountid"] = Authentication.id;
                 return RedirectToAction("Index", "Home");
             }
             else

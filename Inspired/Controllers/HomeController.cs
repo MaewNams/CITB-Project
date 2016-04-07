@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using CatsInTheBox.DAL;
 using Inspired.Models;
-
+using System;
 
 namespace Inspired.Controllers
 {
@@ -37,8 +37,39 @@ namespace Inspired.Controllers
 
         public ActionResult CatCensus()
         {
+            if (Session["Authen"] == null)
+            { return RedirectToAction("Login", "Accounts"); }
+
+                int userid = Int32.Parse(Session["accountid"].ToString());
+         
+            ViewData["Breeds"] = db.Breed.OrderBy(b => b.name).ToList<Breed>();
+            ViewData["Cats"] = db.Cat.Where(c => c.userid == userid && c.status == 1).OrderBy(c => c.name).ToList<Cat>();
             return View();
+
         }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        [ValidateAntiForgeryToken]
+        public ActionResult CatCensus([Bind(Include = "id,name,userid,status,birthdate,adoptdate,deathdate")] Cat cat)
+        {
+            cat.userid = Int32.Parse(Session["accountid"].ToString());
+            cat.status = 1;
+
+            cat.birthdate = DateTime.Now;
+            cat.adoptdate = DateTime.Now;
+            cat.deathdate = DateTime.Now;
+            if (ModelState.IsValid)
+            {
+                db.Cat.Add(cat);
+                db.SaveChanges();
+                return RedirectToAction("CatCensus");
+            }
+
+            return View(cat);
+        }
+
+
         public ActionResult CatTimeline()
         {
             return View();
