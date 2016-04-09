@@ -97,13 +97,6 @@ $(document).ready(function () {
 
 
 
-    $("#switch_sidebar").click(function () {
-        var padding = $('#my_content').css('padding-left');
-        var newPadding = (padding == '260px') ? '1em' : '260px';
-        $('#my_content').css('padding-left', newPadding);
-    });
-
-
     $("#call_adopt_modal").click(function () {
         $('#adopt_modal')
             .modal('show')
@@ -163,5 +156,5 @@ $(function () {
 });
 
 function imageIsLoaded(e) {
-    $('#myCat').attr('src', e.target.result);
+    $('.myCat').attr('src', e.target.result);
 };

@@ -9,3 +9,130 @@
     <button type="submit">Upload</button>
 </form>
 
+
+<div class="header" style="color:#0e566c">
+    Maewww
+</div>
+<div class="image content">
+    <div class="ui medium image">
+        <img class="ui fluid image" src="~/Content/pic/cat01.jpg" id="myCat">
+        <div>
+            <label for="file" class="ui fluid icon button">
+                <i class="file icon"></i>
+                Uplode File
+            </label>
+            <input type="file" id="file" style="display:none">
+        </div>
+    </div>
+
+
+    <div class="description" style="width:65%">
+        @using (Html.BeginForm())
+            {
+            @Html.AntiForgeryToken()
+            <form class="ui form">
+                <div class="field">
+                    <div class="ui left icon input">
+                        <input type="text" placeholder="name" name="name">
+                        <i class="user icon"></i>
+                        @Html.ValidationMessageFor(model => model.name, "", new { @name = "name" })
+                    </div>
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <label>Gender</label>
+                        <select class="ui fluid dropdown">
+                            <option value="">All</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Age</label>
+                        <select class="ui fluid dropdown">
+                            <option value="">All</option>
+                            <option value="male">Baby</option>
+                            <option value="female">Adult</option>
+                            <option value="female">Senior</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Breed</label>
+                    <select name="breed" multiple="" class="ui fluid dropdown" id="service-dropdown">
+                        <option value="">Select color, you can select multi color</option>
+                        <option value="af">Black</option>
+                        <option value="ax">Blue</option>
+                        <option value="ax">Orange</option>
+                        <option value="al">Yellow</option>
+
+                    </select>
+
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <label>
+                            Coat pattern
+                            <i class="circular help icon link" id="coat" data-content="Click to learn about coat pattern" data-variation="wide"></i>
+                        </label>
+                        <select class="ui fluid dropdown">
+                            <option value="">All</option>
+                            <option value="male">Bicolor</option>
+                            <option value="female">Colorpoint  </option>
+                            <option value="female">Solid</option>
+                            <option value="female">Tabby</option>
+                            <option value="female">Tricolor or Calico </option>
+                            <option value="female">Tortoiseshell </option>
+                        </select>
+
+                    </div>
+                    <div class="field">
+                        <label>Color</label>
+                        <select name="breed" multiple="" class="ui fluid dropdown" id="service-dropdown2">
+                            <option value="">You can select multi color</option>
+                            <option value="af">Black</option>
+                            <option value="ax">Blue</option>
+                            <option value="ax">Orange</option>
+                            <option value="al">Yellow</option>
+
+                        </select>
+
+                    </div>
+                </div>
+
+
+                <div class="three fields">
+                    <div class="field">
+                        <label>Eye color</label>
+                        <select class="ui fluid dropdown">
+                            <option value="">Any</option>
+                            <option value="blue">Blue</option>
+                            <option value="blue-green">Blue-green</option>
+                            <option value="copper">Copper</option>
+                            <option value="green">Green</option>
+                            <option value="hazel">Hazel</option>
+                            <option value="odd">Odd-eye</option>
+                            <option value="orange">Orange</option>
+                            <option value="yellow">Yellow</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Tail type</label>
+                        <select class="ui fluid dropdown">
+                            <option value="">Any</option>
+                            <option value="bare">Bare</option>
+                            <option value="female">Bob</option>
+                            <option value="female">Curled</option>
+                            <option value="female">Docked</option>
+                            <option value="female">Kinked</option>
+                            <option value="female">Long</option>
+                            <option value="female">Missing</option>
+                            <option value="female">Short</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="fluid ui blue submit button">Create</button>
+            </form>
+        }
+    </div>
+</div>

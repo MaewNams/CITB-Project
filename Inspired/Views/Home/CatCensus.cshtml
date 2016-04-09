@@ -88,7 +88,10 @@
                             <div class="ui inverted dimmer">
                                 <div class="content">
                                     <div class="center">
-                                        <div class="ui red basic button">@cat.name</div>
+                                        <div class="ui teal basic button">
+                                            @Html.ActionLink(cat.name,"Details", "Cats", new {id = cat.id}, null)
+                      
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -149,6 +152,7 @@
                             <i class="user icon"></i>
 
                             @Html.ValidationMessageFor(model => model.name, "", new { @name = "name" })
+
                         </div>
                     </div>
                     <div class="two fields">

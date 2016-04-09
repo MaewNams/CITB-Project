@@ -1005,7 +1005,7 @@
     <Content Include="Views\Forums\Index.cshtml" />
     <Content Include="Views\Diaries\Index.cshtml" />
     <Content Include="Views\Cats\Index.cshtml" />
-    <Content Include="Views\Cats\Detail.cshtml" />
+    <Content Include="Views\Cats\Details.cshtml" />
     <Content Include="Views\Cats\Edit.cshtml" />
     <Content Include="Views\Cats\Create.cshtml" />
     <Content Include="Views\Accounts\Login.cshtml" />

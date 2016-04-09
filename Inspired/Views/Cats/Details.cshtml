@@ -1,0 +1,60 @@
+﻿@using Inspired.Models;
+@model Inspired.Models.Cat
+
+@{
+    ViewBag.Title = "Cat Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="ui centered grid" style="padding-top:70px">
+    <div class="ui row" style="width:80%!important;background-color:white">
+
+        <div class="five wide column">
+
+            <div class="image">
+                @if (Model.pic != null)
+                {
+                    <img class="ui medium circular image myCat" src="@Model.pic">
+                }
+                else
+                {
+                    <img class="ui medium circular image myCat" src="~/Content/pic/cat07.jpg">
+                }
+
+
+
+            </div>
+
+        </div>
+        <div class="eleven wide column">
+            <div class="ui basic segment" style="padding-bottom:0px">
+                <div class="ui huge header" style="font-family:Delicious;font-size:80px"> About @Model.name</div>
+            </div>
+            <div class="ui basic segment" style="font-family:'Helvetica Neue LT Std';font-size:22px;padding-top:0px;line-height:30px">
+                M8 is a very good cat, we found her in the gardent. She is a very small kitten at that time. M8 look into my eyes and then I decide to adopt her.
+            </div>
+        </div>
+
+    </div>
+    <br />
+    <br />
+
+    <div class="ui row" style="width:80%!important;background-color:white;margin-top:40px">
+        <div class="ten wide column">
+            <div class="ui basic segment" style="padding-bottom:0px">
+                <div class="ui huge header" style="font-family:Delicious;font-size:60px"> More about @Model.name</div>
+            </div>
+            <div class="ui basic segment" style="font-family:'Helvetica Neue LT Std';font-size:22px;padding-top:0px;line-height:20px">
+                sdf
+            </div>
+        </div>
+
+        <div class="six wide column">
+            <div class="ui basic segment" style="padding-bottom:0px">
+                <div class="ui huge header" style="font-family:Delicious;font-size:60px"> @Model.name's diary</div>
+            </div>
+            <div class="ui basic segment" style="font-family:'Helvetica Neue LT Std';font-size:22px;padding-top:0px;line-height:20px">
+                asdsas
+            </div>
+        </div>
+    </div>
+</div>
