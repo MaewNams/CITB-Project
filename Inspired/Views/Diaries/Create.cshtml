@@ -1,10 +1,9 @@
 ﻿@using Inspired.Models;
 @model Inspired.Models.Diary
 @{
-    ViewBag.Title = "MyDiary";
+    ViewBag.Title = "Create new Diary";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 
 <div class="ui page centered celled grid">
 
@@ -122,45 +121,64 @@
 
 
         </div>
-        <a href="/Diaries/Create">
-            <div class="ui center aligned  segment" style="color:#00b5ad!important;cursor:pointer;margin-top:0px">
-                <i class="add circle icon"></i> CREATE NEW DIARY
-            </div>
-        </a>
+
         <div class="ui segment">
 
-            <div class="ui divided link items">
-                @{
-                    List<Diary> diaries = (List<Diary>)ViewData["Diary"];
-                }
-                @if (diaries != null && diaries.Count > 0)
-                {
-                    foreach (var diary in diaries)
-                    {
-                        <a class="item" href="/Diaries/StatisticDiary">
-                            <div class="ui tiny image">
-                                <img src="~/Content/pic/cat01.jpg">
-                            </div>
-                            <div class="content">
-                                <div class="header">@diary.name</div>
-                                <div class="meta">
-                                    <span class="price">$1200</span>
-                                    <span class="stay">1 Month</span>
-                                </div>
-                                <div class="description">
-                                    <p></p>
-                                </div>
-                                <div class="extra">
-                                    Owner name
 
-                                </div>
+            <div class="header" style="color:#0e566c">
+                Create new diary
+            </div>
+            <br />
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="ui form">
+        
+                        <div class="field">
+                            <label>Diary name</label>
+                            <div class="ui left icon input">
+                                <input type="text" name="name">
+                                @Html.ValidationMessageFor(model => model.name, "", new { @name = "name" })
                             </div>
-                        </a>
+                        </div>
+            
+                    @if (ViewBag.DiaryNameError != null)
+                    { <div class="ui basic segment" style="margin-top:-20px;margin-bottom:-5px;padding-left:0px">
+                        <div class="ui red basic label">
+                            <strong>Sorry!</strong> @ViewBag.DiaryNameError
+                        </div>
+                    </div>
                     }
-                }
+                    <div class="field">
+                        <label>Diary owner</label>
+                        <select name="catsdiary" multiple="" class="ui fluid dropdown" id="service-dropdown">
+                            @{
+                                List<Cat> cats = (List<Cat>)ViewData["Cat"];
+                            }
+                            @if (cats != null && cats.Count > 0)
+                            {
+                                foreach (var cat in cats)
+                                {
+                                    <option value="@cat.id">@cat.name</option>
+                                }
+                            }
+                        </select>
+
+                    </div>
+                    @if (ViewBag.DiaryOwnerError != null)
+                    { <div class="ui basic segment" style="margin-top:-20px;margin-bottom:-5px;padding-left:0px">
+                        <div class="ui red basic label">
+                            <strong>Sorry!</strong> @ViewBag.DiaryOwnerError
+                        </div>
+                    </div>
+                    }
+                    <br />
+                    <button class="fluid ui blue submit button">Create</button>
+                </div>
+                                }
         </div>
+
     </div>
-</div>
 
 
 
@@ -175,6 +193,9 @@
 
     </div>
 </div>
+
+
+
 
 
 

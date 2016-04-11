@@ -7,13 +7,17 @@
 }
 <div class="ui centered grid" style="padding-top:70px">
     <div class="ui row" style="width:80%!important;background-color:white">
-
+        <div class="sixteen wide column">
+            <h4 class="ui horizontal divider header" style="font-family:Delicious;font-size:36px">
+               @Model.name
+            </h4>
+        </div>
         <div class="five wide column">
 
             <div class="image">
                 @if (Model.pic != null)
                 {
-                    <img class="ui medium circular image myCat" src="@Model.pic">
+                    <img class="ui tiny circular image myCat" src="@Model.pic">
                 }
                 else
                 {
@@ -25,11 +29,9 @@
             </div>
 
         </div>
+     
         <div class="eleven wide column">
-            <div class="ui basic segment" style="padding-bottom:0px">
-                <div class="ui huge header" style="font-family:Delicious;font-size:80px"> About @Model.name</div>
-            </div>
-            <div class="ui basic segment" style="font-family:'Helvetica Neue LT Std';font-size:22px;padding-top:0px;line-height:30px">
+            <br />  <div class="ui basic segment" style="font-family:'Helvetica Neue LT Std';font-size:20px;padding-top:0px;line-height:28px">
                 M8 is a very good cat, we found her in the gardent. She is a very small kitten at that time. M8 look into my eyes and then I decide to adopt her.
             </div>
         </div>
@@ -41,19 +43,67 @@
     <div class="ui row" style="width:80%!important;background-color:white;margin-top:40px">
         <div class="ten wide column">
             <div class="ui basic segment" style="padding-bottom:0px">
-                <div class="ui huge header" style="font-family:Delicious;font-size:60px"> More about @Model.name</div>
+                <div class="ui huge header" style="font-family:Delicious;font-size:36px"> More about @Model.name</div>
             </div>
             <div class="ui basic segment" style="font-family:'Helvetica Neue LT Std';font-size:22px;padding-top:0px;line-height:20px">
-                sdf
+                <form class="ui form">
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <input type="text" placeholder="name" name="name">
+                            <i class="user icon"></i>
+
+                            @Html.ValidationMessageFor(model => model.name, "", new { @name = "name" })
+
+                        </div>
+                    </div>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Gender</label>
+                            <select class="ui fluid dropdown">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Life stage</label>
+                            <select class="ui fluid dropdown">
+                                <option value="ki">Kitten (0-6 months)</option>
+                                <option value="ju">Junior (7 months-2 years)</option>
+                                <option value="pr">Prime (3-6 years)</option>
+                                <option value="ma">Mature (7-10 years)</option>
+                                <option value="se">Senior (11-14 years)</option>
+                                <option value="ge">Geriatric (15 years and over)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Breed</label>
+                        <select name="breed" multiple="" class="ui fluid dropdown" id="service-dropdown">
+                            @{
+                                List<Breed> breeds = (List<Breed>)ViewData["Breeds"];
+                            }
+                            @if (breeds != null && breeds.Count > 0)
+                            {
+                                foreach (var breed in breeds)
+                                {
+                                    <option>@breed.name</option>
+                                }
+                            }
+                        </select>
+                        <br />
+                    </div>
+                </form>
             </div>
         </div>
 
         <div class="six wide column">
-            <div class="ui basic segment" style="padding-bottom:0px">
-                <div class="ui huge header" style="font-family:Delicious;font-size:60px"> @Model.name's diary</div>
-            </div>
-            <div class="ui basic segment" style="font-family:'Helvetica Neue LT Std';font-size:22px;padding-top:0px;line-height:20px">
-                asdsas
+            <div class="ui stacked segment">
+                <div class="ui basic segment" style="padding-bottom:0px;padding-top:0px">
+                    <div class="ui huge header" style="font-family:Delicious;font-size:36px"> @Model.name's diary</div>
+                </div>
+                <div class="ui basic segment" style="font-family:'Helvetica Neue LT Std';font-size:22px;padding-top:0px;line-height:20px">
+                    asdsas
+                </div>
             </div>
         </div>
     </div>

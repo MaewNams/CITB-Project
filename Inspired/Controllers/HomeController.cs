@@ -27,21 +27,31 @@ namespace Inspired.Controllers
         }
         public ActionResult Adoption()
         {
+            if (Session["Authen"] == null)
+            { return RedirectToAction("Login", "Accounts"); }
+
             return View();
         }
 
         public ActionResult MyDiary()
         {
+            if (Session["Authen"] == null)
+            { return RedirectToAction("Login", "Accounts"); }
+            int userid = Int32.Parse(Session["accountid"].ToString());
+            ViewData["Diary"] = db.Diary.Where(d => d.userid == userid).OrderBy(d => d.name).ToList<Diary>();
+            ViewData["Cat"] = db.Cat.Where(c => c.userid == userid).OrderBy(c => c.name).ToList<Cat>();
             return View();
         }
+
+
 
         public ActionResult CatCensus()
         {
             if (Session["Authen"] == null)
             { return RedirectToAction("Login", "Accounts"); }
 
-                int userid = Int32.Parse(Session["accountid"].ToString());
-         
+            int userid = Int32.Parse(Session["accountid"].ToString());
+
             ViewData["Breeds"] = db.Breed.OrderBy(b => b.name).ToList<Breed>();
             ViewData["Cats"] = db.Cat.Where(c => c.userid == userid && c.status == 1).OrderBy(c => c.name).ToList<Cat>();
             return View();

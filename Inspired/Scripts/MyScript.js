@@ -113,6 +113,15 @@ $(document).ready(function () {
               .modal('setting', 'transition', 'fade up');
     });
 
+    $("#call_create_diary_modal").click(function () {
+        $('#create_diary_modal')
+                .modal('show')
+                .modal({
+                    blurring: true
+                })
+                  .modal('setting', 'transition', 'fade up');
+    });
+
     $("#coat").click(function () {
         $('#coat_modal')
 
