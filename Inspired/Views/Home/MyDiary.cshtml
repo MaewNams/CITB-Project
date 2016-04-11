@@ -137,7 +137,7 @@
                 {
                     foreach (var diary in diaries)
                     {
-                        <a class="item" href="/Diaries/StatisticDiary">
+                        <a class="item"  href='@(Url.Action("SettingDiary", "Diaries", new {id = diary.id}, null))'>
                             <div class="ui tiny image">
                                 <img src="~/Content/pic/cat01.jpg">
                             </div>

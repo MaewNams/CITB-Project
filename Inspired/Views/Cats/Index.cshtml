@@ -1,29 +1,5 @@
-﻿@model Inspired.Models.Cat
+﻿@model IEnumerable<Inspired.Models.Cat>
 @{
     ViewBag.Title = "Coatpattenr index";
     Layout = "~/Views/Shared/_CRUDLayout.cshtml";
 }
-
-
-
-<div>
-    <h4>Cat name</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.name)
-        </dt>
-
-        <dd>
-            @Model.name
-        </dd>
-
-    </dl>
-
-
-
-
-</div>
-
- 
-

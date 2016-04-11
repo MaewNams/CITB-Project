@@ -1,9 +1,7 @@
-﻿var ospry = new Ospry('pk-test-mm3nyd399te4tplr3ewv29n3');
-
-
-
-
+﻿BaseURL = window.location.origin;
 $(document).ready(function () {
+
+    var ospry = new Ospry('pk-test-mm3nyd399te4tplr3ewv29n3');
 
     $('#up-form').submit(function (e) {
         e.preventDefault();
@@ -105,16 +103,26 @@ $(document).ready(function () {
 
 
     $("#call_cat_profile_modal").click(function () {
-    $('#create_cat_modal')
-            .modal('show')
-            .modal({
-                blurring: true
-            })
-              .modal('setting', 'transition', 'fade up');
+        $('#create_cat_modal')
+                .modal('show')
+                .modal({
+                    blurring: true
+                })
+                  .modal('setting', 'transition', 'fade up');
     });
 
     $("#call_create_diary_modal").click(function () {
         $('#create_diary_modal')
+                .modal('show')
+                .modal({
+                    blurring: true
+                })
+                  .modal('setting', 'transition', 'fade up');
+    });
+
+
+    $("#call_add_diary_owner").click(function () {
+        $('#add_diary_owner')
                 .modal('show')
                 .modal({
                     blurring: true
@@ -136,7 +144,53 @@ $(document).ready(function () {
         alertify.notify('You will get in touch soon', 'success', 5, function () { console.log('dismissed'); });
     });
 
+    $('.DeleteCat_Button').click(function (e) {
+        e.preventDefault();
+        if (confirm("Do you want to delete this cat from the diary?")) {
+            $.post(BaseURL + '/Cats/DeleteCat', {
+                ID: $(this).data('id')
+            }, function (data) {
+                if (data.Result == "Success") {
+                    alert("Cat Deleted");
+                    window.location.reload();
+                } else {
+                    alert(data.Result);
+                }
+            })
+        }
+    });
 
+    $('.DeleteOwner_Button').click(function (e) {
+        e.preventDefault();
+        if (confirm("Do you want to delete this cat from the diary?")) {
+            $.post(BaseURL + '/Diaries/DeleteOwner', {
+                catid: $(this).data('id')
+            }, function (data) {
+                if (data.Result == "Success") {
+                    alert("Cat Deleted");
+                    window.location.reload();
+                } else {
+                    alert(data.Result);
+                }
+            })
+        }
+    });
+
+    $('.AddOwner_Button').click(function (e) {
+        e.preventDefault();
+        if (confirm("Do you want to add this cat to be diary owner?")) {
+            $.post(BaseURL + '/Diaries/AddOwner', {
+                catid: $(this).data('id')
+            }, function (data) {
+                if (data.Result == "Success") {
+                    alert("Cat add success");
+                    window.location.reload();
+                } else {
+                    alert(data.Result);
+                }
+            })
+        }
+    });
 
 
 

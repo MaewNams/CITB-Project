@@ -16,19 +16,11 @@ namespace Inspired.Controllers
         private CatsInTheBoxContext db = new CatsInTheBoxContext();
 
         // GET: Cats
-        public ActionResult Index(int? id)
+        public ActionResult Index()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Cat cat = db.Cat.Find(id);
-            if (cat == null)
-            {
-                return HttpNotFound();
-            }
-            return View(cat);
+            return View(db.Cat.ToList());
         }
+
 
         public ActionResult Create()
         {
@@ -80,14 +72,13 @@ namespace Inspired.Controllers
         }
 
         // POST: Cat/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        [HttpPost]
+        public ActionResult DeleteCat(int id)
         {
             Cat cat = db.Cat.Find(id);
             db.Cat.Remove(cat);
             db.SaveChanges();
-            return RedirectToAction("CatCensus", "Home");
+            return Json(new { Result = "Success" });
         }
 
 

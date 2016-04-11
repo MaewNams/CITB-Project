@@ -33,11 +33,10 @@ namespace Inspired.Controllers
         [HttpPost]
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,name,userid,timestamp")] Diary diary)
+        public ActionResult Create([Bind(Include = "id,name,userid,timestamp,description")] Diary diary)
         {
             int userid = Int32.Parse(Session["accountid"].ToString());
             ViewData["Cat"] = db.Cat.Where(c => c.userid == userid).OrderBy(c => c.name).ToList<Cat>();
-            Catdiary catdiary = new Catdiary();
             diary.userid = Int32.Parse(Session["accountid"].ToString());
             diary.timestamp = DateTime.Now;
             string[] catowners = Request.Form.GetValues("catsdiary");
@@ -64,6 +63,7 @@ namespace Inspired.Controllers
 
                 db.Diary.Add(diary);
                 db.SaveChanges();
+                Catdiary catdiary = new Catdiary();
                 foreach (string key in catowners)
                 {
                     int catid = Int32.Parse(key.ToString());
@@ -74,12 +74,57 @@ namespace Inspired.Controllers
                 }
 
             }
-            return RedirectToAction("Setting");
+            return RedirectToAction("SettingDiary", new { id = diary.id });
 
         }
-        public ActionResult SettingDiary()
+        public ActionResult SettingDiary(int? id)
         {
-            return View();
+            
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Session["diaryid"] = id;
+            Diary diary = db.Diary.Find(id);
+            if (diary == null)
+            {
+                return HttpNotFound();
+            }
+            int userid = Int32.Parse(Session["accountid"].ToString());
+
+            ViewData["CatsOwnDiary"] = db.Catdiary
+                .Where(cd => cd.diaryid == id)
+                .Select(cd => cd.Cat).ToList<Cat>();
+
+            ViewData["AllMyCats"] = db.Cat.Where(c => c.userid == userid).OrderBy(c => c.name).ToList<Cat>();
+            List<Cat> allmycats = (List<Cat>)ViewData["AllMyCats"];
+            List<Cat> catowndiary = (List<Cat>)ViewData["CatsOwnDiary"];
+
+            ViewData["SelectableCat"] = allmycats.Where(c => !catowndiary.Any(c2 => c2.id == c.id)).OrderBy(c => c.name).ToList<Cat>();
+            return View(diary);
+        }
+
+        [HttpPost]
+        public ActionResult AddOwner(int catid)
+        {
+            int diaryid = Int32.Parse(Session["diaryid"].ToString());
+            Catdiary catdiary = new Catdiary();
+            catdiary.catid = catid;
+            catdiary.diaryid = diaryid;
+            db.Catdiary.Add(catdiary);
+            db.SaveChanges();
+            return Json(new { Result = "Success" });
+        }
+
+        [HttpPost]
+        public ActionResult DeleteOwner(int? catid)
+        {
+            int diaryid = Int32.Parse(Session["diaryid"].ToString()) ;
+            Catdiary catdiary = db.Catdiary.Where(c => c.catid == catid && c.diaryid == diaryid).FirstOrDefault();
+            db.Catdiary.Remove(catdiary);
+            db.SaveChanges();
+            return Json(new { Result = "Success" });
         }
 
 

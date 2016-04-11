@@ -70,52 +70,25 @@
 
         <div class="ui right close rail">
             <div class="ui segment">
-                <div class="ui large teal label">
-                    <i class="icon"><i class="fa fa-book"></i></i>My follow diary
+                <div class="ui warning message">
+
+                    <div class="header">
+                        Did you know ? Every diary have to have a owner.
+                    </div>
+                    <ul class="list">
+                        <li>Owner of the diary is your cat</li>
+                        <li>One diary can have many owner as you want</li>
+                    </ul>
                 </div>
-                <div class="ui relaxed divided selection list">
-                    <a class="item">
-                        <img class="ui avatar image" src="~/Content/pic/cat1.png">
-                        <div class="content">
-                            <div class="header">Snickerdoodle</div>
-                            An excellent companion
-                        </div>
-                    </a>
-                    <a class="item">
-                        <img class="ui avatar image" src="~/Content/pic/cat2.png">
-                        <div class="content">
-                            <div class="header">Poodle</div>
-                            A poodle, its pretty basic
-                        </div>
-                    </a>
-                    <a class="item">
-                        <img class="ui avatar image" src="~/Content/pic/cat3.png">
-                        <div class="content">
-                            <div class="header">Paulo</div>
-                            He's also a dog
-                        </div>
-                    </a>
-                    <a class="item">
-                        <img class="ui avatar image" src="~/Content/pic/cat1.png">
-                        <div class="content">
-                            <div class="header">Snickerdoodle</div>
-                            An excellent companion
-                        </div>
-                    </a>
-                    <a class="item">
-                        <img class="ui avatar image" src="~/Content/pic/cat2.png">
-                        <div class="content">
-                            <div class="header">Poodle</div>
-                            A poodle, its pretty basic
-                        </div>
-                    </a>
-                    <a class="item">
-                        <img class="ui avatar image" src="~/Content/pic/cat3.png">
-                        <div class="content">
-                            <div class="header">Paulo</div>
-                            He's also a dog
-                        </div>
-                    </a>
+
+                <div class="ui warning message">
+                    <div class="header">
+                        Didn't create any cat profile yet?
+                    </div>
+                    <br />
+                    <div class="ui center aligned basic segment" style="padding:0px;margin:0px">
+                        <button class="ui teal button">Create cat profile</button>
+                    </div>
                 </div>
             </div>
 
@@ -123,25 +96,23 @@
         </div>
 
         <div class="ui segment">
-
-
-            <div class="header" style="color:#0e566c">
-                Create new diary
-            </div>
             <br />
+            <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px;overflow:auto!important">
+                Create new diary
+            </h4>
             @using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
                 <div class="ui form">
-        
-                        <div class="field">
-                            <label>Diary name</label>
-                            <div class="ui left icon input">
-                                <input type="text" name="name">
-                                @Html.ValidationMessageFor(model => model.name, "", new { @name = "name" })
-                            </div>
+
+                    <div class="field">
+                        <label>Diary name</label>
+                        <div class="ui left icon input">
+                            <input type="text" name="name">
+                            @Html.ValidationMessageFor(model => model.name, "", new { @name = "name" })
                         </div>
-            
+                    </div>
+
                     @if (ViewBag.DiaryNameError != null)
                     { <div class="ui basic segment" style="margin-top:-20px;margin-bottom:-5px;padding-left:0px">
                         <div class="ui red basic label">
@@ -172,8 +143,17 @@
                         </div>
                     </div>
                     }
+                    <div class="field">
+                        <label>Diary description</label>
+                        <div class="ui left icon input">
+                            <input type="text" name="description">
+                            @Html.ValidationMessageFor(model => model.description, "", new { @description = "description" })
+                        </div>
+                    </div>
+
+                    <button class=" ui right floated blue submit button">Create</button>
                     <br />
-                    <button class="fluid ui blue submit button">Create</button>
+                    <br />
                 </div>
                                 }
         </div>

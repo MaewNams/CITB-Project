@@ -1,4 +1,5 @@
-﻿
+﻿@using Inspired.Models;
+@model Inspired.Models.Diary
 @{
     ViewBag.Title = "Diary | setting";
     Layout = "~/Views/Shared/_CPLayout.cshtml";
@@ -17,7 +18,7 @@
                 <div class="fields">
                     <div class="sixteen wide field">
                         <label>Diary name</label>
-                        <input type="text" placeholder="">
+                        <input type="text" placeholder="" value="@Model.name">
                     </div>
                 </div>
                 <div class="field">
@@ -28,30 +29,40 @@
                     <label>Cat owner</label>
 
                     <div class="ui four special cards">
+                        @{
+                            List<Cat> cats = (List<Cat>)ViewData["CatsOwnDiary"];
+                        }
+                        @if (cats != null && cats.Count > 0)
+                        {
+                            foreach (var cat in cats)
+                            {
+                                <div class="card">
+                                    <div class="blurring dimmable image">
+                                        <div class="ui inverted dimmer">
+                                            <div class="content">
+                                                <div class="center">
+                                                    <button data-id="@cat.id" class="DeleteOwner_Button btn btn-danger">Delete</button>
 
-                        <div class="card">
-                            <div class="blurring dimmable image">
-                                <div class="ui inverted dimmer">
-                                    <div class="content">
-                                        <div class="center">
-                                            <div class="ui red basic button">Delete</div>
+                                                </div>
+                                            </div>
                                         </div>
+
+                                        <img src="~/Content/pic/cat01.jpg">
+                                    </div>
+
+                                    <div class="content">
+                                        <h5 class="ui header" style="text-align:center">@cat.name</h5>
                                     </div>
                                 </div>
 
-                                <img src="~/Content/pic/cat01.jpg">
-                            </div>
-
-                            <div class="content">
-                                <h5 class="ui header" style="text-align:center">Team Hess</h5>
-                            </div>
-                        </div>
+                            }
+                        }
                         <div class="card">
                             <div class="blurring dimmable image">
                                 <div class="ui inverted dimmer">
                                     <div class="content">
                                         <div class="center">
-                                            <div class="ui blue button">Add new</div>
+                                            <div class="ui blue button" id="call_add_diary_owner">Add owner</div>
                                         </div>
                                     </div>
                                 </div>
@@ -76,6 +87,41 @@
 
 
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="ui modal" id="add_diary_owner">
+    <div class="header">My cats</div>
+    <div class="content">
+        <div class="ui four special cards">
+            @{
+                List<Cat> mycats = (List<Cat>)ViewData["SelectableCat"];
+            }
+            @if (mycats != null && mycats.Count > 0)
+            {
+                foreach (var cat in mycats)
+                {
+                    <div class="card">
+                        <div class="blurring dimmable image">
+                            <div class="ui inverted dimmer">
+                                <div class="content">
+                                    <div class="center">
+                                        <div class="ui teal basic button AddOwner_Button" data-id="@cat.id" >Select cat</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <img src="~/Content/pic/cat01.jpg">
+                        </div>
+
+                        <div class="content">
+                            <h5 class="ui header" style="text-align:center">@cat.name</h5>
+                        </div>
+                    </div>
+
+                }
+            }
         </div>
     </div>
 </div>
