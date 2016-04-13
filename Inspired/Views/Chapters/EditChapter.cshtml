@@ -1,0 +1,39 @@
+﻿@using Inspired.Models;
+@model Inspired.Models.Diary
+
+@{
+    ViewBag.Title = "EditChapter";
+    Layout = "~/Views/Shared/_CPLayout.cshtml";
+}
+
+<div class="ui centered  grid">
+    <div class="twelve wide column" style="padding-right:30px">
+        <div class="ui segment">
+            <div class="ui form">
+                @{
+                    Chapter chapter = (Chapter)ViewData["EditChapter"];
+
+                <div class="field">
+                    <label>Chapter name</label>
+                    <div class="ui left icon input">
+                        <input type="text" id="newName" value="@chapter.name">
+                    </div>
+                </div>
+
+
+                <div class="field">
+                    <label>Content</label>
+                    <textarea class="form" id="editor">
+                        @chapter.detail
+                    </textarea>
+                </div>
+
+                <button class=" ui right floated blue submit button EditChapter_Button" data-id="@chapter.id">Save</button>
+                    }
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+

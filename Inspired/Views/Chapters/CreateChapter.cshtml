@@ -1,0 +1,35 @@
+﻿@using Inspired.Models;
+@model Inspired.Models.Diary
+
+@{
+    ViewBag.Title = "CreateChapter";
+    Layout = "~/Views/Shared/_CPLayout.cshtml";
+}
+
+
+<div class="ui centered  grid">
+    <div class="twelve wide column" style="padding-right:30px">
+            <div class="ui segment">
+                    <div class="ui form">
+
+                        <div class="field">
+                            <label>Chapter name</label>
+                            <div class="ui left icon input">
+                                <input type="text" id="name">
+                            </div>
+                        </div>
+
+
+                        <div class="field">
+                            <label>Content</label>
+                            <textarea class="form" id="editor"></textarea>
+                        </div>
+
+                        <button class=" ui right floated blue submit button CreateChapter_Button">Create</button>
+                        <br />
+                        <br />
+                    </div>
+            </div>
+    </div>
+</div>
+

@@ -1,8 +1,74 @@
-﻿
+﻿@using Inspired.Models;
+@model Inspired.Models.Diary
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_CRUDLayout.cshtml";
+    Layout = "~/Views/Shared/_CPLayout.cshtml";
 }
 
-<h2>Index</h2>
+
+<div class="ui centered  grid">
+
+    <div class="nine wide column" style="margin-left:-20px">
+        <div class="ui raised segment">
+            <h4 class="ui header">@Model.name</h4>
+            @Model.description
+            <div class="metadata" style="padding-top:10px">
+                <span class="date">Create : @Model.timestamp</span>
+            </div>
+        </div>
+
+        <div class="ui raised segment">
+            <h4 class="ui header" > <i class="comments outline  icon"></i> Latest comments</h4>
+            <div class="ui comments">
+                <div class="comment">
+                    <a class="avatar">
+                        <img src="~/Content/pic/cat1.png">
+                    </a>
+                    <div class="content">
+                        <a class="author">Matt</a> 
+                        <div class="metadata">
+                            <span class="date">Today at 5:42PM in</span>
+                            <a class="author">Chapter name</a>
+                        </div>
+                        <div class="text">
+                            How artistic!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="four wide column" style="padding-right:20px">
+        <div class="ui segment">
+            <div class="ui large blue label">
+                <i class="heart icon"></i>5 Latest follower
+            </div>
+            <div class="ui relaxed divided selection list">
+                <a class="item">
+                    <img class="ui avatar image" src="~/Content/pic/cat1.png">
+                    <div class="content">
+                        <div class="header">Snickerdoodle</div>
+                        An excellent companion
+                    </div>
+                </a>
+
+            </div>
+        </div>
+        <div class="ui segment">
+            <div class="ui large blue label">
+                <i class="heart icon"></i>Follower
+            </div>
+            <div class="ui relaxed divided selection list">
+                <a class="item">
+                    <img class="ui avatar image" src="~/Content/pic/cat1.png">
+                    <div class="content">
+                        <div class="header">Snickerdoodle</div>
+                        An excellent companion
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</div>
 

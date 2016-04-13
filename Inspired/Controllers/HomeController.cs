@@ -38,8 +38,7 @@ namespace Inspired.Controllers
             if (Session["Authen"] == null)
             { return RedirectToAction("Login", "Accounts"); }
             int userid = Int32.Parse(Session["accountid"].ToString());
-            ViewData["Diary"] = db.Diary.Where(d => d.userid == userid).OrderBy(d => d.name).ToList<Diary>();
-            ViewData["Cat"] = db.Cat.Where(c => c.userid == userid).OrderBy(c => c.name).ToList<Cat>();
+            ViewData["Diary"] = db.Diary.Where(d => d.userid == userid).OrderByDescending(d => d.timestamp).ToList<Diary>();
             return View();
         }
 

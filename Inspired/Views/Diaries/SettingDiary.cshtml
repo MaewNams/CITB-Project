@@ -8,7 +8,6 @@
 <div class="ui centered  grid">
     <div class="twelve wide column" style="padding-right:30px">
         <div class="ui segment" style="background-color:white!important">
-
             <div class="ui form">
                 <div class="field">
                     <label>Cover page</label>
@@ -18,12 +17,13 @@
                 <div class="fields">
                     <div class="sixteen wide field">
                         <label>Diary name</label>
-                        <input type="text" placeholder="" value="@Model.name">
+                        <input type="text" placeholder="" value="@Model.name" id="newName">
                     </div>
                 </div>
                 <div class="field">
                     <label>Short description</label>
-                    <textarea rows="2"></textarea>
+                    <textarea rows="1" placeholder="" id="newDescription">@Model.description</textarea>
+
                 </div>
                 <div class="field">
                     <label>Cat owner</label>
@@ -32,7 +32,7 @@
                         @{
                             List<Cat> cats = (List<Cat>)ViewData["CatsOwnDiary"];
                         }
-                        @if (cats != null && cats.Count > 0)
+                        @if (cats != null && cats.Count == 1)
                         {
                             foreach (var cat in cats)
                             {
@@ -41,7 +41,31 @@
                                         <div class="ui inverted dimmer">
                                             <div class="content">
                                                 <div class="center">
-                                                    <button data-id="@cat.id" class="DeleteOwner_Button btn btn-danger">Delete</button>
+                                                    <div class="ui disabled button DeleteOwner_Button" data-id="@cat.id">Delete</div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <img src="~/Content/pic/cat01.jpg">
+                                    </div>
+
+                                    <div class="content">
+                                        <h5 class="ui header" style="text-align:center">@cat.name</h5>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        @if (cats != null && cats.Count != 1)
+                        {
+                            foreach (var cat in cats)
+                            {
+                                <div class="card">
+                                    <div class="blurring dimmable image">
+                                        <div class="ui inverted dimmer">
+                                            <div class="content">
+                                                <div class="center">
+                                                    <div class="ui red basic button DeleteOwner_Button" data-id="@cat.id">Delete</div>
 
                                                 </div>
                                             </div>
@@ -74,22 +98,27 @@
 
                     </div>
 
-                    <div class="ui divider"></div>
-                    <button class="ui right floated primary button">
-                        Save
-                    </button>
-                    <button class="ui right floated button">
-                        Cancel
-                    </button>
-                    <br />
-                    <br />
                 </div>
 
-
+                @if (ViewBag.SettingDiaryError != null)
+                { <div class="ui basic segment" style="margin-top:-20px;margin-bottom:-5px;padding-left:0px">
+                        <div class="ui red basic label">
+                            <strong>Sorry!</strong> @ViewBag.SettingDiaryError
+                        </div>
+                    </div>
+                }
+                <div class="ui divider"></div>
+                <button class="ui right floated primary button EditDiary_Button" data-id="@Model.id">
+                    Save
+                </button>
+                <br />
+                <br />
             </div>
+
         </div>
     </div>
 </div>
+
 
 <div class="ui modal" id="add_diary_owner">
     <div class="header">My cats</div>
@@ -107,7 +136,7 @@
                             <div class="ui inverted dimmer">
                                 <div class="content">
                                     <div class="center">
-                                        <div class="ui teal basic button AddOwner_Button" data-id="@cat.id" >Select cat</div>
+                                        <div class="ui teal basic button AddOwner_Button" data-id="@cat.id">Select cat</div>
                                     </div>
                                 </div>
                             </div>

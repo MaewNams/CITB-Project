@@ -144,9 +144,9 @@
                     </div>
                     }
                     <div class="field">
-                        <label>Diary description</label>
+                        <label>Diary description (limit 300 alphabet) </label>
                         <div class="ui left icon input">
-                            <input type="text" name="description">
+                            <textarea type="text" name="description" maxlength="300" rows="3"></textarea>
                             @Html.ValidationMessageFor(model => model.description, "", new { @description = "description" })
                         </div>
                     </div>

@@ -1,6 +1,7 @@
 ﻿BaseURL = window.location.origin;
 $(document).ready(function () {
 
+
     var ospry = new Ospry('pk-test-mm3nyd399te4tplr3ewv29n3');
 
     $('#up-form').submit(function (e) {
@@ -24,6 +25,8 @@ $(document).ready(function () {
              customConfig: '/Scripts/ckeditor/config.js'
          });
     });
+
+
 
 
     $('.ui.accordion').accordion();
@@ -120,6 +123,19 @@ $(document).ready(function () {
                   .modal('setting', 'transition', 'fade up');
     });
 
+    $("#call_create_chapter").click(function () {
+        $('#create_chapter')
+                .modal('show')
+                .modal({blurring: true})
+                 .modal('setting', 'closable', false)
+                  .modal('setting', 'transition', 'fade up');
+    });
+
+    $("#close_create_chapter").click(function () {
+        $('#create_chapter')
+                .modal('hide');
+    });
+
 
     $("#call_add_diary_owner").click(function () {
         $('#add_diary_owner')
@@ -184,6 +200,76 @@ $(document).ready(function () {
             }, function (data) {
                 if (data.Result == "Success") {
                     alert("Cat add success");
+                    window.location.reload();
+                } else {
+                    alert(data.Result);
+                }
+            })
+        }
+    });
+
+
+    $('.EditDiary_Button').click(function (e) {
+        e.preventDefault();
+        $.post(BaseURL + '/Diaries/EditDiary', {
+            diaryid: $(this).data('id'),
+            newName: $('#newName').val(),
+            newDescription: $('#newDescription').val(),
+        }, function (data) {
+            if (data.Result == "Success") {
+                alert("Diary edit success");
+                window.location.reload();
+            } else {
+                alert(data.Result);
+            }
+        })
+    }
+    );
+
+
+
+    $('.CreateChapter_Button').click(function (e) {
+        e.preventDefault();
+        $.post(BaseURL + '/Chapters/CreateChapter', {
+            name: $('#name').val(),
+            detail: $('#editor').val()
+        }, function (data) {
+            if (data.Result == "Success") {
+                alert("create chapter success");
+                window.location.replace(document.referrer)
+            } else {
+                alert(data.Result);
+            }
+        })
+    }
+    );
+
+
+    $('.EditChapter_Button').click(function (e) {
+        e.preventDefault();
+        $.post(BaseURL + '/Chapters/EditChapter', {
+            chapterid: $(this).data('id'),
+            newName: $('#newName').val(),
+            newDetail: CKEDITOR.instances.editor.getData(),
+        }, function (data) {
+            if (data.Result == "Success") {
+                alert("Diary edit success");
+                window.location.reload();
+            } else {
+                alert(data.Result);
+            }
+        })
+    }
+    );
+
+    $('.DeleteChapter_Button').click(function (e) {
+        e.preventDefault();
+        if (confirm("Do you want to delete this cat from the diary?")) {
+            $.post(BaseURL + '/Chapters/DeleteChapter', {
+                id: $(this).data('id')
+            }, function (data) {
+                if (data.Result == "Success") {
+                    alert("Chapter Deleted");
                     window.location.reload();
                 } else {
                     alert(data.Result);

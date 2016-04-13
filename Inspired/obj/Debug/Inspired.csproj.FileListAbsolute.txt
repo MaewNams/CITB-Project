@@ -204,3 +204,4 @@ D:\CITB-Project\Inspired\bin\Microsoft.Owin.Security.Twitter.xml
 D:\CITB-Project\Inspired\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\CITB-Project\Inspired\obj\Debug\Inspired.dll
 D:\CITB-Project\Inspired\obj\Debug\Inspired.pdb
+D:\CITB-Project\Inspired\obj\Debug\Inspired.csprojResolveAssemblyReference.cache

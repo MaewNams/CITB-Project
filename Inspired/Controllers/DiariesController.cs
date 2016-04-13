@@ -16,9 +16,21 @@ namespace Inspired.Controllers
     {
         private CatsInTheBoxContext db = new CatsInTheBoxContext();
         // GET: Diaries
-        public ActionResult Index()
+
+        public ActionResult Index(int? id)
         {
-            return View();
+            Session["diaryid"] = id;
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Diary diary = db.Diary.Find(id);
+            if (diary == null)
+            {
+                return HttpNotFound();
+            }
+            return View(diary);
+
         }
 
         public ActionResult Create()
@@ -74,12 +86,12 @@ namespace Inspired.Controllers
                 }
 
             }
-            return RedirectToAction("SettingDiary", new { id = diary.id });
+            return RedirectToAction("Index", new { id = diary.id });
 
         }
         public ActionResult SettingDiary(int? id)
         {
-            
+
 
             if (id == null)
             {
@@ -120,22 +132,64 @@ namespace Inspired.Controllers
         [HttpPost]
         public ActionResult DeleteOwner(int? catid)
         {
-            int diaryid = Int32.Parse(Session["diaryid"].ToString()) ;
+            int diaryid = Int32.Parse(Session["diaryid"].ToString());
             Catdiary catdiary = db.Catdiary.Where(c => c.catid == catid && c.diaryid == diaryid).FirstOrDefault();
             db.Catdiary.Remove(catdiary);
             db.SaveChanges();
             return Json(new { Result = "Success" });
         }
 
+        [HttpPost]
+        public ActionResult EditDiary(int diaryid, string newName, string newDescription)
+        {
+            Diary diary = db.Diary.Find(diaryid);
+            diary.name = newName;
+            diary.description = newDescription;
+            db.SaveChanges();
+            return Json(new { Result = "Success" });
+        }
 
-        public ActionResult StatisticDiary()
+
+        public ActionResult StatisticDiary(int? id)
         {
-            return View();
+            Session["diaryid"] = id;
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Diary diary = db.Diary.Find(id);
+            if (diary == null)
+            {
+                return HttpNotFound();
+            }
+            return View(diary);
+
         }
-        public ActionResult ChapterDiary()
+
+
+        public ActionResult ChapterDiary(int? id)
         {
-            return View();
+            if (Session["Authen"] == null)
+            { return RedirectToAction("Login", "Accounts"); }
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Session["diaryid"] = id;
+            Diary diary = db.Diary.Find(id);
+            if (diary == null)
+            {
+                return HttpNotFound();
+            }
+
+            ViewData["Chapter"] = db.Chapter.Where(c => c.diaryid == id).OrderBy(c => c.timestamp).ToList<Chapter>(); ;
+
+            return View(diary);
         }
+
+     
 
     }
+
 }

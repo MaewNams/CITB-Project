@@ -1,4 +1,5 @@
-﻿
+﻿@using Inspired.Models;
+@model Inspired.Models.Diary
 
 @{
     ViewBag.Title = "Diary | chapter";
@@ -6,43 +7,60 @@
 }
 
 <div class="ui centered  grid">
-    <div class="twelve wide column" style="padding-right:30px">
-        <div class="ui segment">
-            <div class="ui basic segment">
-                <h4 class="ui header">Chapter summary</h4>
-                <table class="ui blue table">
-                    <thead>
-                        <tr>
-                            <th class="three wide">Date</th>
-                            <th class="six wide">Chapter</th>
-                            <th class="one wide center aligned">View</th>
-                            <th class="one wide center aligned">Comment</th>
-                            <th class="one wide center aligned">Edit</th>
-                            <th class="one wide center aligned">Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>dd/mm/yy</td>
-                            <td><a href="#">John open his eyes!</a></td>
-                            <td class="center aligned">8</td>
-                            <td class="center aligned">10</td>
-                            <td class="center aligned">10</td>
-                            <td class="center aligned">10</td>
-                        </tr>
-                        <tr>
-                            <td>dd/mm/yy</td>
-                            <td><a href="#">John start running!</a></td>
-                            <td class="center aligned">10</td>
-                            <td class="center aligned">12</td>
+    <div class="thirteen wide column" style="padding-right:20px">
+        <div class="ui basic segment" style="padding-left:0px;padding-right:0px">
 
-                        </tr>
-                    </tbody>
-                </table>
+
+            <div class="ui segment">
+                <div class="ui two column very relaxed grid">
+                    <div class="column">
+                        <h2 class="ui header">
+                            Chapter
+                        </h2>
+                    </div>
+                    <div class="ui hidden vertical divider">
+                    </div>
+                    <div class="column">
+                        <button onclick="location.href = '/Chapters/CreateChapter'" class="ui right floated blue button">New chapter</button>
+
+                    </div>
+                </div>
             </div>
+            <div class="ui segment">
+                <div class="ui one cards">
 
-
+                    @{
+                        List<Chapter> chapters = (List<Chapter>)ViewData["Chapter"];
+                    }
+                    @if (chapters != null && chapters.Count > 0)
+                    {
+                        foreach (var chapter in chapters)
+                        {
+                            <div class="card">
+                                <div class="content">
+                                    <div class="header">
+                                        @chapter.name
+                                    </div>
+                                    <div class="meta">
+                                        @chapter.timestamp
+                                    </div>
+                                    <div class="description">
+                                        Elliot requested permission to view your contact details
+                                    </div>
+                                </div>
+                                <div class="extra content">
+                                    <div class="ui two buttons">
+                                        <div class="ui basic teal button"  onclick="location.href = '/Chapters/EditChapter/'+ @chapter.id" >Edit</div>
+                                        <div class="ui red button DeleteChapter_Button" data-id="@chapter.id">Delete</div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
 
         </div>
     </div>
 </div>
+

@@ -17,6 +17,7 @@ namespace Inspired.Models
         public string pic1 { get; set; }
         public string pic2 { get; set; }
         public DateTime timestamp { get; set; }
+        public int views { get; set; }
 
 
         [ForeignKey("diaryid")]
