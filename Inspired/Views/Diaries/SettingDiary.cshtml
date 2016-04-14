@@ -22,7 +22,7 @@
                 </div>
                 <div class="field">
                     <label>Short description</label>
-                    <textarea rows="1" placeholder="" id="newDescription">@Model.description</textarea>
+                    <textarea rows="3" placeholder="" id="newDescription">@Model.description</textarea>
 
                 </div>
                 <div class="field">
@@ -116,6 +116,13 @@
             </div>
 
         </div>
+
+
+            <div class="ui center aligned  segment" style="color:#D91E18!important;margin-top:0px">
+                <button class="ui red basic button DeleteDiary_Button" data-id="@Model.id" style="margin-bottom:5px"><i class="trash icon"></i> DELETE THE DIARY</button>
+                <br /> All your post, image, and data of this diary @Model.name will be gone forever.
+                <br /><text style="font-style:oblique;color:#E08283 !important"> Be careful! Once a diary is deleted, it cannot be recovered. Please be sure before you proceed.</text>
+            </div>
     </div>
 </div>
 

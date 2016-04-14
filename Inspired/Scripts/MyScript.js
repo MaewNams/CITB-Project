@@ -217,7 +217,6 @@ $(document).ready(function () {
             newDescription: $('#newDescription').val(),
         }, function (data) {
             if (data.Result == "Success") {
-                alert("Diary edit success");
                 window.location.reload();
             } else {
                 alert(data.Result);
@@ -226,7 +225,21 @@ $(document).ready(function () {
     }
     );
 
-
+    $('.DeleteDiary_Button').click(function (e) {
+        e.preventDefault();
+        if (confirm("Do you want to delete this diary?")) {
+            $.post(BaseURL + '/Diaries/DeleteDiary', {
+                diaryid: $(this).data('id')
+            }, function (data) {
+                if (data.Result == "Success") {
+                    alert("Diary Deleted");
+                    window.location.replace(BaseURL + '/Home/MyDiary');
+                } else {
+                    alert(data.Result);
+                }
+            })
+        }
+    });
 
     $('.CreateChapter_Button').click(function (e) {
         e.preventDefault();

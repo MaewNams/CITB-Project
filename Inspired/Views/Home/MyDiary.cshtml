@@ -142,19 +142,18 @@
                                 <img src="~/Content/pic/cat01.jpg">
                             </div>
                             <div class="content">
-                                <div class="header">@diary.name</div>
-                                <div class="meta">
-                                    <span class="price">
-                                    @diary.description</span>
+                                <div class="header" style="color:#34495E !important">@diary.name</div>
+                                <div class="description" style="color:#336E7B !important">
+                                    @diary.description
                                 </div>
-                                <div class="description">
+                                <div class="meta">
                                     <p><span class="price">Create : @diary.timestamp</span></p>
                                 </div>
                                 <div class="description">
                                     <div class="ui right pointing teal basic label">
                                         Owner :
                                     </div>
-                                 
+
                                     @{
                                         ViewData["CatsOwnDiary"] = diary.Catsdiaries.ToList();
                                         List<Catdiary> catowndiary = (List<Catdiary>)ViewData["CatsOwnDiary"];
@@ -167,7 +166,7 @@
                                                 <img src="~/Content/pic/cat2.png">
                                                 @cat.Cat.name
                                             </div>
-                                        
+
                                         }
                                     }
 

@@ -91,7 +91,8 @@ namespace Inspired.Controllers
         }
         public ActionResult SettingDiary(int? id)
         {
-
+            if (Session["Authen"] == null)
+            { return RedirectToAction("Login", "Accounts"); }
 
             if (id == null)
             {
@@ -149,6 +150,16 @@ namespace Inspired.Controllers
             return Json(new { Result = "Success" });
         }
 
+        [HttpPost]
+        public ActionResult DeleteDiary(int? diaryid)
+        {
+            Diary diary = db.Diary.Find(diaryid);
+            db.Diary.Remove(diary);
+     
+             
+            db.SaveChanges();
+            return Json(new { Result = "Success" });
+        }
 
         public ActionResult StatisticDiary(int? id)
         {
