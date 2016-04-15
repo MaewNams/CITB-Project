@@ -37,7 +37,7 @@ namespace Inspired.Controllers
         }
 
         [Route("{username}/Diary/{id}/{chaptername}")]
-        public ActionResult ChapterDetail(string username, int? id, string chaptername,int chapterid)
+        public ActionResult ChapterDetail(string username, int? id, string chaptername, int chapterid)
         {
 
             Session["diaryid"] = id;
@@ -52,7 +52,7 @@ namespace Inspired.Controllers
             }
             ViewData["RecentChapter"] = db.Chapter.Where(c => c.diaryid == id).OrderByDescending(c => c.timestamp).Take(5).ToList<Chapter>();
             ViewData["Chapter"] = db.Chapter.Find(chapterid);
-           
+
             Chapter chapterview = db.Chapter.Find(chapterid);
             chapterview.views += 1;
             db.SaveChanges();
@@ -96,8 +96,8 @@ namespace Inspired.Controllers
         {
             int userid = Int32.Parse(Session["accountid"].ToString());
             ViewData["Cat"] = db.Cat.Where(c => c.userid == userid).OrderBy(c => c.name).ToList<Cat>();
-            if(ViewData["Cat"] == null)
-   
+            if (ViewData["Cat"] == null)
+
                 diary.userid = Int32.Parse(Session["accountid"].ToString());
             diary.timestamp = DateTime.Now;
             string[] catowners = Request.Form.GetValues("catsdiary");
@@ -205,9 +205,10 @@ namespace Inspired.Controllers
         public ActionResult DeleteDiary(int? diaryid)
         {
             Diary diary = db.Diary.Find(diaryid);
-            ViewData ["DeleteChapter"] = db.Chapter.Where(c => c.diaryid == diaryid).ToList<Chapter>();
+            ViewData["DeleteChapter"] = db.Chapter.Where(c => c.diaryid == diaryid).ToList<Chapter>();
             List<Chapter> deletechapter = (List<Chapter>)ViewData["DeleteChapter"];
-            foreach (Chapter chapter in deletechapter ) {
+            foreach (Chapter chapter in deletechapter)
+            {
                 db.Chapter.Remove(chapter);
                 db.SaveChanges();
             }
@@ -263,7 +264,7 @@ namespace Inspired.Controllers
             return View(diary);
         }
 
-     
+
 
     }
 

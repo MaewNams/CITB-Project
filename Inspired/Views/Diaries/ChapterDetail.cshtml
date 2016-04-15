@@ -9,7 +9,7 @@
     <div class="ui row" style="width:80%!important;background-color:transparent">
         <div class="sixteen wide column" style="padding-bottom:20px">
             <h4 class="ui horizontal divider header" style="font-family:Delicious;font-size:36px;color:#6BB9F0 !important">
-             Select chapter :3
+                Select chapter :3
             </h4>
         </div>
 
@@ -35,56 +35,56 @@
             }
             @if (chapter != null)
             {
-                    <div class="ui basic segment" style="background-color:white;padding:60px;padding-top:30px;padding-bottom:30px;color:#34495E">
-                        <div class="ui right corner blue label"></div>
-                        <a href="#" class="ui header" style="font-family:Delicious;font-size:30px;margin-top:0px;color:#34495E">
-                            @chapter.name
-                        </a>
-                        <br />
-                        <a style="font-family:'Delicious SmallCaps';font-size:16px;margin-top:0px;color:#BFBFBF">
-                            @chapter.timestamp <i class="comments outline icon" style="margin-left:15px"></i>1 Comments
-                        </a>
-                        <div class="ui divider"></div>
-                        <br />
-                        <div class="ui basic segment" style="padding:0px;margin:0px">
-                            <div style="font-weight:300;font-size:18px">
-                                @Html.Raw(@chapter.detail)
-                            </div>
-
+                <div class="ui basic segment" style="background-color:white;padding:60px;padding-top:30px;padding-bottom:30px;color:#34495E">
+                    <div class="ui right corner blue label"></div>
+                    <a href="#" class="ui header" style="font-family:Delicious;font-size:30px;margin-top:0px;color:#34495E">
+                        @chapter.name
+                    </a>
+                    <br />
+                    <a style="font-family:'Delicious SmallCaps';font-size:16px;margin-top:0px;color:#BFBFBF">
+                        @chapter.timestamp <i class="comments outline icon" style="margin-left:15px"></i>1 Comments
+                    </a>
+                    <div class="ui divider"></div>
+                    <br />
+                    <div class="ui basic segment" style="padding:0px;margin:0px">
+                        <div style="font-weight:300;font-size:18px">
+                            @Html.Raw(@chapter.detail)
                         </div>
-                        <br />
-                        <div class="ui divider"></div>
-                      <br />
-                        <div class="ui comments">
-                            <h3 class="ui header">Comments</h3>
-                            <div class="comment">
-                                <a class="avatar">
-                                    <img src="~/Content/pic/cat01.jpg">
-                                </a>
-                                <div class="content">
-                                    <a class="author">Matt</a>
-                                    <div class="metadata">
-                                        <span class="date">Today at 5:42PM</span>
-                                    </div>
-                                    <div class="text">
-                                        How artistic!
-                                    </div>
-                                </div>
-                            </div>
 
-                            <form class="ui reply form">
-                                <div class="field">
-                                    <textarea></textarea>
-                                </div>
-                                <div class="ui blue labeled submit icon button">
-                                    <i class="icon edit"></i> Add comment
-                                </div>
-                            </form>
-                        </div>
-                        <br />
                     </div>
-                }
-            
+                    <br />
+                    <div class="ui divider"></div>
+                    <br />
+                    <div class="ui comments">
+                        <h3 class="ui header">Comments</h3>
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="~/Content/pic/cat01.jpg">
+                            </a>
+                            <div class="content">
+                                <a class="author">Matt</a>
+                                <div class="metadata">
+                                    <span class="date">Today at 5:42PM</span>
+                                </div>
+                                <div class="text">
+                                    How artistic!
+                                </div>
+                            </div>
+                        </div>
+
+                        <form class="ui reply form">
+                            <div class="field">
+                                <textarea></textarea>
+                            </div>
+                            <div class="ui blue labeled submit icon button">
+                                <i class="icon edit"></i> Add comment
+                            </div>
+                        </form>
+                    </div>
+                    <br />
+                </div>
+            }
+
 
         </div>
 

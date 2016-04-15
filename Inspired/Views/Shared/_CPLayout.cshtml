@@ -20,7 +20,7 @@
             <i class="arrow left icon" style="padding-right:35px"></i>
             All diary
         </a>
-        <a class="item" href='@(Url.Action("DiaryIndex", "Diaries", new { id = Session["diaryid"], username = Session["username"]},null))'  style="color:#2C3E50">
+        <a class="item" href='@(Url.Action("DiaryIndex", "Diaries", new { id = Session["diaryid"], username = Session["username"]},null))' style="color:#2C3E50">
             <i class="external icon" style="padding-right:35px;"></i>
             @Model.name
         </a>
@@ -28,7 +28,7 @@
             <i class="home icon" style="padding-right:35px;"></i>
             Index
         </a>
-        <a class="item" href='@(Url.Action("StatisticDiary", "Diaries", new {id = Session["diaryid"]}, null))'style="color:#2C3E50">
+        <a class="item" href='@(Url.Action("StatisticDiary", "Diaries", new {id = Session["diaryid"]}, null))' style="color:#2C3E50">
             <i class="block layout icon" style="padding-right:35px"></i>
             Statistic
         </a>

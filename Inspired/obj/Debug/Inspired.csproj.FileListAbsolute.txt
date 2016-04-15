@@ -204,7 +204,6 @@ D:\CITB-Project\Inspired\bin\Microsoft.Owin.Security.Twitter.xml
 D:\CITB-Project\Inspired\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\CITB-Project\Inspired\obj\Debug\Inspired.dll
 D:\CITB-Project\Inspired\obj\Debug\Inspired.pdb
-D:\CITB-Project\Inspired\obj\Debug\Inspired.csprojResolveAssemblyReference.cache
 C:\Users\Window\Documents\CITB-Project\Inspired\bin\roslyn\csc.exe
 C:\Users\Window\Documents\CITB-Project\Inspired\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\Window\Documents\CITB-Project\Inspired\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
