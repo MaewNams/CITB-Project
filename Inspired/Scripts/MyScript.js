@@ -114,15 +114,6 @@ $(document).ready(function () {
                   .modal('setting', 'transition', 'fade up');
     });
 
-    $("#call_create_diary_modal").click(function () {
-        $('#create_diary_modal')
-                .modal('show')
-                .modal({
-                    blurring: true
-                })
-                  .modal('setting', 'transition', 'fade up');
-    });
-
     $("#call_create_chapter").click(function () {
         $('#create_chapter')
                 .modal('show')
@@ -233,7 +224,7 @@ $(document).ready(function () {
             }, function (data) {
                 if (data.Result == "Success") {
                     alert("Diary Deleted");
-                    window.location.replace(BaseURL + '/Home/MyDiary');
+                    window.location.replace(BaseURL + '/Home/Mydiary')
                 } else {
                     alert(data.Result);
                 }
@@ -245,7 +236,7 @@ $(document).ready(function () {
         e.preventDefault();
         $.post(BaseURL + '/Chapters/CreateChapter', {
             name: $('#name').val(),
-            detail: $('#editor').val()
+            detail: CKEDITOR.instances.editor.getData(),
         }, function (data) {
             if (data.Result == "Success") {
                 alert("create chapter success");
@@ -290,7 +281,6 @@ $(document).ready(function () {
             })
         }
     });
-
 
 
 

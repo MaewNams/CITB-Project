@@ -1,0 +1,136 @@
+﻿@using Inspired.Models;
+@model Inspired.Models.Diary
+
+@{
+    ViewBag.Title = "Cat Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="ui centered grid" style="padding-top:70px">
+    <div class="ui row" style="width:80%!important;background-color:transparent">
+        <div class="sixteen wide column" style="padding-bottom:20px">
+            <h4 class="ui horizontal divider header" style="font-family:Delicious;font-size:36px;color:#6BB9F0 !important">
+             Select chapter :3
+            </h4>
+        </div>
+
+        <div class="sixteen wide column">
+            <img class="ui fluid image" style="height:250px !important" src="https://c2.staticflickr.com/2/1682/26354230801_143a6113a5_b.jpg">
+        </div>
+        <div class="sixteen wide column" style="padding-bottom:15px;padding-top:15px;font-family:Delicious">
+            <div class="ui secondary  menu">
+                <a class="item active" href="#">
+                    Home
+                </a>
+                <div class="right menu">
+                    <div class="item">
+                        <button class="ui blue button">Follow</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="twelve wide column">
+
+            @{
+                Chapter chapter = (Chapter)ViewData["Chapter"];
+            }
+            @if (chapter != null)
+            {
+                    <div class="ui basic segment" style="background-color:white;padding:60px;padding-top:30px;padding-bottom:30px;color:#34495E">
+                        <div class="ui right corner blue label"></div>
+                        <a href="#" class="ui header" style="font-family:Delicious;font-size:30px;margin-top:0px;color:#34495E">
+                            @chapter.name
+                        </a>
+                        <br />
+                        <a style="font-family:'Delicious SmallCaps';font-size:16px;margin-top:0px;color:#BFBFBF">
+                            @chapter.timestamp <i class="comments outline icon" style="margin-left:15px"></i>1 Comments
+                        </a>
+                        <div class="ui divider"></div>
+                        <br />
+                        <div class="ui basic segment" style="padding:0px;margin:0px">
+                            <div style="font-weight:300;font-size:18px">
+                                @Html.Raw(@chapter.detail)
+                            </div>
+
+                        </div>
+                        <br />
+                        <div class="ui divider"></div>
+                      <br />
+                        <div class="ui comments">
+                            <h3 class="ui header">Comments</h3>
+                            <div class="comment">
+                                <a class="avatar">
+                                    <img src="~/Content/pic/cat01.jpg">
+                                </a>
+                                <div class="content">
+                                    <a class="author">Matt</a>
+                                    <div class="metadata">
+                                        <span class="date">Today at 5:42PM</span>
+                                    </div>
+                                    <div class="text">
+                                        How artistic!
+                                    </div>
+                                </div>
+                            </div>
+
+                            <form class="ui reply form">
+                                <div class="field">
+                                    <textarea></textarea>
+                                </div>
+                                <div class="ui blue labeled submit icon button">
+                                    <i class="icon edit"></i> Add comment
+                                </div>
+                            </form>
+                        </div>
+                        <br />
+                    </div>
+                }
+            
+
+        </div>
+
+        <div class="four wide column">
+
+            <div class="ui basic segment" style="margin-top:0px;border-top:3px solid #34495E;padding-top:25px">
+                <a class="ui header" style="font-family:Delicious;font-size:20px;margin-top:0px;color:#34495E">
+                    ABOUT
+                </a>
+                <div style="font-size:14px;color:#34495E!important;padding-top:10px">@Model.description</div>
+            </div>
+
+            <div class="ui basic segment" style="margin-top:0px;border-top:3px solid #34495E;padding-top:25px">
+                <div class="ui search">
+                    <div class="ui icon input">
+                        <input class="prompt" type="text" placeholder="Search chapter">
+                        <i class="search icon"></i>
+                    </div>
+                    <div class="results"></div>
+                </div>
+            </div>
+
+            <div class="ui basic segment" style="margin-top:0px;border-top:3px solid #34495E;padding-top:25px">
+                <div class="ui header" style="font-family:Delicious;font-size:20px;margin-top:0px;color:#34495E">
+                    RECENT CHAPTER
+                    <div class="ui relaxed divided list" style="padding-top:10px">
+                        @{
+                            List<Chapter> recentchapters = (List<Chapter>)ViewData["RecentChapter"];
+                        }
+                        @if (recentchapters != null && recentchapters.Count > 0)
+                        {
+                            foreach (var recentchapter in recentchapters)
+                            {
+                                <div class="item">
+                                    <a class="header" style="font-size:14px;color:#34495E!important">@recentchapter.name</a>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <br />
+        <br />
+
+    </div>
+</div>

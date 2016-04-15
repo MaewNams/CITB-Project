@@ -39,7 +39,7 @@ namespace Inspired.Controllers
                 else
                     Session["Autho"] = false;
 
-                Session["username"] = Authentication.username;
+                Session["username"] = Authentication.username.ToString();
                 Session["accountid"] = Authentication.id;
                 return RedirectToAction("Index", "Home");
             }

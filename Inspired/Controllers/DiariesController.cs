@@ -17,6 +17,51 @@ namespace Inspired.Controllers
         private CatsInTheBoxContext db = new CatsInTheBoxContext();
         // GET: Diaries
 
+        [Route("{username}/Diary/{id}")]
+        public ActionResult DiaryIndex(int? id, string username)
+        {
+            Session["diaryid"] = id;
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Diary diary = db.Diary.Find(id);
+            if (diary == null)
+            {
+                return HttpNotFound();
+            }
+            ViewData["Chapter"] = db.Chapter.Where(c => c.diaryid == id).OrderByDescending(c => c.timestamp).ToList<Chapter>();
+            ViewData["RecentChapter"] = db.Chapter.Where(c => c.diaryid == id).OrderByDescending(c => c.timestamp).Take(5).ToList<Chapter>();
+            return View(diary);
+
+        }
+
+        [Route("{username}/Diary/{id}/{chaptername}")]
+        public ActionResult ChapterDetail(string username, int? id, string chaptername,int chapterid)
+        {
+
+            Session["diaryid"] = id;
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Diary diary = db.Diary.Find(id);
+            if (diary == null)
+            {
+                return HttpNotFound();
+            }
+            ViewData["RecentChapter"] = db.Chapter.Where(c => c.diaryid == id).OrderByDescending(c => c.timestamp).Take(5).ToList<Chapter>();
+            ViewData["Chapter"] = db.Chapter.Find(chapterid);
+           
+            Chapter chapterview = db.Chapter.Find(chapterid);
+            chapterview.views += 1;
+            db.SaveChanges();
+            return View(diary);
+
+        }
+
+
+        [Route("ManageDiary/Index/{id}")]
         public ActionResult Index(int? id)
         {
             Session["diaryid"] = id;
@@ -33,6 +78,8 @@ namespace Inspired.Controllers
 
         }
 
+
+        [Route("ManageDiary/CreateDiary")]
         public ActionResult Create()
         {
             if (Session["Authen"] == null)
@@ -49,7 +96,9 @@ namespace Inspired.Controllers
         {
             int userid = Int32.Parse(Session["accountid"].ToString());
             ViewData["Cat"] = db.Cat.Where(c => c.userid == userid).OrderBy(c => c.name).ToList<Cat>();
-            diary.userid = Int32.Parse(Session["accountid"].ToString());
+            if(ViewData["Cat"] == null)
+   
+                diary.userid = Int32.Parse(Session["accountid"].ToString());
             diary.timestamp = DateTime.Now;
             string[] catowners = Request.Form.GetValues("catsdiary");
             if (ModelState.IsValid)
@@ -89,6 +138,8 @@ namespace Inspired.Controllers
             return RedirectToAction("Index", new { id = diary.id });
 
         }
+
+        [Route("ManageDiary/SettingDiary/{id}")]
         public ActionResult SettingDiary(int? id)
         {
             if (Session["Authen"] == null)
@@ -154,13 +205,26 @@ namespace Inspired.Controllers
         public ActionResult DeleteDiary(int? diaryid)
         {
             Diary diary = db.Diary.Find(diaryid);
+            ViewData ["DeleteChapter"] = db.Chapter.Where(c => c.diaryid == diaryid).ToList<Chapter>();
+            List<Chapter> deletechapter = (List<Chapter>)ViewData["DeleteChapter"];
+            foreach (Chapter chapter in deletechapter ) {
+                db.Chapter.Remove(chapter);
+                db.SaveChanges();
+            }
+
+            ViewData["DeleteCatDiary"] = db.Catdiary.Where(cd => cd.diaryid == diaryid).ToList<Catdiary>();
+            List<Catdiary> deletecatdiary = (List<Catdiary>)ViewData["DeleteCatDiary"];
+            foreach (Catdiary catdiary in deletecatdiary)
+            {
+                db.Catdiary.Remove(catdiary);
+                db.SaveChanges();
+            }
             db.Diary.Remove(diary);
-     
-             
             db.SaveChanges();
             return Json(new { Result = "Success" });
         }
 
+        [Route("ManageDiary/Statistic/{id}")]
         public ActionResult StatisticDiary(int? id)
         {
             Session["diaryid"] = id;
@@ -177,7 +241,7 @@ namespace Inspired.Controllers
 
         }
 
-
+        [Route("ManageDiary/Chapter/{id}")]
         public ActionResult ChapterDiary(int? id)
         {
             if (Session["Authen"] == null)

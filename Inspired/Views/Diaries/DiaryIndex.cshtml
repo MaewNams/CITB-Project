@@ -1,0 +1,113 @@
+﻿@using Inspired.Models;
+@model Inspired.Models.Diary
+
+@{
+    ViewBag.Title = "Cat Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="ui centered grid" style="padding-top:70px">
+    <div class="ui row" style="width:80%!important;background-color:transparent">
+        <div class="sixteen wide column" style="padding-bottom:20px">
+            <h4 class="ui horizontal divider header" style="font-family:Delicious;font-size:36px;color:#6BB9F0 !important">
+                @Model.name
+            </h4>
+        </div>
+
+        <div class="sixteen wide column">
+            <img class="ui fluid image" style="height:250px !important" src="https://c2.staticflickr.com/2/1682/26354230801_143a6113a5_b.jpg">
+        </div>
+        <div class="sixteen wide column" style="padding-bottom:15px;padding-top:15px;font-family:Delicious">
+            <div class="ui secondary  menu">
+                <a class="item active" href="#">
+                    Home
+                </a>
+                <div class="right menu">
+                    <div class="item">
+                        <button class="ui blue button">Follow</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="twelve wide column">
+
+            @{
+                List<Chapter> chapters = (List<Chapter>)ViewData["Chapter"];
+            }
+            @if (chapters != null && chapters.Count > 0)
+            {
+                foreach (var chapter in chapters)
+                {
+                    <div class="ui basic segment" style="background-color:white;padding:60px;padding-top:30px;padding-bottom:30px;color:#34495E">
+                        <div class="ui right corner blue label"></div>
+                        <a href='@(Url.Action("ChapterDetail", "Diaries", new { id = Session["diaryid"], username = Session["username"], chaptername = @chapter.name,chapterid = chapter.id }, null))' class="ui header" style="font-family:Delicious;font-size:30px;margin-top:0px;color:#34495E">
+                        @chapter.name
+                        </a>
+                        <br />
+                        <a style="font-family:'Delicious SmallCaps';font-size:16px;margin-top:0px;color:#BFBFBF">
+                            @chapter.timestamp <i class="comments outline icon" style="margin-left:15px"></i>1 Comments
+                        </a>
+                        <div class="ui divider"></div>
+                        <br />
+                        <div class="ui basic segment" style="height:75px;padding:0px;margin:0px">
+                            <div id="short-description" style="font-weight:300;font-size:18px;height:inherit;overflow:hidden;text-overflow:ellipsis">
+                                @Html.Raw(@chapter.detail)
+                            </div>
+
+                        </div>
+                        <br />
+                        <div class="ui divider"></div>
+                        <a href='@(Url.Action("ChapterDetail", "Diaries", new { id = Session["diaryid"], username = Session["username"], chaptername = @chapter.name,chapterid = chapter.id},null))'>
+                            <button class="ui right floated blue basic button">Read more</button>
+                        </a>
+                        <br />
+                    </div>
+                }
+            }
+
+        </div>
+        <div class="four wide column">
+
+            <div class="ui basic segment" style="margin-top:0px;border-top:3px solid #34495E;padding-top:25px">
+                <a class="ui header" style="font-family:Delicious;font-size:20px;margin-top:0px;color:#34495E">
+                    ABOUT
+                </a>
+                <div style="font-size:14px;color:#34495E!important;padding-top:10px">@Model.description</div>
+            </div>
+
+            <div class="ui basic segment" style="margin-top:0px;border-top:3px solid #34495E;padding-top:25px">
+                <div class="ui search">
+                    <div class="ui icon input">
+                        <input class="prompt" type="text" placeholder="Search chapter">
+                        <i class="search icon"></i>
+                    </div>
+                    <div class="results"></div>
+                </div>
+            </div>
+
+            <div class="ui basic segment" style="margin-top:0px;border-top:3px solid #34495E;padding-top:25px">
+                <div class="ui header" style="font-family:Delicious;font-size:20px;margin-top:0px;color:#34495E">
+                    RECENT CHAPTER
+                    <div class="ui relaxed divided list" style="padding-top:10px">
+                        @{
+                            List<Chapter> recentchapters = (List<Chapter>)ViewData["RecentChapter"];
+                        }
+                        @if (recentchapters != null && recentchapters.Count > 0)
+                        {
+                            foreach (var recentchapter in recentchapters)
+                            {
+                                <div class="item">
+                                    <a class="header" href='@(Url.Action("ChapterDetail", "Diaries", new { id = Session["diaryid"], username = Session["username"], chaptername = recentchapter.name, chaterid = recentchapter.id},null))' style="font-size:14px;color:#34495E!important">@recentchapter.name</a>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <br />
+        <br />
+
+    </div>
+</div>
