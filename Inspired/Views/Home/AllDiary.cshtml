@@ -1,0 +1,69 @@
+﻿@using Inspired.Models;
+@model Inspired.Models.Diary
+@{
+    ViewBag.Title = "All Diary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="ui page centered celled grid">
+
+    <div class="ui segment" style="width:100%">
+        <div class="ui secondary  menu">
+            <a class="active item">
+                Recent
+            </a>
+            <a class="item">
+                Most view
+            </a>
+            <a class="item">
+                Most comment
+            </a>
+            <div class="right menu">
+                <div class="item">
+                    <div class="ui icon input">
+                        <input type="text" placeholder="Search...">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui basic segment" style="width:100%">
+        <div class="ui link four cards">
+            @{
+                List<Diary> alldiary = (List<Diary>)ViewData["RecentDiary"];
+            }
+            @if (alldiary != null)
+            {
+                foreach (var diary in alldiary)
+                {
+
+
+                    <a class="card" href='@(Url.Action("DiaryIndex", "Diaries", new { id = @diary.id, username = @diary.Account.username}, null))'>
+                        <div class="image">
+                            <img src="~/Content/Pic/cat01.jpg">
+                        </div>
+                        <div class="content">
+                            <div class="header">@diary.name</div>
+                        </div>
+                        <div class="extra content">
+                            <span class="right floated">
+                                Joined in 2013
+                            </span>
+                            <span>
+                                <i class="user icon"></i>
+                                75 Friends
+                            </span>
+                        </div>
+                    </a>
+
+
+                }
+            }
+        </div>
+    </div>
+
+
+</div>

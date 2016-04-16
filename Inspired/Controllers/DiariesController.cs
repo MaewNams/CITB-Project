@@ -30,8 +30,10 @@ namespace Inspired.Controllers
             {
                 return HttpNotFound();
             }
+            int userid = Int32.Parse(Session["accountid"].ToString());
             ViewData["Chapter"] = db.Chapter.Where(c => c.diaryid == id).OrderByDescending(c => c.timestamp).ToList<Chapter>();
             ViewData["RecentChapter"] = db.Chapter.Where(c => c.diaryid == id).OrderByDescending(c => c.timestamp).Take(5).ToList<Chapter>();
+            ViewData["MyFollowdiary"] = db.Followdiary.Where(f => f.diaryid == id && f.userid == userid).FirstOrDefault();
             return View(diary);
 
         }

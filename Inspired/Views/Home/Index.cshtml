@@ -1,4 +1,5 @@
-﻿@model Inspired.Models.Account
+﻿@using Inspired.Models;
+@model Inspired.Models.Account
 @{
     ViewBag.Title = "Home Page";
 }
@@ -94,49 +95,23 @@
                     <i class="icon"><i class="fa fa-book"></i></i>Recently update diary
                 </div>
                 <div class="ui relaxed divided selection list">
+                    
+@{
+    List<Diary> recentdiary = (List<Diary>)ViewData["RecentDiary"];
+}
+@if (recentdiary != null)
+{
+    foreach (var diary in recentdiary)
+    {
                     <a class="item">
                         <img class="ui avatar image" src="~/Content/pic/cat1.png">
                         <div class="content">
-                            <div class="header">Snickerdoodle</div>
-                            An excellent companion
+                            <div class="header">@diary.name</div>
                         </div>
                     </a>
-                    <a class="item">
-                        <img class="ui avatar image" src="~/Content/pic/cat2.png">
-                        <div class="content">
-                            <div class="header">Poodle</div>
-                            A poodle, its pretty basic
-                        </div>
-                    </a>
-                    <a class="item">
-                        <img class="ui avatar image" src="~/Content/pic/cat3.png">
-                        <div class="content">
-                            <div class="header">Paulo</div>
-                            He's also a dog
-                        </div>
-                    </a>
-                    <a class="item">
-                        <img class="ui avatar image" src="~/Content/pic/cat1.png">
-                        <div class="content">
-                            <div class="header">Snickerdoodle</div>
-                            An excellent companion
-                        </div>
-                    </a>
-                    <a class="item">
-                        <img class="ui avatar image" src="~/Content/pic/cat2.png">
-                        <div class="content">
-                            <div class="header">Poodle</div>
-                            A poodle, its pretty basic
-                        </div>
-                    </a>
-                    <a class="item">
-                        <img class="ui avatar image" src="~/Content/pic/cat3.png">
-                        <div class="content">
-                            <div class="header">Paulo</div>
-                            He's also a dog
-                        </div>
-                    </a>
-                    <a class="item" href="#">
+    }
+}
+                    <a class="item" href="/Home/AllDiary/Recent">
                         <div class="content">
                             <div class="header" style="color:#00b5ad">View all diary <i class="fa fa-angle-double-right"></i></div>
                         </div>

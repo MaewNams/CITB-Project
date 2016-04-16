@@ -21,11 +21,15 @@
                 <a class="item active" href="#">
                     Home
                 </a>
+                @{ Followdiary followdiary = (Followdiary)ViewData["MyFollowdiary"]; }
+                @{ if (Session["username"].ToString() != Model.Account.username && followdiary == null) {
                 <div class="right menu">
                     <div class="item">
-                        <button class="ui blue button">Follow</button>
+                        <button class="ui blue button" >Follow</button>
                     </div>
                 </div>
+                    }
+                    }
             </div>
         </div>
         <div class="twelve wide column">

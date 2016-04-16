@@ -22,6 +22,7 @@ namespace CatsInTheBox.DAL
         public virtual DbSet<Catdiary> Catdiary { get; set; }
         public virtual DbSet<Chapter> Chapter { get; set; }
         public virtual DbSet<Chaptercomment> Chaptercomment { get; set; }
+        public virtual DbSet<Chapterlog> Chapterlog { get; set; }
         public virtual DbSet<Coatcolor> Coatcolor { get; set; }
         public virtual DbSet<Coatpattern> Coatpattern { get; set; }
         public virtual DbSet<Diary> Diary { get; set; }

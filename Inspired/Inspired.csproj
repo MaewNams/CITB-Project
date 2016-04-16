@@ -198,6 +198,7 @@
     <Compile Include="Models\Catdiary.cs" />
     <Compile Include="Models\Chapter.cs" />
     <Compile Include="Models\Chaptercomment.cs" />
+    <Compile Include="Models\Chapterlog.cs" />
     <Compile Include="Models\Coatcolor.cs" />
     <Compile Include="Models\Coatpattern.cs" />
     <Compile Include="Models\Diary.cs" />
@@ -1026,6 +1027,7 @@
     <Content Include="Views\Chapters\EditChapter.cshtml" />
     <Content Include="Views\Diaries\DiaryIndex.cshtml" />
     <Content Include="Views\Diaries\ChapterDetail.cshtml" />
+    <Content Include="Views\Home\AllDiary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

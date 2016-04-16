@@ -16,6 +16,7 @@ namespace Inspired.Controllers
         private CatsInTheBoxContext db = new CatsInTheBoxContext();
         public ActionResult Index()
         {
+            ViewData["RecentDiary"] = db.Diary.OrderByDescending(c => c.timestamp).Take(5).ToList<Diary>();
             return View();
         }
 
@@ -41,6 +42,18 @@ namespace Inspired.Controllers
             ViewData["Diary"] = db.Diary.Where(d => d.userid == userid).OrderByDescending(d => d.timestamp).ToList<Diary>();
             return View();
         }
+
+        [Route("Home/AllDiary/Recent")]
+        public ActionResult AllDiary()
+        {
+            if (Session["Authen"] == null)
+            { return RedirectToAction("Login", "Accounts"); }
+            int userid = Int32.Parse(Session["accountid"].ToString());
+            ViewData["RecentDiary"] = db.Diary.OrderByDescending(d => d.timestamp).ToList<Diary>();
+            return View();
+        }
+
+
 
 
 
