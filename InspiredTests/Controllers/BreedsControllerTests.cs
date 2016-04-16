@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Inspired.Controllers.Tests
 {
@@ -12,9 +13,13 @@ namespace Inspired.Controllers.Tests
     public class BreedsControllerTests
     {
         [TestMethod()]
-        public void IndexTest()
+        public void IndexBreedsTest() // test ไม่ผ่านเพราะยังไม่ได้ mock
         {
-            Assert.Fail();
+            var controller = new BreedsController();
+            var result = controller.Index() as ViewResult;
+            Assert.IsNotNull(result);
+            ReferenceEquals(result, new ViewResult());
+
         }
 
         [TestMethod()]
@@ -24,36 +29,42 @@ namespace Inspired.Controllers.Tests
         }
 
         [TestMethod()]
-        public void CreateTest()
+        public void GetCreateTest()
+        {
+            var controller = new BreedsController();
+            var result = controller.Create() as ViewResult;
+            Assert.IsNotNull(result);
+            ReferenceEquals(result, new ViewResult());
+        }
+
+        [TestMethod()]
+        public void PostCreateTest()
         {
             Assert.Fail();
         }
 
         [TestMethod()]
-        public void CreateTest1()
+        public void GetEditTest() // ต้อง mock 
+        {
+            var controller = new BreedsController();
+            //var result = controller.Edit as ViewResult;
+            Assert.IsNotNull(result);
+            ReferenceEquals(result, new ViewResult());
+        }
+
+        [TestMethod()] // mock 
+        public void PostEditTest()
         {
             Assert.Fail();
         }
 
-        [TestMethod()]
-        public void EditTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void EditTest1()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
+        [TestMethod()] // mock
         public void DeleteTest()
         {
             Assert.Fail();
         }
 
-        [TestMethod()]
+        [TestMethod()] //mock 
         public void DeleteConfirmedTest()
         {
             Assert.Fail();

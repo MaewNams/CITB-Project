@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Inspired.Controllers.Tests
 {
@@ -12,8 +13,10 @@ namespace Inspired.Controllers.Tests
     public class ForumsControllerTests
     {
         [TestMethod()]
-        public void IndexTest()
+        public void IndexForumTest()
         {
+            var controller = new ForumsController();
+            var result = controller.Index() as ViewResult;
             Assert.Fail();
         }
     }
