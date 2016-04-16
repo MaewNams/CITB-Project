@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Inspired.Controllers.Tests
 {
@@ -14,17 +15,24 @@ namespace Inspired.Controllers.Tests
         [TestMethod()]
         public void IndexTest()
         {
-            Assert.Fail();
+            var controller = new AccountsController();
+            var result = controller.Index();
+            Assert.IsNotNull(result);
+            ReferenceEquals(result, new ViewResult());
         }
 
         [TestMethod()]
-        public void LoginTest()
+        public void GetLoginTest()
         {
-            Assert.Fail();
+            var controller = new AccountsController();
+            var result = controller.Login();
+            Assert.IsNotNull(result);
+            ReferenceEquals(result, new ViewResult());
+           
         }
 
         [TestMethod()]
-        public void LoginTest1()
+        public void PostLoginTest()
         {
             Assert.Fail();
         }
@@ -32,17 +40,23 @@ namespace Inspired.Controllers.Tests
         [TestMethod()]
         public void LogoutTest()
         {
-            Assert.Fail();
+            var controller = new AccountsController();
+            var result = controller.Logout() as RedirectToRouteResult;
+            Assert.IsInstanceOfType(result, typeof(RedirectToRouteResult));
         }
 
         [TestMethod()]
-        public void RegisterTest()
+        public void GetRegisterTest()
         {
-            Assert.Fail();
+            var controller = new AccountsController();
+            var result = controller.Register();
+            Assert.IsNotNull(result);
+            ReferenceEquals(result, new ViewResult());
+
         }
 
         [TestMethod()]
-        public void RegisterTest1()
+        public void PostRegisterTest()
         {
             Assert.Fail();
         }
