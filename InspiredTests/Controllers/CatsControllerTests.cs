@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Mvc;
 
 namespace Inspired.Controllers.Tests
 {
@@ -13,27 +12,20 @@ namespace Inspired.Controllers.Tests
     public class CatsControllerTests
     {
         [TestMethod()]
-        public void IndexCatsTest()
+        public void IndexTest()
         {
-            var controller = new CatsController();
             Assert.Fail();
         }
 
         [TestMethod()]
-        public void GetCreateTest()
+        public void CreateTest()
         {
-            var controller = new CatsController();
-            var result = controller.Create() as ViewResult;
-            Assert.IsNotNull(result);
-            ReferenceEquals(result, new ViewResult());
-        
+            Assert.Fail();
         }
 
         [TestMethod()]
-        public void PostCreateTest()
+        public void CreateTest1()
         {
-            var controller = new CatsController();
-            
             Assert.Fail();
         }
 
@@ -50,12 +42,9 @@ namespace Inspired.Controllers.Tests
         }
 
         [TestMethod()]
-        public void GetDeleteTest()
+        public void DeleteTest()
         {
-            var controller = new CatsController();
-            var result = controller.Delete() as ViewResult
-            Assert.IsNotNull(result);
-            ReferenceEquals(result, new ViewResult());
+            Assert.Fail();
         }
 
         [TestMethod()]

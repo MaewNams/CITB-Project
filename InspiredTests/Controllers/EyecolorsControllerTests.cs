@@ -11,60 +11,51 @@ namespace Inspired.Controllers.Tests
     [TestClass()]
     public class EyecolorsControllerTests
     {
-        [TestMethod()] //ต้อง mock 
-        public void IndexEyecolorsTest()
+        [TestMethod()]
+        public void IndexTest()
         {
-            var controller = new EyecolorsController();
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock 
+        [TestMethod()]
         public void DetailsTest()
         {
-            var controller = new EyecolorsController();
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock 
+        [TestMethod()]
         public void CreateTest()
         {
-            var controller = new EyecolorsController();
             Assert.Fail();
         }
-         
-        [TestMethod()] //ต้อง mock 
+
+        [TestMethod()]
         public void CreateTest1()
-
         {
-            var controller = new EyecolorsController();
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock 
+        [TestMethod()]
         public void EditTest()
         {
-            var controller = new EyecolorsController();
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock 
+        [TestMethod()]
         public void EditTest1()
         {
-            var controller = new EyecolorsController();
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock 
+        [TestMethod()]
         public void DeleteTest()
         {
-            var controller = new EyecolorsController();
             Assert.Fail();
         }
 
-        [TestMethod()]  //ต้อง mock 
+        [TestMethod()]
         public void DeleteConfirmedTest()
         {
-            var controller = new EyecolorsController();
             Assert.Fail();
         }
     }

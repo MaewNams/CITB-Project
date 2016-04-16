@@ -30,8 +30,8 @@ namespace Inspired.Controllers.Tests
             ReferenceEquals(result, new ViewResult());
            
         }
-         
-        [TestMethod()] //ยังเทสไม่ผ่านเพราะยังไม่ได้ mock database
+
+        [TestMethod()]
         public void PostLoginTest()
         {
             Assert.Fail();
@@ -55,7 +55,7 @@ namespace Inspired.Controllers.Tests
 
         }
 
-        [TestMethod()] //ยังเทสไม่ผ่านเพราะยังไม่ได้ mock database
+        [TestMethod()]
         public void PostRegisterTest()
         {
             Assert.Fail();

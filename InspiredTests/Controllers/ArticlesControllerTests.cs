@@ -31,13 +31,13 @@ namespace Inspired.Controllers.Tests
         }
 
         [TestMethod()]
-        public void PostCreateTest() //ยังเทสไม่ผ่านเพราะยังไม่ได้ mock database
+        public void PostCreateTest()
         {
             Assert.Fail();
         }
 
         [TestMethod()]
-        public void DetailsTest() //ยังเทสไม่ผ่านเพราะยังไม่ได้ mock database
+        public void DetailsTest()
         {
             Assert.Fail();
         }

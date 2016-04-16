@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Mvc;
 
 namespace Inspired.Controllers.Tests
 {
@@ -13,40 +12,36 @@ namespace Inspired.Controllers.Tests
     public class ChaptersControllerTests
     {
         [TestMethod()]
-        public void IndexChapterTest()
+        public void IndexTest()
         {
-            var controller = new ChaptersController();
-            var result = controller.Index() as ViewResult;
-            Assert.IsNotNull(result);
-            ReferenceEquals(result, new ViewResult());
-           
+            Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock
+        [TestMethod()]
         public void CreateChapterTest()
         {
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock
+        [TestMethod()]
         public void CreateChapterTest1()
         {
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock
+        [TestMethod()]
         public void DeleteChapterTest()
         {
             Assert.Fail();
         }
-         
-        [TestMethod()] //ต้อง mock
+
+        [TestMethod()]
         public void EditChapterTest()
         {
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock
+        [TestMethod()]
         public void EditChapterTest1()
         {
             Assert.Fail();

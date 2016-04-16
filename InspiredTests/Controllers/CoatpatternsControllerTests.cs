@@ -5,73 +5,57 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Mvc;
 
 namespace Inspired.Controllers.Tests
 {
     [TestClass()]
     public class CoatpatternsControllerTests
     {
-        [TestMethod()]  //ต้อง mock
-        public void IndexCoatpatternsTest()
+        [TestMethod()]
+        public void IndexTest()
         {
-            var controller = new CoatpatternsController();
-            var result = controller.Index() as ViewResult;
+            Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock
+        [TestMethod()]
         public void DetailsTest()
         {
-            var controller = new CoatpatternsController();
-         
             Assert.Fail();
         }
 
-        [TestMethod()]//ต้อง mock
-        public void GetCreateTest()
+        [TestMethod()]
+        public void CreateTest()
         {
-            var controller = new CoatpatternsController();
-         
             Assert.Fail();
         }
 
-        [TestMethod()]//ต้อง mock
-        public void PostCreateTest()
+        [TestMethod()]
+        public void CreateTest1()
         {
-            var controller = new CoatpatternsController();
-   
             Assert.Fail();
         }
 
-        [TestMethod()]//ต้อง mock
-        public void GetEditTest()
+        [TestMethod()]
+        public void EditTest()
         {
-            var controller = new CoatpatternsController();
-          
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock
-        public void PostEditTest()
+        [TestMethod()]
+        public void EditTest1()
         {
-            var controller = new CoatpatternsController();
-     
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock
+        [TestMethod()]
         public void DeleteTest()
         {
-            var controller = new CoatpatternsController();
-      
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock
+        [TestMethod()]
         public void DeleteConfirmedTest()
         {
-            var controller = new CoatpatternsController();
-           
             Assert.Fail();
         }
     }

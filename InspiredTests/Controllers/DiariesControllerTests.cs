@@ -5,81 +5,69 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Mvc;
 
 namespace Inspired.Controllers.Tests
 {
     [TestClass()]
     public class DiariesControllerTests
     {
-        [TestMethod()] //ต้อง mock
-        public void IndexDiariesTest()
+        [TestMethod()]
+        public void IndexTest()
         {
-            var controller = new DiariesController();
-           // var result = controller.Index() as ViewResult;
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock
-        public void GetCreateTest()
+        [TestMethod()]
+        public void CreateTest()
         {
-            var controller = new DiariesController();
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock
-        public void PostCreateTest()
+        [TestMethod()]
+        public void CreateTest1()
         {
-            var controller = new DiariesController();
             Assert.Fail();
         }
 
-        [TestMethod()] ////ต้อง mock
+        [TestMethod()]
         public void SettingDiaryTest()
         {
-            var controller = new DiariesController();
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock
+        [TestMethod()]
         public void AddOwnerTest()
         {
-            var controller = new DiariesController();
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock
+        [TestMethod()]
         public void DeleteOwnerTest()
         {
-            var controller = new DiariesController();
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock
+        [TestMethod()]
         public void EditDiaryTest()
         {
-            var controller = new DiariesController();
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock
+        [TestMethod()]
         public void DeleteDiaryTest()
         {
-            var controller = new DiariesController();
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock
+        [TestMethod()]
         public void StatisticDiaryTest()
         {
-            var controller = new DiariesController();
             Assert.Fail();
         }
 
-        [TestMethod()] //ต้อง mock
+        [TestMethod()]
         public void ChapterDiaryTest()
         {
-            var controller = new DiariesController();
             Assert.Fail();
         }
     }

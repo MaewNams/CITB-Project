@@ -12,11 +12,8 @@ namespace Inspired.Controllers.Tests
     public class HomeControllerTests
     {
         [TestMethod()]
-        public void IndexHomeTest()
-
+        public void IndexTest()
         {
-            var controller = new HomeController();
-           
             Assert.Fail();
         }
 
