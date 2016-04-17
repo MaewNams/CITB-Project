@@ -14,7 +14,18 @@ namespace Inspired.Controllers
 {
     public class DiariesController : Controller
     {
-        private CatsInTheBoxContext db = new CatsInTheBoxContext();
+        //private CatsInTheBoxContext db = new CatsInTheBoxContext();
+
+        public CatsInTheBoxContext db { get; set; }
+        public DiariesController()
+        {
+            this.db = new CatsInTheBoxContext();
+        }
+        public DiariesController(CatsInTheBoxContext db)
+        {
+            this.db = db;
+        }
+
         // GET: Diaries
 
         [Route("{username}/Diary/{id}")]
