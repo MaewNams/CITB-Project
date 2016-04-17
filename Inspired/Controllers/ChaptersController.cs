@@ -13,7 +13,15 @@ namespace Inspired.Controllers
 {
     public class ChaptersController : Controller
     {
-        private CatsInTheBoxContext db = new CatsInTheBoxContext();
+        public CatsInTheBoxContext db { get; set; }
+        public ChaptersController()
+        {
+            this.db = new CatsInTheBoxContext();
+        }
+        public ChaptersController(CatsInTheBoxContext db)
+        {
+            this.db = db;
+        }
         // GET: Chapters
         public ActionResult Index()
         {
@@ -25,6 +33,7 @@ namespace Inspired.Controllers
             if (Session["Authen"] == null)
             { return RedirectToAction("Login", "Accounts"); }
             int diaryid = Int32.Parse(Session["diaryid"].ToString());
+
             Diary diary = db.Diary.Find(diaryid);
             if (diary == null)
             {
