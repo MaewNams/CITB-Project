@@ -13,7 +13,17 @@ namespace Inspired.Controllers
 {
     public class BreedsController : Controller
     {
-        private CatsInTheBoxContext db = new CatsInTheBoxContext();
+        //private CatsInTheBoxContext db = new CatsInTheBoxContext();
+
+        public CatsInTheBoxContext db { get; set; }
+        public BreedsController()
+        {
+            this.db = new CatsInTheBoxContext();
+        }
+        public BreedsController(CatsInTheBoxContext db)
+        {
+            this.db = db;
+        }
 
         // GET: Breeds
         public ActionResult Index()

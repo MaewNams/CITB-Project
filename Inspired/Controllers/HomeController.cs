@@ -13,7 +13,18 @@ namespace Inspired.Controllers
 {
     public class HomeController : Controller
     {
-        private CatsInTheBoxContext db = new CatsInTheBoxContext();
+        //private CatsInTheBoxContext db = new CatsInTheBoxContext();
+
+        public CatsInTheBoxContext db { get; set; }
+        public HomeController()
+        {
+            this.db = new CatsInTheBoxContext();
+        }
+        public HomeController(CatsInTheBoxContext db)
+        {
+            this.db = db;
+        }
+
         public ActionResult Index()
         {
             return View();

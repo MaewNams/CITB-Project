@@ -13,7 +13,17 @@ namespace Inspired.Controllers
 {
     public class CoatpatternsController : Controller
     {
-        private CatsInTheBoxContext db = new CatsInTheBoxContext();
+        // private CatsInTheBoxContext db = new CatsInTheBoxContext();
+
+        public CatsInTheBoxContext db { get; set; }
+        public CoatpatternsController()
+        {
+            this.db = new CatsInTheBoxContext();
+        }
+        public CoatpatternsController(CatsInTheBoxContext db)
+        {
+            this.db = db;
+        }
 
         // GET: Coatpatterns
         public ActionResult Index()
