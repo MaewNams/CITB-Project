@@ -40,6 +40,7 @@ namespace Inspired.Controllers
             { return RedirectToAction("Login", "Accounts"); }
             int userid = Int32.Parse(Session["accountid"].ToString());
             ViewData["Diary"] = db.Diary.Where(d => d.userid == userid).OrderByDescending(d => d.timestamp).ToList<Diary>();
+            ViewData["FollowDiary"] = db.Followdiary.Where(f => f.userid == userid).OrderBy(f => f.Diary.name).ToList<Followdiary>();
             return View();
         }
 
@@ -96,7 +97,7 @@ namespace Inspired.Controllers
         {
             return View();
         }
-        public ActionResult MyBoard()
+        public ActionResult MyForum()
         {
             return View();
         }
@@ -119,5 +120,6 @@ namespace Inspired.Controllers
 
             return View();
         }
+
     }
 }

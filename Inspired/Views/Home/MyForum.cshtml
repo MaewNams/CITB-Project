@@ -1,0 +1,144 @@
+﻿@using Inspired.Models;
+@model Inspired.Models.Topic
+@{
+    ViewBag.Title = "My forum";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="ui page centered celled grid">
+
+
+
+    <div class="ui left aligned basic segment" style="width:70%;padding-left:0px;padding-right:0px;padding-top:0px">
+
+
+        <div class="ui left close rail" style="width:30%">
+            <div class=" ui orange vertical fluid tabular menu">
+                <a href="/Home/Index" class=" contropanel_menu item">
+                    Home
+                </a>
+
+                <div class="ui card">
+                    <br />
+                    <div class="ui centered small image">
+                        <img src="~/Content/pic/cat07.jpg">
+                    </div>
+                    <br />
+                    <div class="content">
+                        <a class="header">Kristy</a>
+                        <div class="meta">
+                            <span class="date">Joined in 2013</span>
+                        </div>
+                        <div class="description">
+                            Chiang Mai
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <a style="color:#e74c3c !important">
+                            <i class="fa fa-heart"></i>
+                            Cats lover
+                        </a>
+                    </div>
+                </div>
+
+
+                <a href="/Home/MyDiary" class=" contropanel_menu item">
+                    Diary
+                </a>
+                <a href="/Home/CatCensus" class=" contropanel_menu item">
+                    Cat's Census
+                </a>
+                <a href="/Home/CatTimeline" class=" contropanel_menu item">
+                    Cat's Timeline
+                </a>
+                <a href="/Home/MyForum" class=" contropanel_menu item active">
+                    My forum
+                </a>
+                <a href="/Home/Profile" class=" contropanel_menu item">
+                    Profile
+                </a>
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+
+        <div class="ui right close rail">
+            <a href="/Forums/Create">
+                <div class="ui center aligned  segment" style="color:#00b5ad!important;cursor:pointer;margin-top:0px">
+                    <i class="add circle icon"></i> CREATE NEW TOPIC
+                </div>
+            </a>
+            <div class="ui segment">
+                <div class="ui large teal label">
+                    <i class="icon"><i class="fa fa-book"></i></i>My favorite topic
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="ui secondary pointing menu">
+            <a class="active item">
+                All
+            </a>
+            <a class="item">
+                Discusstion
+            </a>
+            <a class="item">
+                Adoption
+            </a>
+            <a class="item">
+                Lost cat
+            </a>
+            <a class="item">
+                Find owner
+            </a>
+            <a class="item">
+                SOS
+            </a>
+        </div>
+        <div class="ui segment">
+            <table class="ui very basic table">
+                <tbody>
+                    <tr class="top aligned">
+                        <td class="nine wide" style="padding-left:15px">
+                            <div class="item">
+                                <div class="content">
+                                    <a class="header" style="font-family:Montserrat;font-size:16px">12 Years a Slave</a>
+                                    <div class="extra" style="padding-top:5px;font-size:14px;color:darkgrey !important">
+                                        View | Comment
+                                        <br />
+                                        time: |
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </td>
+
+                        <td class="six wide" style="text-align:center">
+                            <button class="ui primary button">
+                                Edit
+                            </button>
+                            <button class="ui red button">
+                                Delete
+                            </button>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+</div>

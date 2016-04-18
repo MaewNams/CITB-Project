@@ -978,7 +978,7 @@
     <Content Include="Views\Diaries\ChapterDiary.cshtml" />
     <Content Include="Views\Home\CatCensus.cshtml" />
     <Content Include="Views\Home\CatTimeline.cshtml" />
-    <Content Include="Views\Home\MyBoard.cshtml" />
+    <Content Include="Views\Home\MyForum.cshtml" />
     <Content Include="Views\Home\Profile.cshtml" />
     <Content Include="Views\Breeds\Create.cshtml" />
     <Content Include="Views\Breeds\Delete.cshtml" />
@@ -1028,6 +1028,8 @@
     <Content Include="Views\Diaries\DiaryIndex.cshtml" />
     <Content Include="Views\Diaries\ChapterDetail.cshtml" />
     <Content Include="Views\Home\AllDiary.cshtml" />
+    <Content Include="Views\Forums\Create.cshtml" />
+    <Content Include="Views\Forums\TopicForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

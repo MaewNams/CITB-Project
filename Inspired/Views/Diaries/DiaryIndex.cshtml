@@ -25,11 +25,21 @@
                 @{ if (Session["username"].ToString() != Model.Account.username && followdiary == null) {
                 <div class="right menu">
                     <div class="item">
-                        <button class="ui blue button" >Follow</button>
+                        <button class="ui blue button AddFoll_Button" data-id="@Model.id">Follow</button>
                     </div>
                 </div>
                     }
                     }
+
+                @{ if (Session["username"].ToString() != Model.Account.username && followdiary != null)
+                    {
+                        <div class="right menu">
+                            <div class="item">
+                                <button class="ui blue button UnFoll_Button" data-id="@Model.id">UnFollow</button>
+                            </div>
+                        </div>
+                    }
+                }
             </div>
         </div>
         <div class="twelve wide column">

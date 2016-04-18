@@ -52,8 +52,8 @@
                 <a href="/Home/CatTimeline" class=" contropanel_menu item">
                     Cat's Timeline
                 </a>
-                <a href="/Home/MyBoard" class=" contropanel_menu item">
-                    My board
+                <a href="/Home/MyForum" class=" contropanel_menu item">
+                    My forum
                 </a>
                 <a href="/Home/Profile" class=" contropanel_menu item">
                     Profile
@@ -75,54 +75,29 @@
                     <i class="icon"><i class="fa fa-book"></i></i>My follow diary
                 </div>
                 <div class="ui relaxed divided selection list">
-                    <a class="item">
-                        <img class="ui avatar image" src="~/Content/pic/cat1.png">
-                        <div class="content">
-                            <div class="header">Snickerdoodle</div>
-                            An excellent companion
-                        </div>
-                    </a>
-                    <a class="item">
-                        <img class="ui avatar image" src="~/Content/pic/cat2.png">
-                        <div class="content">
-                            <div class="header">Poodle</div>
-                            A poodle, its pretty basic
-                        </div>
-                    </a>
-                    <a class="item">
-                        <img class="ui avatar image" src="~/Content/pic/cat3.png">
-                        <div class="content">
-                            <div class="header">Paulo</div>
-                            He's also a dog
-                        </div>
-                    </a>
-                    <a class="item">
-                        <img class="ui avatar image" src="~/Content/pic/cat1.png">
-                        <div class="content">
-                            <div class="header">Snickerdoodle</div>
-                            An excellent companion
-                        </div>
-                    </a>
-                    <a class="item">
-                        <img class="ui avatar image" src="~/Content/pic/cat2.png">
-                        <div class="content">
-                            <div class="header">Poodle</div>
-                            A poodle, its pretty basic
-                        </div>
-                    </a>
-                    <a class="item">
-                        <img class="ui avatar image" src="~/Content/pic/cat3.png">
-                        <div class="content">
-                            <div class="header">Paulo</div>
-                            He's also a dog
-                        </div>
-                    </a>
+                    @{
+                        List<Followdiary> myfollowdiaries = (List<Followdiary>)ViewData["FollowDiary"];
+                    }
+                    @if (myfollowdiaries != null && myfollowdiaries.Count > 0)
+                    {
+                        foreach (var followdiary in myfollowdiaries)
+                        {
+                            <a class="item">
+                                <img class="ui avatar image" src="~/Content/pic/cat1.png">
+                                <div class="content">
+                                    <div class="header">@followdiary.Diary.name</div>
+                                      By: @followdiary.Diary.Account.
+                                </div>
+                            </a>
+                        }
+                    }
+
                 </div>
             </div>
 
 
         </div>
-        <a href="/Diaries/Create">
+        <a href="/ManageDiary/CreateDiary">
             <div class="ui center aligned  segment" style="color:#00b5ad!important;cursor:pointer;margin-top:0px">
                 <i class="add circle icon"></i> CREATE NEW DIARY
             </div>
@@ -183,15 +158,4 @@
 
 
 
-
-    <div class="ui left aligned segment" style="width:70%">
-        <div class="ui divided items">
-
-        </div>
-
-
-    </div>
 </div>
-
-
-
