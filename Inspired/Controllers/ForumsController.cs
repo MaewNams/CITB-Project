@@ -1,20 +1,32 @@
+
 ﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+﻿using CatsInTheBox.DAL;
+using System;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using CatsInTheBox.DAL;
 using Inspired.Models;
-using System;
-
 
 namespace Inspired.Controllers
 {
     public class ForumsController : Controller
     {
-        private CatsInTheBoxContext db = new CatsInTheBoxContext();
+
+    //    private CatsInTheBoxContext db = new CatsInTheBoxContext();
+
+        public CatsInTheBoxContext db { get; set; }
+        public ForumsController()
+        {
+            this.db = new CatsInTheBoxContext();
+        }
+        public ForumsController(CatsInTheBoxContext db)
+        {
+            this.db = db;
+        }
+
         // GET: Forums
         public ActionResult Index()
         {

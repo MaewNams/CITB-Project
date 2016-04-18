@@ -13,7 +13,18 @@ namespace Inspired.Controllers
 {
     public class HomeController : Controller
     {
-        private CatsInTheBoxContext db = new CatsInTheBoxContext();
+        //private CatsInTheBoxContext db = new CatsInTheBoxContext();
+
+        public CatsInTheBoxContext db { get; set; }
+        public HomeController()
+        {
+            this.db = new CatsInTheBoxContext();
+        }
+        public HomeController(CatsInTheBoxContext db)
+        {
+            this.db = db;
+        }
+
         public ActionResult Index()
         {
             ViewData["RecentDiary"] = db.Diary.OrderByDescending(c => c.timestamp).Take(5).ToList<Diary>();

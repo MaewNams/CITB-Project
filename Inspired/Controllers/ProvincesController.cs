@@ -13,8 +13,18 @@ namespace Inspired.Controllers
 {
     public class ProvincesController : Controller
     {
-        private CatsInTheBoxContext db = new CatsInTheBoxContext();
 
+        //private CatsInTheBoxContext db = new CatsInTheBoxContext();
+
+        public CatsInTheBoxContext db { get; set; }
+        public ProvincesController()
+        {
+            this.db = new CatsInTheBoxContext();
+        }
+        public ProvincesController(CatsInTheBoxContext db)
+        {
+            this.db = db;
+        }
         // GET: Provinces
         public ActionResult Index()
         {
