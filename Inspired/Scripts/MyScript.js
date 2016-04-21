@@ -117,7 +117,7 @@ $(document).ready(function () {
     $("#call_create_chapter").click(function () {
         $('#create_chapter')
                 .modal('show')
-                .modal({blurring: true})
+                .modal({ blurring: true })
                  .modal('setting', 'closable', false)
                   .modal('setting', 'transition', 'fade up');
     });
@@ -232,6 +232,34 @@ $(document).ready(function () {
         }
     });
 
+    $('.AddFoll_Button').click(function (e) {
+        e.preventDefault();
+        $.post(BaseURL + '/Diaries/AddFoll', {
+            id: $(this).data('id')
+        }, function (data) {
+            if (data.Result == "Success") {
+                window.location.reload();
+            } else {
+                alert(data.Result);
+            }
+        })
+
+    });
+
+    $('.UnFoll_Button').click(function (e) {
+        e.preventDefault();
+        $.post(BaseURL + '/Diaries/UnFoll', {
+            id: $(this).data('id')
+        }, function (data) {
+            if (data.Result == "Success") {
+                window.location.reload();
+            } else {
+                alert(data.Result);
+            }
+        })
+
+    });
+
     $('.CreateChapter_Button').click(function (e) {
         e.preventDefault();
         $.post(BaseURL + '/Chapters/CreateChapter', {
@@ -282,18 +310,13 @@ $(document).ready(function () {
         }
     });
 
+    //Post type
+
+
+
 
 
 });
-///*ไดอารี่1*/
-//$('#one').click(function () {
-//    $("li").removeClass("active");
-//    $("#di_statistic").AddClass("active");
-//    $('#Di_detail').load("/ControlPanel/Diarypage  #stat");
-//    $('.One-diary').toggle("fast");
-//    $('.All-diary').toggle("fast");
-//});
-
 
 
 
@@ -310,3 +333,13 @@ $(function () {
 function imageIsLoaded(e) {
     $('.myCat').attr('src', e.target.result);
 };
+
+
+
+
+// Start Form Type Selected
+$('#Topic_Type').on('change', function () {
+    var e = document.getElementById('Topic_Type');
+    var id = e.options[e.selectedIndex].value;
+    window.location.href = window.location.origin + "/Forums/Create/" + id;
+});

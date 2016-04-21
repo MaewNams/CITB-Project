@@ -13,14 +13,18 @@ namespace Inspired.Controllers
 {
     public class AccountsController : Controller
     {
+        //private CatsInTheBoxContext db = new CatsInTheBoxContext();
+
         public CatsInTheBoxContext db { get; set; }
         public AccountsController()
         {
             this.db = new CatsInTheBoxContext();
         }
-        public AccountsController(CatsInTheBoxContext db) {
+        public AccountsController(CatsInTheBoxContext db)
+        {
             this.db = db;
         }
+
         // GET: Accounts
         public ActionResult Index()
         {
@@ -41,18 +45,12 @@ namespace Inspired.Controllers
             if (Authentication != null)
             {
                 Session["Authen"] = true;
-                if (account.usertypeid == 1)
-                    Session["Autho"] = true;
-                else
-                    Session["Autho"] = false;
-
                 Session["username"] = Authentication.username.ToString();
                 Session["accountid"] = Authentication.id;
                 return RedirectToAction("Index", "Home");
             }
             else
             {
-                Session["Autho"] = null;
                 Session["username"] = null;
                 Session["accountid"] = null;
                 ViewBag.LoginError = "Your username or password may be wrong!";

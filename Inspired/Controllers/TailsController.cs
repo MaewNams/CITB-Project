@@ -13,7 +13,16 @@ namespace Inspired.Controllers
 {
     public class TailsController : Controller
     {
-        private CatsInTheBoxContext db = new CatsInTheBoxContext();
+        //private CatsInTheBoxContext db = new CatsInTheBoxContext();
+        public CatsInTheBoxContext db { get; set; }
+        public TailsController()
+        {
+            this.db = new CatsInTheBoxContext();
+        }
+        public TailsController(CatsInTheBoxContext db)
+        {
+            this.db = db;
+        }
 
         // GET: Tails
         public ActionResult Index()

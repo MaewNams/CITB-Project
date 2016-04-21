@@ -13,6 +13,8 @@ namespace Inspired.Controllers
 {
     public class CatdiariesController : Controller
     {
+        // private CatsInTheBoxContext db = new CatsInTheBoxContext();
+
         public CatsInTheBoxContext db { get; set; }
         public CatdiariesController()
         {

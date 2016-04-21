@@ -11,9 +11,12 @@ namespace Inspired.Models
     {
         [Key]
         public int id { get; set; }
-        public int topicid { get; set; }
+        public string name { get; set; }
 
         [InverseProperty("Usertype")]
         public virtual ICollection<Account> Accounts { get; set; }
+
+        [InverseProperty("Usertype")]
+        public virtual ICollection<Topictype> Topictypes { get; set; }
     }
 }

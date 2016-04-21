@@ -14,7 +14,18 @@ namespace Inspired.Controllers
 {
     public class DiariesController : Controller
     {
-        private CatsInTheBoxContext db = new CatsInTheBoxContext();
+        //private CatsInTheBoxContext db = new CatsInTheBoxContext();
+
+        public CatsInTheBoxContext db { get; set; }
+        public DiariesController()
+        {
+            this.db = new CatsInTheBoxContext();
+        }
+        public DiariesController(CatsInTheBoxContext db)
+        {
+            this.db = db;
+        }
+
         // GET: Diaries
 
         [Route("{username}/Diary/{id}")]
@@ -35,8 +46,36 @@ namespace Inspired.Controllers
             ViewData["RecentChapter"] = db.Chapter.Where(c => c.diaryid == id).OrderByDescending(c => c.timestamp).Take(5).ToList<Chapter>();
             ViewData["MyFollowdiary"] = db.Followdiary.Where(f => f.diaryid == id && f.userid == userid).FirstOrDefault();
             return View(diary);
-
+       
         }
+
+        [HttpPost]
+        public ActionResult AddFoll(int id)
+        {
+            int diaryid = id;
+            int userid = Int32.Parse(Session["accountid"].ToString());
+            Chapter latestchapter = db.Chapter.Where(c => c.diaryid == id).OrderByDescending(c => c.timestamp).FirstOrDefault();
+            Followdiary followdiary = new Followdiary();
+            followdiary.userid = userid;
+            followdiary.diaryid = diaryid;
+            followdiary.latestchapterid = latestchapter.id;
+            db.Followdiary.Add(followdiary);
+            db.SaveChanges();
+            return Json(new { Result = "Success" });
+        }
+
+
+        [HttpPost]
+        public ActionResult UnFoll(int id)
+        {
+            int diaryid = id;
+            int userid = Int32.Parse(Session["accountid"].ToString());
+            Followdiary followdiary = db.Followdiary.Where(f => f.userid == userid && f.diaryid == diaryid).First();
+            db.Followdiary.Remove(followdiary);
+            db.SaveChanges();
+            return Json(new { Result = "Success" });
+        }
+
 
         [Route("{username}/Diary/{id}/{chaptername}")]
         public ActionResult ChapterDetail(string username, int? id, string chaptername, int chapterid)
@@ -91,6 +130,7 @@ namespace Inspired.Controllers
             return View();
         }
 
+        [Route("ManageDiary/CreateDiary")]
         [HttpPost]
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
@@ -99,9 +139,10 @@ namespace Inspired.Controllers
             int userid = Int32.Parse(Session["accountid"].ToString());
             ViewData["Cat"] = db.Cat.Where(c => c.userid == userid).OrderBy(c => c.name).ToList<Cat>();
             if (ViewData["Cat"] == null)
+            {
 
-                diary.userid = Int32.Parse(Session["accountid"].ToString());
-            diary.timestamp = DateTime.Now;
+            }
+            
             string[] catowners = Request.Form.GetValues("catsdiary");
             if (ModelState.IsValid)
             {
@@ -123,7 +164,8 @@ namespace Inspired.Controllers
                     ViewBag.DiaryOwnerError = "Diary have to has atleast 1 cat owner.";
                     return View();
                 }
-
+                diary.userid = userid;
+                diary.timestamp = DateTime.Now;
                 db.Diary.Add(diary);
                 db.SaveChanges();
                 Catdiary catdiary = new Catdiary();

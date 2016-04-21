@@ -13,14 +13,23 @@ namespace Inspired.Controllers
 {
     public class HomeController : Controller
     {
-        private CatsInTheBoxContext db = new CatsInTheBoxContext();
+        //private CatsInTheBoxContext db = new CatsInTheBoxContext();
+
+        public CatsInTheBoxContext db { get; set; }
+        public HomeController()
+        {
+            this.db = new CatsInTheBoxContext();
+        }
+        public HomeController(CatsInTheBoxContext db)
+        {
+            this.db = db;
+        }
+
         public ActionResult Index()
         {
             ViewData["RecentDiary"] = db.Diary.OrderByDescending(c => c.timestamp).Take(5).ToList<Diary>();
             return View();
         }
-
-
 
         public ActionResult AdoptionDetail()
         {
@@ -40,6 +49,7 @@ namespace Inspired.Controllers
             { return RedirectToAction("Login", "Accounts"); }
             int userid = Int32.Parse(Session["accountid"].ToString());
             ViewData["Diary"] = db.Diary.Where(d => d.userid == userid).OrderByDescending(d => d.timestamp).ToList<Diary>();
+            ViewData["FollowDiary"] = db.Followdiary.Where(f => f.userid == userid).OrderBy(f => f.Diary.name).ToList<Followdiary>();
             return View();
         }
 
@@ -52,10 +62,6 @@ namespace Inspired.Controllers
             ViewData["RecentDiary"] = db.Diary.OrderByDescending(d => d.timestamp).ToList<Diary>();
             return View();
         }
-
-
-
-
 
         public ActionResult CatCensus()
         {
@@ -96,7 +102,7 @@ namespace Inspired.Controllers
         {
             return View();
         }
-        public ActionResult MyBoard()
+        public ActionResult MyForum()
         {
             return View();
         }
@@ -119,5 +125,6 @@ namespace Inspired.Controllers
 
             return View();
         }
+
     }
 }

@@ -56,6 +56,20 @@ namespace InspiredTests
             };
             mockContext.Setup(c => c.Diary).ReturnsDbSet(fakeModels);
         }
+        public void FollowDiarySetUp()
+        {
+            Diary diary = new Diary();
+            diary.name = "Diary";
+            diary.id = 1;
+
+            var fakeModels = new Followdiary[]
+            {
+
+                new Followdiary() { id = 1, userid = 1, diaryid = 1, latestchapterid = 1, Diary = diary},
+                new Followdiary() { id = 2, userid = 1, diaryid = 2, latestchapterid = 2, Diary = diary }
+            };
+            mockContext.Setup(c => c.Followdiary).ReturnsDbSet(fakeModels);
+        }
         public void ChapterSetUp()
         {
             var fakeModels = new Chapter[]
@@ -138,6 +152,15 @@ namespace InspiredTests
                 new Catdiary() { id = 2, catid = 2, diaryid = 2, Cat = new Cat(), Diary = new Diary()}
             };
             mockContext.Setup(c => c.Catdiary).ReturnsDbSet(fakeModels);
+        }
+        public void BreedSetUp()
+        {
+            var fakeModels = new Breed[]
+            {
+                new Breed() { id = 1, name = "Breed 1", pic1 = "Breed1_1.jpg", pic2 = "Breed1_2.jpg", detail = "Breed 1 Description"},
+                new Breed() { id = 1, name = "Breed 2", pic1 = "Breed2_1.jpg", pic2 = "Breed2_2.jpg", detail = "Breed 2 Description"}
+            };
+            mockContext.Setup(c => c.Breed).ReturnsDbSet(fakeModels);
         }
     }
 }

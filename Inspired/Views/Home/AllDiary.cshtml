@@ -35,13 +35,11 @@
             @{
                 List<Diary> alldiary = (List<Diary>)ViewData["RecentDiary"];
             }
-            @if (alldiary != null)
+            @if (alldiary.Count >= 1)
             {
                 foreach (var diary in alldiary)
                 {
-
-
-                    <a class="card" href='@(Url.Action("DiaryIndex", "Diaries", new { id = @diary.id, username = @diary.Account.username}, null))'>
+                    <a class="card" href= '@(Url.Action("DiaryIndex", "Diaries", new { id = @diary.id, username = @diary.Account.username}, null))'>
                         <div class="image">
                             <img src="~/Content/Pic/cat01.jpg">
                         </div>
@@ -49,17 +47,11 @@
                             <div class="header">@diary.name</div>
                         </div>
                         <div class="extra content">
-                            <span class="right floated">
-                                Joined in 2013
-                            </span>
-                            <span>
-                                <i class="user icon"></i>
-                                75 Friends
+                            <span class="left floated">
+                                By: @diary.Account.username
                             </span>
                         </div>
                     </a>
-
-
                 }
             }
         </div>

@@ -14,6 +14,7 @@ namespace Inspired.Controllers
     public class CatsController : Controller
     {
         //private CatsInTheBoxContext db = new CatsInTheBoxContext();
+
         public CatsInTheBoxContext db { get; set; }
         public CatsController()
         {
@@ -23,6 +24,7 @@ namespace Inspired.Controllers
         {
             this.db = db;
         }
+
         // GET: Cats
         public ActionResult Index()
         {
