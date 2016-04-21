@@ -138,13 +138,6 @@ namespace Inspired.Controllers
         {
             int userid = Int32.Parse(Session["accountid"].ToString());
             ViewData["Cat"] = db.Cat.Where(c => c.userid == userid).OrderBy(c => c.name).ToList<Cat>();
-            if (ViewData["Cat"] == null)
-            {
-
-            }
-
-
-
             string[] catowners = Request.Form.GetValues("catsdiary");
             if (ModelState.IsValid)
             {

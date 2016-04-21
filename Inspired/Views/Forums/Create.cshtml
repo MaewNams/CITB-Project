@@ -75,7 +75,7 @@
         <div class="ui right close rail">
             <a href="/Forums/Create">
                 <div class="ui center aligned  segment" style="color:#00b5ad!important;cursor:pointer;margin-top:0px">
-                    <i class="add circle icon"></i> CREATE NEW TOPIC
+                    <i class="add circle icon"></i>Read more about cat coat patterns and coat color
                 </div>
             </a>
             <div class="ui segment">
@@ -92,11 +92,11 @@
             <h4 class="ui horizontal divider header" style="color:#FF7055;margin-top:-10px;overflow:auto!important">
                 Create new topic
             </h4>
+
             @using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
                 <div class="ui form">
-
                     <div class="field">
                         <label>Topic name</label>
                         <div class="ui left icon input">
@@ -104,14 +104,6 @@
                             @Html.ValidationMessageFor(model => model.name, "", new { @name = "name" })
                         </div>
                     </div>
-
-                    @if (ViewBag.DiaryNameError != null)
-                    { <div class="ui basic segment" style="margin-top:-20px;margin-bottom:-5px;padding-left:0px">
-                        <div class="ui red basic label">
-                            <strong>Sorry!</strong> @ViewBag.DiaryNameError
-                        </div>
-                    </div>
-                    }
                     <div class="field">
                         <label>Topic type</label>
                         <select name="topic" class="ui fluid dropdown" id="Topic_Type">
@@ -133,21 +125,21 @@
                         </select>
 
                     </div>
-                    <div class="field" id="Topic_form">
+                    <div id="Topic_form">
                         @{
                             if (ViewData["Type"] != null && (int)ViewData["Type"] == 3)
                             {
-                                @Html.Partial("TopicForm");
+                                @Html.Partial("AdoptionForm");
                             }
                         }
 
                     </div>
 
-                    <button class="ui right floated blue submit button AddTopic_button">Create</button>
+                    <button class="ui right floated blue submit button">Create</button>
                     <br />
                     <br />
                 </div>
-                            }
-        </div>
+                }
     </div>
+</div>
 </div>

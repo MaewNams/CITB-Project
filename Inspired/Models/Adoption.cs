@@ -15,7 +15,7 @@ namespace Inspired.Models
         public int provinceid { get; set; }
         public int topicid { get; set; }
         public string condition { get; set; }
-        public string status { get; set; }
+        public int status { get; set; }
 
         [Required]
         public virtual Cat Cat { get; set; }

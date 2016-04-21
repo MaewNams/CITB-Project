@@ -14,6 +14,7 @@ namespace Inspired.Models
         public int userid { get; set; }
         public string name { get; set; }
         public string age { get; set; }
+        public string gender { get; set; }
         public string lifestage { get; set; }
         public string pic { get; set; }
         public int eyecolorid { get; set; }

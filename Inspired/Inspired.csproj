@@ -1029,7 +1029,7 @@
     <Content Include="Views\Diaries\ChapterDetail.cshtml" />
     <Content Include="Views\Home\AllDiary.cshtml" />
     <Content Include="Views\Forums\Create.cshtml" />
-    <Content Include="Views\Forums\TopicForm.cshtml" />
+    <Content Include="Views\Forums\AdoptionForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

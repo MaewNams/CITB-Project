@@ -1,0 +1,155 @@
+﻿@using Inspired.Models;
+
+    <div class="field">
+        <label>Cat Picture</label>
+        
+        <div class="ui medium image">
+            <img class="ui fluid image" src="~/Content/pic/cat01.jpg" id="myCat">
+            <div>
+                <label for="file" class="ui fluid icon button">
+                    <i class="file icon"></i>
+                    Uplode File
+                </label>
+                <input type="file" id="file" style="display:none">
+            </div>
+        </div>
+    </div>
+    <div class="fields">
+
+        <div class="field">
+            <label>Cat name</label>
+            <input type="text" name="catname">
+        </div>
+        <div class="field">
+            <label>Gender</label>
+            <select class="ui fluid dropdown" name="gender">
+                <option>--Please select gender--</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div class="field">
+            <label>Life stage</label>
+            <select class="ui fluid dropdown" name="lifestage">
+                <option>--Please select life stage--</option>
+                <option value="kitten">Kitten (0-6 months)</option>
+                <option value="junior">Junior (7 months-2 years)</option>
+                <option value="prime">Prime (3-6 years)</option>
+                <option value="mature">Mature (7-10 years)</option>
+                <option value="senior">Senior (11-14 years)</option>
+                <option value="geriatric">Geriatric (15 years and over)</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="fields">
+        <div class="field">
+            <label>Breed (**You can select more than one breed) </label>
+            <select name="breed" multiple="" class="ui fluid dropdown" id="service-dropdown">
+                @{
+                    List<Breed> breeds = (List<Breed>)ViewData["Breeds"];
+                }
+                @if (breeds != null && breeds.Count > 0)
+                {
+                    foreach (var breed in breeds)
+                    {
+                <option value="@breed.id">@breed.name</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="field">
+            <label>Coat pattern</label>
+            <select name="coatpattern" class="ui fluid dropdown service-dropdown3">
+                <option>--Please select coat patterns--</option>
+                @{
+                    List<Coatpattern> coatpatterns = (List<Coatpattern>)ViewData["Coatpatterns"];
+                }
+                @if (coatpatterns != null && coatpatterns.Count > 0)
+                {
+                    foreach (var coatpattern in coatpatterns)
+                    {
+                        <option value="@coatpattern.id">@coatpattern.name</option>
+                    }
+                }
+            </select>
+        </div>
+
+    </div>
+    <div class="field">
+        <label>Coat color (**You can select more than one color) </label>
+        <select name="coatcolor" multiple="" class="ui fluid dropdown service-dropdown">
+            @{
+                List<Coatcolor> coatcolors = (List<Coatcolor>)ViewData["Coatcolors"];
+            }
+            @if (coatcolors != null && coatcolors.Count > 0)
+            {
+                foreach (var coatcolor in coatcolors)
+                {
+                    <option value="@coatcolor.id">@coatcolor.name</option>
+                }
+            }
+        </select>
+    </div>
+
+    <div class="fields">
+
+        <div class="field">
+            <label>Eye color</label>
+            <select name="eyecolor" class="ui fluid dropdown" >
+                <option>--Please select eye color--</option>
+                @{
+                    List<Eyecolor> eyecolors = (List<Eyecolor>)ViewData["Eyecolors"];
+                }
+                @if (eyecolors != null && eyecolors.Count > 0)
+                {
+                    foreach (var eyecolor in eyecolors)
+                    {
+                <option value="@eyecolor.id">@eyecolor.name</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="field">
+            <label>Tail type</label>
+            <select name="tail" class="ui fluid dropdown service-dropdown">
+                <option>--Please select tail type--</option>
+                @{
+                    List<Tail> tails = (List<Tail>)ViewData["Tails"];
+                }
+                @if (tails != null && tails.Count > 0)
+                {
+                    foreach (var tail in tails)
+                    {
+                <option value="@tail.id">@tail.name</option>
+                    }
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="field">
+        <label>Province</label>
+        <select name="province" class="ui fluid dropdown" id="Create_ProviceID">
+            @{
+            List<Province> provinces = (List<Province>)ViewData["Province"];
+            }
+            <option>--Please select province--</option>
+            @if (provinces != null && provinces.Count > 0)
+            {
+                foreach (var province in provinces)
+                {
+        <option value="@province.id">@province.name</option>
+            }
+        }
+        </select>
+    </div>
+
+    <div class="field">
+        <label>Tell us more about the cat</label>
+        <textarea class="form " id="editor" name="detail"></textarea>
+    </div>
+    <div class="field">
+        <label>Condition</label>
+        <textarea class="form" id="editor2" name="condition"></textarea>
+    </div>

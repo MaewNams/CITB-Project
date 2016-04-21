@@ -26,6 +26,12 @@ $(document).ready(function () {
          });
     });
 
+    $(function () {
+        CKEDITOR.replace('editor2',
+         {
+             customConfig: '/Scripts/ckeditor/config.js'
+         });
+    });
 
 
 
@@ -43,7 +49,11 @@ $(document).ready(function () {
 
 
     $("#service-dropdown").dropdown({
-        allowLabels: true
+        allowLabels: true,
+    });
+
+    $(".service-dropdown").dropdown({
+        allowLabels: true,
     });
 
     $("#service-dropdown2").dropdown({
@@ -310,9 +320,6 @@ $(document).ready(function () {
         }
     });
 
-    //Post type
-
-
 
 
 
@@ -331,7 +338,7 @@ $(function () {
 });
 
 function imageIsLoaded(e) {
-    $('.myCat').attr('src', e.target.result);
+    $('#myCat').attr('src', e.target.result);
 };
 
 
