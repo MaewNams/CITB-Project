@@ -58,7 +58,14 @@ namespace Inspired.Controllers
             Followdiary followdiary = new Followdiary();
             followdiary.userid = userid;
             followdiary.diaryid = diaryid;
-            followdiary.latestchapterid = latestchapter.id;
+            if (latestchapter != null)
+            {
+                followdiary.latestchapterid = latestchapter.id;
+            }
+            else
+            {
+                followdiary.latestchapterid = 0;
+            }
             db.Followdiary.Add(followdiary);
             db.SaveChanges();
             return Json(new { Result = "Success" });

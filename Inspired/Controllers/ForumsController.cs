@@ -121,7 +121,7 @@ namespace Inspired.Controllers
             int provinceid = Int32.Parse(Request.Form["province"].ToString());
             Adoption adoption = new Adoption();
             adoption.catid = wantownercat.id;
-            adoption.topicid = topic.id;
+            adoption.topicid = newTopic.id;
             adoption.condition = Request.Form["condotion"];
             adoption.provinceid = provinceid;
             adoption.status = 1;
