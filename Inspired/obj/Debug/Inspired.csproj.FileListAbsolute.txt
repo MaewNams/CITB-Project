@@ -1,3 +1,141 @@
+D:\CatsInTheBox\Inspired\bin\roslyn\csc.exe
+D:\CatsInTheBox\Inspired\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\CatsInTheBox\Inspired\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\CatsInTheBox\Inspired\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\CatsInTheBox\Inspired\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\CatsInTheBox\Inspired\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\CatsInTheBox\Inspired\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\CatsInTheBox\Inspired\bin\roslyn\System.Collections.Immutable.dll
+D:\CatsInTheBox\Inspired\bin\roslyn\System.Reflection.Metadata.dll
+D:\CatsInTheBox\Inspired\bin\roslyn\vbc.exe
+D:\CatsInTheBox\Inspired\bin\roslyn\VBCSCompiler.exe
+D:\CatsInTheBox\Inspired\bin\roslyn\VBCSCompiler.exe.config
+D:\CatsInTheBox\Inspired\bin\Inspired.dll.config
+D:\CatsInTheBox\Inspired\bin\Inspired.dll
+D:\CatsInTheBox\Inspired\bin\Inspired.pdb
+D:\CatsInTheBox\Inspired\bin\Antlr3.Runtime.dll
+D:\CatsInTheBox\Inspired\bin\EntityFramework.dll
+D:\CatsInTheBox\Inspired\bin\EntityFramework.SqlServer.dll
+D:\CatsInTheBox\Inspired\bin\Microsoft.AspNet.Identity.Core.dll
+D:\CatsInTheBox\Inspired\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\CatsInTheBox\Inspired\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\CatsInTheBox\Inspired\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\CatsInTheBox\Inspired\bin\Microsoft.Owin.dll
+D:\CatsInTheBox\Inspired\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\CatsInTheBox\Inspired\bin\Microsoft.Owin.Security.Cookies.dll
+D:\CatsInTheBox\Inspired\bin\Microsoft.Owin.Security.dll
+D:\CatsInTheBox\Inspired\bin\Microsoft.Owin.Security.Facebook.dll
+D:\CatsInTheBox\Inspired\bin\Microsoft.Owin.Security.Google.dll
+D:\CatsInTheBox\Inspired\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\CatsInTheBox\Inspired\bin\Microsoft.Owin.Security.OAuth.dll
+D:\CatsInTheBox\Inspired\bin\Microsoft.Owin.Security.Twitter.dll
+D:\CatsInTheBox\Inspired\bin\Microsoft.Web.Infrastructure.dll
+D:\CatsInTheBox\Inspired\bin\Newtonsoft.Json.dll
+D:\CatsInTheBox\Inspired\bin\Owin.dll
+D:\CatsInTheBox\Inspired\bin\System.Web.Helpers.dll
+D:\CatsInTheBox\Inspired\bin\System.Web.Mvc.dll
+D:\CatsInTheBox\Inspired\bin\System.Web.Optimization.dll
+D:\CatsInTheBox\Inspired\bin\System.Web.Razor.dll
+D:\CatsInTheBox\Inspired\bin\System.Web.WebPages.Deployment.dll
+D:\CatsInTheBox\Inspired\bin\System.Web.WebPages.dll
+D:\CatsInTheBox\Inspired\bin\System.Web.WebPages.Razor.dll
+D:\CatsInTheBox\Inspired\bin\WebGrease.dll
+D:\CatsInTheBox\Inspired\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\CatsInTheBox\Inspired\bin\System.Web.Helpers.xml
+D:\CatsInTheBox\Inspired\bin\System.Web.Mvc.xml
+D:\CatsInTheBox\Inspired\bin\System.Web.Optimization.xml
+D:\CatsInTheBox\Inspired\bin\System.Web.Razor.xml
+D:\CatsInTheBox\Inspired\bin\System.Web.WebPages.xml
+D:\CatsInTheBox\Inspired\bin\System.Web.WebPages.Deployment.xml
+D:\CatsInTheBox\Inspired\bin\System.Web.WebPages.Razor.xml
+D:\CatsInTheBox\Inspired\bin\Antlr3.Runtime.pdb
+D:\CatsInTheBox\Inspired\bin\Newtonsoft.Json.xml
+D:\CatsInTheBox\Inspired\bin\EntityFramework.xml
+D:\CatsInTheBox\Inspired\bin\EntityFramework.SqlServer.xml
+D:\CatsInTheBox\Inspired\bin\Microsoft.AspNet.Identity.Core.xml
+D:\CatsInTheBox\Inspired\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\CatsInTheBox\Inspired\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\CatsInTheBox\Inspired\bin\Microsoft.Owin.xml
+D:\CatsInTheBox\Inspired\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\CatsInTheBox\Inspired\bin\Microsoft.Owin.Security.xml
+D:\CatsInTheBox\Inspired\bin\Microsoft.Owin.Security.Facebook.xml
+D:\CatsInTheBox\Inspired\bin\Microsoft.Owin.Security.Cookies.xml
+D:\CatsInTheBox\Inspired\bin\Microsoft.Owin.Security.OAuth.xml
+D:\CatsInTheBox\Inspired\bin\Microsoft.Owin.Security.Google.xml
+D:\CatsInTheBox\Inspired\bin\Microsoft.Owin.Security.Twitter.xml
+D:\CatsInTheBox\Inspired\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\CatsInTheBox\Inspired\obj\Debug\Inspired.dll
+D:\CatsInTheBox\Inspired\obj\Debug\Inspired.pdb
+D:\CatsInTheBox\Inspired\obj\Debug\Inspired.csprojResolveAssemblyReference.cache
+D:\Zz\Inspired\bin\roslyn\csc.exe
+D:\Zz\Inspired\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Zz\Inspired\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Zz\Inspired\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Zz\Inspired\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Zz\Inspired\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Zz\Inspired\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Zz\Inspired\bin\roslyn\System.Collections.Immutable.dll
+D:\Zz\Inspired\bin\roslyn\System.Reflection.Metadata.dll
+D:\Zz\Inspired\bin\roslyn\vbc.exe
+D:\Zz\Inspired\bin\roslyn\VBCSCompiler.exe
+D:\Zz\Inspired\bin\roslyn\VBCSCompiler.exe.config
+D:\Zz\Inspired\bin\Inspired.dll.config
+D:\Zz\Inspired\bin\Inspired.dll
+D:\Zz\Inspired\bin\Inspired.pdb
+D:\Zz\Inspired\bin\Antlr3.Runtime.dll
+D:\Zz\Inspired\bin\EntityFramework.dll
+D:\Zz\Inspired\bin\EntityFramework.SqlServer.dll
+D:\Zz\Inspired\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Zz\Inspired\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Zz\Inspired\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Zz\Inspired\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Zz\Inspired\bin\Microsoft.Owin.dll
+D:\Zz\Inspired\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Zz\Inspired\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Zz\Inspired\bin\Microsoft.Owin.Security.dll
+D:\Zz\Inspired\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Zz\Inspired\bin\Microsoft.Owin.Security.Google.dll
+D:\Zz\Inspired\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Zz\Inspired\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Zz\Inspired\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Zz\Inspired\bin\Microsoft.Web.Infrastructure.dll
+D:\Zz\Inspired\bin\Newtonsoft.Json.dll
+D:\Zz\Inspired\bin\Owin.dll
+D:\Zz\Inspired\bin\System.Web.Helpers.dll
+D:\Zz\Inspired\bin\System.Web.Mvc.dll
+D:\Zz\Inspired\bin\System.Web.Optimization.dll
+D:\Zz\Inspired\bin\System.Web.Razor.dll
+D:\Zz\Inspired\bin\System.Web.WebPages.Deployment.dll
+D:\Zz\Inspired\bin\System.Web.WebPages.dll
+D:\Zz\Inspired\bin\System.Web.WebPages.Razor.dll
+D:\Zz\Inspired\bin\WebGrease.dll
+D:\Zz\Inspired\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Zz\Inspired\bin\System.Web.Helpers.xml
+D:\Zz\Inspired\bin\System.Web.Mvc.xml
+D:\Zz\Inspired\bin\System.Web.Optimization.xml
+D:\Zz\Inspired\bin\System.Web.Razor.xml
+D:\Zz\Inspired\bin\System.Web.WebPages.xml
+D:\Zz\Inspired\bin\System.Web.WebPages.Deployment.xml
+D:\Zz\Inspired\bin\System.Web.WebPages.Razor.xml
+D:\Zz\Inspired\bin\Antlr3.Runtime.pdb
+D:\Zz\Inspired\bin\Newtonsoft.Json.xml
+D:\Zz\Inspired\bin\EntityFramework.xml
+D:\Zz\Inspired\bin\EntityFramework.SqlServer.xml
+D:\Zz\Inspired\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Zz\Inspired\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Zz\Inspired\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Zz\Inspired\bin\Microsoft.Owin.xml
+D:\Zz\Inspired\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Zz\Inspired\bin\Microsoft.Owin.Security.xml
+D:\Zz\Inspired\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Zz\Inspired\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Zz\Inspired\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Zz\Inspired\bin\Microsoft.Owin.Security.Google.xml
+D:\Zz\Inspired\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Zz\Inspired\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Zz\Inspired\obj\Debug\Inspired.dll
+D:\Zz\Inspired\obj\Debug\Inspired.pdb
+D:\Zz\Inspired\obj\Debug\Inspired.csprojResolveAssemblyReference.cache
 D:\CITB-Project\Inspired\bin\roslyn\csc.exe
 D:\CITB-Project\Inspired\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 D:\CITB-Project\Inspired\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -66,3 +204,141 @@ D:\CITB-Project\Inspired\bin\Microsoft.Owin.Security.Twitter.xml
 D:\CITB-Project\Inspired\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\CITB-Project\Inspired\obj\Debug\Inspired.dll
 D:\CITB-Project\Inspired\obj\Debug\Inspired.pdb
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\roslyn\csc.exe
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\roslyn\vbc.exe
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\roslyn\VBCSCompiler.exe
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Inspired.dll.config
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Inspired.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Inspired.pdb
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Antlr3.Runtime.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\EntityFramework.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\EntityFramework.SqlServer.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Owin.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Owin.Security.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Newtonsoft.Json.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Owin.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\System.Web.Helpers.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\System.Web.Mvc.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\System.Web.Optimization.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\System.Web.Razor.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\System.Web.WebPages.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\System.Web.WebPages.Razor.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\WebGrease.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\System.Web.Helpers.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\System.Web.Mvc.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\System.Web.Optimization.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\System.Web.Razor.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\System.Web.WebPages.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\System.Web.WebPages.Razor.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Antlr3.Runtime.pdb
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Newtonsoft.Json.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\EntityFramework.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\EntityFramework.SqlServer.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Owin.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Owin.Security.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Window\Documents\CITB-Project\Inspired\obj\Debug\Inspired.csprojResolveAssemblyReference.cache
+C:\Users\Window\Documents\CITB-Project\Inspired\obj\Debug\Inspired.dll
+C:\Users\Window\Documents\CITB-Project\Inspired\obj\Debug\Inspired.pdb
+E:\C# Work\CITB\Inspired\bin\roslyn\csc.exe
+E:\C# Work\CITB\Inspired\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\C# Work\CITB\Inspired\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\C# Work\CITB\Inspired\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\C# Work\CITB\Inspired\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\C# Work\CITB\Inspired\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\C# Work\CITB\Inspired\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\C# Work\CITB\Inspired\bin\roslyn\System.Collections.Immutable.dll
+E:\C# Work\CITB\Inspired\bin\roslyn\System.Reflection.Metadata.dll
+E:\C# Work\CITB\Inspired\bin\roslyn\vbc.exe
+E:\C# Work\CITB\Inspired\bin\roslyn\VBCSCompiler.exe
+E:\C# Work\CITB\Inspired\bin\roslyn\VBCSCompiler.exe.config
+E:\C# Work\CITB\Inspired\bin\Inspired.dll.config
+E:\C# Work\CITB\Inspired\bin\Inspired.dll
+E:\C# Work\CITB\Inspired\bin\Inspired.pdb
+E:\C# Work\CITB\Inspired\bin\Antlr3.Runtime.dll
+E:\C# Work\CITB\Inspired\bin\EntityFramework.dll
+E:\C# Work\CITB\Inspired\bin\EntityFramework.SqlServer.dll
+E:\C# Work\CITB\Inspired\bin\Microsoft.AspNet.Identity.Core.dll
+E:\C# Work\CITB\Inspired\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\C# Work\CITB\Inspired\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\C# Work\CITB\Inspired\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\C# Work\CITB\Inspired\bin\Microsoft.Owin.dll
+E:\C# Work\CITB\Inspired\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\C# Work\CITB\Inspired\bin\Microsoft.Owin.Security.Cookies.dll
+E:\C# Work\CITB\Inspired\bin\Microsoft.Owin.Security.dll
+E:\C# Work\CITB\Inspired\bin\Microsoft.Owin.Security.Facebook.dll
+E:\C# Work\CITB\Inspired\bin\Microsoft.Owin.Security.Google.dll
+E:\C# Work\CITB\Inspired\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\C# Work\CITB\Inspired\bin\Microsoft.Owin.Security.OAuth.dll
+E:\C# Work\CITB\Inspired\bin\Microsoft.Owin.Security.Twitter.dll
+E:\C# Work\CITB\Inspired\bin\Microsoft.Web.Infrastructure.dll
+E:\C# Work\CITB\Inspired\bin\Newtonsoft.Json.dll
+E:\C# Work\CITB\Inspired\bin\Owin.dll
+E:\C# Work\CITB\Inspired\bin\System.Web.Helpers.dll
+E:\C# Work\CITB\Inspired\bin\System.Web.Mvc.dll
+E:\C# Work\CITB\Inspired\bin\System.Web.Optimization.dll
+E:\C# Work\CITB\Inspired\bin\System.Web.Razor.dll
+E:\C# Work\CITB\Inspired\bin\System.Web.WebPages.Deployment.dll
+E:\C# Work\CITB\Inspired\bin\System.Web.WebPages.dll
+E:\C# Work\CITB\Inspired\bin\System.Web.WebPages.Razor.dll
+E:\C# Work\CITB\Inspired\bin\WebGrease.dll
+E:\C# Work\CITB\Inspired\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\C# Work\CITB\Inspired\bin\System.Web.Helpers.xml
+E:\C# Work\CITB\Inspired\bin\System.Web.Mvc.xml
+E:\C# Work\CITB\Inspired\bin\System.Web.Optimization.xml
+E:\C# Work\CITB\Inspired\bin\System.Web.Razor.xml
+E:\C# Work\CITB\Inspired\bin\System.Web.WebPages.xml
+E:\C# Work\CITB\Inspired\bin\System.Web.WebPages.Deployment.xml
+E:\C# Work\CITB\Inspired\bin\System.Web.WebPages.Razor.xml
+E:\C# Work\CITB\Inspired\bin\Antlr3.Runtime.pdb
+E:\C# Work\CITB\Inspired\bin\Newtonsoft.Json.xml
+E:\C# Work\CITB\Inspired\bin\EntityFramework.xml
+E:\C# Work\CITB\Inspired\bin\EntityFramework.SqlServer.xml
+E:\C# Work\CITB\Inspired\bin\Microsoft.AspNet.Identity.Core.xml
+E:\C# Work\CITB\Inspired\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\C# Work\CITB\Inspired\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\C# Work\CITB\Inspired\bin\Microsoft.Owin.xml
+E:\C# Work\CITB\Inspired\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\C# Work\CITB\Inspired\bin\Microsoft.Owin.Security.xml
+E:\C# Work\CITB\Inspired\bin\Microsoft.Owin.Security.Facebook.xml
+E:\C# Work\CITB\Inspired\bin\Microsoft.Owin.Security.Cookies.xml
+E:\C# Work\CITB\Inspired\bin\Microsoft.Owin.Security.OAuth.xml
+E:\C# Work\CITB\Inspired\bin\Microsoft.Owin.Security.Google.xml
+E:\C# Work\CITB\Inspired\bin\Microsoft.Owin.Security.Twitter.xml
+E:\C# Work\CITB\Inspired\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\C# Work\CITB\Inspired\obj\Debug\Inspired.csprojResolveAssemblyReference.cache
+E:\C# Work\CITB\Inspired\obj\Debug\Inspired.dll
+E:\C# Work\CITB\Inspired\obj\Debug\Inspired.pdb

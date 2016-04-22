@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Inspired.Controllers.Tests
 {
@@ -14,7 +15,10 @@ namespace Inspired.Controllers.Tests
         [TestMethod()]
         public void IndexTest()
         {
-            Assert.Fail();
+            var controller = new CoatpatternsController();
+            var result = controller.Create() as ViewResult;
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
 
         [TestMethod()]

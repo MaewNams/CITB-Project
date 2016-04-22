@@ -58,14 +58,7 @@ namespace Inspired.Controllers
             Followdiary followdiary = new Followdiary();
             followdiary.userid = userid;
             followdiary.diaryid = diaryid;
-            if (latestchapter != null)
-            {
-                followdiary.latestchapterid = latestchapter.id;
-            }
-            else
-            {
-                followdiary.latestchapterid = 0;
-            }
+            followdiary.latestchapterid = latestchapter.id;
             db.Followdiary.Add(followdiary);
             db.SaveChanges();
             return Json(new { Result = "Success" });
@@ -145,6 +138,11 @@ namespace Inspired.Controllers
         {
             int userid = Int32.Parse(Session["accountid"].ToString());
             ViewData["Cat"] = db.Cat.Where(c => c.userid == userid).OrderBy(c => c.name).ToList<Cat>();
+            if (ViewData["Cat"] == null)
+            {
+
+            }
+            
             string[] catowners = Request.Form.GetValues("catsdiary");
             if (ModelState.IsValid)
             {

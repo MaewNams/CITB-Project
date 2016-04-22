@@ -18,7 +18,7 @@ namespace Inspired.Controllers.Tests
             var controller = new ArticlesController();
             var result = controller.Index() as ViewResult;
             Assert.IsNotNull(result);
-            ReferenceEquals(result, new ViewResult());
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
 
         [TestMethod()]
@@ -27,19 +27,25 @@ namespace Inspired.Controllers.Tests
             var controller = new ArticlesController();
             var result = controller.Create() as ViewResult;
             Assert.IsNotNull(result);
-            ReferenceEquals(result, new ViewResult());
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
 
         [TestMethod()]
         public void PostCreateTest()
         {
-            Assert.Fail();
+            var controller = new ArticlesController();
+            var result = controller.Create();
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
 
         [TestMethod()]
         public void DetailsTest()
         {
-            Assert.Fail();
+            var controller = new ArticlesController();
+            var result = controller.Details(1);
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
     }
 }

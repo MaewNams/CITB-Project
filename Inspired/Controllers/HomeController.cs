@@ -31,8 +31,6 @@ namespace Inspired.Controllers
             return View();
         }
 
-
-
         public ActionResult AdoptionDetail()
         {
             return View();
@@ -64,10 +62,6 @@ namespace Inspired.Controllers
             ViewData["RecentDiary"] = db.Diary.OrderByDescending(d => d.timestamp).ToList<Diary>();
             return View();
         }
-
-
-
-
 
         public ActionResult CatCensus()
         {
