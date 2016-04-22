@@ -84,25 +84,45 @@
 
 
         </div>
-        <div class="ui secondary pointing menu">
-            <a class="active item">
+        <div class="ui secondary pointing menu" id="Forum_Type">
+            <a value="all" class="item myforum">
                 All
             </a>
-            <a class="item">
-                Discusstion
-            </a>
-            <a class="item">
-                Adoption
-            </a>
-            <a class="item">
-                Lost cat
-            </a>
-            <a class="item">
-                Find owner
-            </a>
-            <a class="item">
-                SOS
-            </a>
+            @{
+                List<Topictype> topictype = (List<Topictype>)ViewData["TopicType"];
+            }
+            @if (topictype != null && topictype.Count > 0)
+            {
+                foreach (var type in topictype)
+                {                 
+                        var TempClassName = type.name + "Link";
+                    <a data-type="@type.name" class="item myforum ABCD @TempClassName">
+                        @type.name
+                    </a>
+                }
+            }
+            @if (ViewData["Type"].ToString().Equals("Adoption"))
+            {
+                <div id="AdoptionActive" data-status="1"></div>
+            }
+            @if (ViewData["Type"].ToString().Equals("Discussion"))
+            {
+                <div id="DiscussionActive" data-status="1"></div>
+            }
+            @if (ViewData["Type"].ToString().Equals("Findowner"))
+            {
+                <div id="FindownerActive" data-status="1"></div>
+            }
+            @if (ViewData["Type"].ToString().Equals("Lostcat"))
+            {
+                <div id="LostcatActive" data-status="1"></div>
+            }
+            @if (ViewData["Type"].ToString().Equals("SOS"))
+            {
+                <div id="SOSActive" data-status="1"></div>
+            }
+
+
         </div>
         <div class="ui segment">
             <table class="ui very basic table">

@@ -1030,6 +1030,7 @@
     <Content Include="Views\Home\AllDiary.cshtml" />
     <Content Include="Views\Forums\Create.cshtml" />
     <Content Include="Views\Forums\AdoptionForm.cshtml" />
+    <Content Include="Views\Forums\FindOwner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

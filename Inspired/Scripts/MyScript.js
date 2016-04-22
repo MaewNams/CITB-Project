@@ -90,7 +90,13 @@ $(document).ready(function () {
       .sticky({
           context: '#example1'
       });
+
     $('.pointing.menu .item').tab();
+
+    $('.myforum').on('click', function () {
+        $('.ui .item').removeClass('active');
+        $(this).addClass('active');
+    });
 
 
 
@@ -321,7 +327,24 @@ $(document).ready(function () {
     });
 
 
-
+    if ($('#AllActive').data('status') == "1") {
+        $('.AllLink').addClass('active');
+    }
+    if ($('#AdoptionActive').data('status') == "1") {
+        $('.AdoptionLink').addClass('active');
+    }
+    if ($('#DiscussionActive').data('status') == "1") {
+        $('.DiscussionLink').addClass('active');
+    }
+    if ($('#FindownerActive').data('status') == "1") {
+        $('.AdoptionLink').addClass('active');
+    }
+    if ($('#FindownerActive').data('status') == "1") {
+        $('.AdoptionLink').addClass('active');
+    }
+    if ($('#SOSActive').data('status') == "1") {
+        $('.SOSLink').addClass('active');
+    }
 
 });
 
@@ -342,7 +365,12 @@ function imageIsLoaded(e) {
 };
 
 
-
+// Start Form Type Selected
+$('.ABCD').on('click', function () {
+    var button = $(this);
+    var typename = button.data('type');
+    window.location.href = window.location.origin + "/Home/MyForum/" + typename;
+});
 
 // Start Form Type Selected
 $('#Topic_Type').on('change', function () {
@@ -350,3 +378,4 @@ $('#Topic_Type').on('change', function () {
     var id = e.options[e.selectedIndex].value;
     window.location.href = window.location.origin + "/Forums/Create/" + id;
 });
+

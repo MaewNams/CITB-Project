@@ -108,10 +108,21 @@ namespace Inspired.Controllers
         {
             return View();
         }
-        public ActionResult MyForum()
+
+        [Route("Home/MyForum")]
+        [Route("Home/MyForum/{type}")]
+        public ActionResult MyForum(string type)
         {
+            if (Session["Authen"] == null)
+            { return RedirectToAction("Login", "Accounts"); }
+
+            int userid = Int32.Parse(Session["accountid"].ToString());
+            Account user = db.Account.Find(userid);
+            ViewData["Type"] = type;
+            ViewData["TopicType"] = db.Topictype.Where(c => c.usertypeid == user.usertypeid).OrderBy(c => c.name).ToList<Topictype>();
             return View();
         }
+
         public ActionResult Profile()
         {
             return View();

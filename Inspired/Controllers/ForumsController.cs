@@ -33,6 +33,11 @@ namespace Inspired.Controllers
             return View();
         }
 
+        public ActionResult FindOwner()
+        {
+            return View();
+        }
+
         [Route("Forums/Create")]
         [Route("Forums/Create/{type}")]
         public ActionResult Create(int? type)
@@ -56,7 +61,7 @@ namespace Inspired.Controllers
         }
 
         [Route("Forums/Create")]
-        [Route("Forums/Create/{type}")]
+        [Route("Forums/Create/{typename}")]
         [HttpPost]
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
@@ -74,79 +79,82 @@ namespace Inspired.Controllers
             db.Topic.Add(newTopic);
             db.SaveChanges();
 
-            /*Want owner cat*/
-            int coatpatternid = Int32.Parse(Request.Form["coatpattern"].ToString());
-            int eyecolorid = Int32.Parse(Request.Form["eyecolor"].ToString());
-            int tailid = Int32.Parse(Request.Form["tail"].ToString());
-            Cat wantownercat = new Cat();
-            wantownercat.userid = userid;
-            wantownercat.name = Request.Form["catname"];
-            wantownercat.gender = Request.Form["gender"];
-            wantownercat.lifestage = Request.Form["lifestage"];
-            wantownercat.coatpatternid = coatpatternid;
-            wantownercat.eyecolorid = eyecolorid;
-            wantownercat.tailid = tailid;
-            wantownercat.status = 2;
-            wantownercat.birthdate = DateTime.Now;
-            wantownercat.deathdate = DateTime.Now;
-            wantownercat.adoptdate = DateTime.Now;
-            db.Cat.Add(wantownercat);
-            db.SaveChanges();
-
-            /*Want owner cat breed*/
-            string[] catbreeds = Request.Form.GetValues("breed");
-            Catbreed wantownercatbreed = new Catbreed();
-            foreach (string key in catbreeds)
+            if (newTopic.topictypeid == 3)
             {
-                int breedid = Int32.Parse(key.ToString());
-                wantownercatbreed.catid = wantownercat.id;
-                wantownercatbreed.breedid = breedid;
-                db.Catbreed.Add(wantownercatbreed);
+                /*Want owner cat*/
+                int coatpatternid = Int32.Parse(Request.Form["coatpattern"].ToString());
+                int eyecolorid = Int32.Parse(Request.Form["eyecolor"].ToString());
+                int tailid = Int32.Parse(Request.Form["tail"].ToString());
+                Cat wantownercat = new Cat();
+                wantownercat.userid = userid;
+                wantownercat.name = Request.Form["catname"];
+                wantownercat.gender = Request.Form["gender"];
+                wantownercat.lifestage = Request.Form["lifestage"];
+                wantownercat.coatpatternid = coatpatternid;
+                wantownercat.eyecolorid = eyecolorid;
+                wantownercat.tailid = tailid;
+                wantownercat.status = 2;
+                wantownercat.birthdate = DateTime.Now;
+                wantownercat.deathdate = DateTime.Now;
+                wantownercat.adoptdate = DateTime.Now;
+                db.Cat.Add(wantownercat);
                 db.SaveChanges();
-            }
+
+                /*Want owner cat breed*/
+                string[] catbreeds = Request.Form.GetValues("breed");
+                Catbreed wantownercatbreed = new Catbreed();
+                foreach (string key in catbreeds)
+                {
+                    int breedid = Int32.Parse(key.ToString());
+                    wantownercatbreed.catid = wantownercat.id;
+                    wantownercatbreed.breedid = breedid;
+                    db.Catbreed.Add(wantownercatbreed);
+                    db.SaveChanges();
+                }
 
 
-            /* Want owner cat coat color*/
-            string[] coatcolors = Request.Form.GetValues("coatcolor");
-            Catcoatcolor wantownercatcoatcolors = new Catcoatcolor();
-            foreach (string key in coatcolors)
-            {
-                int colorid = Int32.Parse(key.ToString());
-                wantownercatcoatcolors.catid = wantownercat.id;
-                wantownercatcoatcolors.coatcolorid = colorid;
-                db.Catcoatcolor.Add(wantownercatcoatcolors);
-                db.SaveChanges();
-            }
+                /* Want owner cat coat color*/
+                string[] coatcolors = Request.Form.GetValues("coatcolor");
+                Catcoatcolor wantownercatcoatcolors = new Catcoatcolor();
+                foreach (string key in coatcolors)
+                {
+                    int colorid = Int32.Parse(key.ToString());
+                    wantownercatcoatcolors.catid = wantownercat.id;
+                    wantownercatcoatcolors.coatcolorid = colorid;
+                    db.Catcoatcolor.Add(wantownercatcoatcolors);
+                    db.SaveChanges();
+                }
 
-            /*Adoption form*/
-            int provinceid = Int32.Parse(Request.Form["province"].ToString());
-            Adoption adoption = new Adoption();
-            adoption.Cat = wantownercat;
-            adoption.topicid = newTopic.id;
-            adoption.condition = "test condition";
-            adoption.provinceid = provinceid;
-            adoption.status = 1;
-            db.Adoption.Add(adoption);
+                /*Adoption form*/
+                int provinceid = Int32.Parse(Request.Form["province"].ToString());
+                Adoption adoption = new Adoption();
+                adoption.Cat = wantownercat;
+                adoption.topicid = newTopic.id;
+                adoption.condition = "test condition";
+                adoption.provinceid = provinceid;
+                adoption.status = 1;
+                db.Adoption.Add(adoption);
 
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbEntityValidationException ex)
-            {
-                // Retrieve the error messages as a list of strings.
-                var errorMessages = ex.EntityValidationErrors
-                        .SelectMany(x => x.ValidationErrors)
-                        .Select(x => x.ErrorMessage);
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    // Retrieve the error messages as a list of strings.
+                    var errorMessages = ex.EntityValidationErrors
+                            .SelectMany(x => x.ValidationErrors)
+                            .Select(x => x.ErrorMessage);
 
-                // Join the list to a single string.
-                var fullErrorMessage = string.Join("; ", errorMessages);
+                    // Join the list to a single string.
+                    var fullErrorMessage = string.Join("; ", errorMessages);
 
-                // Combine the original exception message with the new one.
-                var exceptionMessage = string.Concat(ex.Message, " The validation errors are: ", fullErrorMessage);
+                    // Combine the original exception message with the new one.
+                    var exceptionMessage = string.Concat(ex.Message, " The validation errors are: ", fullErrorMessage);
 
-                // Throw a new DbEntityValidationException with the improved exception message.
-                throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors);
+                    // Throw a new DbEntityValidationException with the improved exception message.
+                    throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors);
+                }
             }
             return RedirectToAction("Index");
         }
