@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Inspired.Controllers.Tests
 {
@@ -14,49 +15,73 @@ namespace Inspired.Controllers.Tests
         [TestMethod()]
         public void IndexTest()
         {
-            Assert.Fail();
+            var controller = new BreedsController();
+            var result = controller.Index() as ViewResult;
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
 
         [TestMethod()]
         public void DetailsTest()
         {
-            Assert.Fail();
+            var controller = new BreedsController();
+            var result = controller.Details(1) as ViewResult;
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
 
         [TestMethod()]
-        public void CreateTest()
+        public void GetCreateTest()
         {
-            Assert.Fail();
+            var controller = new BreedsController();
+            var result = controller.Create() as ViewResult;
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
 
         [TestMethod()]
-        public void CreateTest1()
+        public void PostCreateTest()
         {
-            Assert.Fail();
+            var controller = new BreedsController();
+            var result = controller.Create() as ViewResult;
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
 
         [TestMethod()]
-        public void EditTest()
+        public void GetEditTest()
         {
-            Assert.Fail();
+            var controller = new BreedsController();
+            var result = controller.Edit(1) as ViewResult;
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
 
         [TestMethod()]
-        public void EditTest1()
+        public void PostEditTest()
         {
-            Assert.Fail();
+            var controller = new BreedsController();
+            var result = controller.Edit(1) as ViewResult;
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
 
         [TestMethod()]
         public void DeleteTest()
         {
-            Assert.Fail();
+            var controller = new BreedsController();
+            var result = controller.Delete(1) as ViewResult;
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
 
         [TestMethod()]
         public void DeleteConfirmedTest()
         {
-            Assert.Fail();
+            var controller = new BreedsController();
+            var result = controller.DeleteConfirmed(1) as ViewResult;
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
     }
 }
