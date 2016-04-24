@@ -15,6 +15,7 @@ namespace Inspired.Models
         public string detail { get; set; }
         public int userid { get; set; }
         public DateTime timestamp { get; set; }
+        public int views { get; set; }
         public int topictypeid { get; set; }
 
         [ForeignKey("userid")]

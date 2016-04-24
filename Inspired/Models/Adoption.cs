@@ -11,20 +11,19 @@ namespace Inspired.Models
     {
         [Key]
         public int id { get; set; }
-        public int catid { get; set; }
         public int provinceid { get; set; }
         public int topicid { get; set; }
         public string condition { get; set; }
         public int status { get; set; }
-
-        [Required]
-        public virtual Cat Cat { get; set; }
 
         [ForeignKey("provinceid")]
         public virtual Province Province { get; set; }
 
         [ForeignKey("topicid")]
         public virtual Topic Topic { get; set; }
+
+        [InverseProperty("Adoption")]
+        public virtual ICollection<Catadoption> Catadoptions { get; set; }
 
         [InverseProperty("Adoption")]
         public virtual ICollection<Adopter> Adopters { get; set; }

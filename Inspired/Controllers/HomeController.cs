@@ -103,7 +103,6 @@ namespace Inspired.Controllers
             return View();
         }
 
-        [Route("Home/MyForum")]
         [Route("Home/MyForum/{type}")]
         public ActionResult MyForum(string type)
         {
@@ -114,6 +113,7 @@ namespace Inspired.Controllers
             Account user = db.Account.Find(userid);
             ViewData["Type"] = type;
             ViewData["TopicType"] = db.Topictype.Where(c => c.usertypeid == user.usertypeid).OrderBy(c => c.name).ToList<Topictype>();
+            ViewData["AllTopic"] = db.Topic.Where(at => at.userid == userid).ToList<Topic>();
             return View();
         }
 

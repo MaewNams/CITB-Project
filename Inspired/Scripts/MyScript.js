@@ -337,10 +337,10 @@ $(document).ready(function () {
         $('.DiscussionLink').addClass('active');
     }
     if ($('#FindownerActive').data('status') == "1") {
-        $('.AdoptionLink').addClass('active');
+        $('.FindownerLink').addClass('active');
     }
-    if ($('#FindownerActive').data('status') == "1") {
-        $('.AdoptionLink').addClass('active');
+    if ($('#LostcatActive').data('status') == "1") {
+        $('.LostcatLink').addClass('active');
     }
     if ($('#SOSActive').data('status') == "1") {
         $('.SOSLink').addClass('active');
@@ -366,7 +366,7 @@ function imageIsLoaded(e) {
 
 
 // Start Form Type Selected
-$('.ABCD').on('click', function () {
+$('.myforum').on('click', function () {
     var button = $(this);
     var typename = button.data('type');
     window.location.href = window.location.origin + "/Home/MyForum/" + typename;
@@ -379,3 +379,13 @@ $('#Topic_Type').on('change', function () {
     window.location.href = window.location.origin + "/Forums/Create/" + id;
 });
 
+
+
+$('.Create_Button').click(function (e) {
+    e.preventDefault();
+    var detail = CKEDITOR.instances.editor.getData();
+    var condition = CKEDITOR.instances.editor2.getData();
+    $('#Adoption_Detail').val(detail);
+    $('#Adoption_Condition').val(condition);
+    $('#ForumCreate_Form').submit();
+});

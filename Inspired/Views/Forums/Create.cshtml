@@ -93,13 +93,13 @@
                 Create new topic
             </h4>
 
-            @using (Html.BeginForm())
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "ForumCreate_Form" }))
             {
                 @Html.AntiForgeryToken()
                 <div class="ui form">
                     <div class="field">
                         <label>Topic name</label>
-                        <div class="ui left icon input">
+                        <div class="ui input">
                             <input type="text" name="name">
                             @Html.ValidationMessageFor(model => model.name, "", new { @name = "name" })
                         </div>
@@ -135,7 +135,7 @@
 
                     </div>
 
-                    <button class="ui right floated blue submit button">Create</button>
+                    <button class="ui right floated blue submit button Create_Button">Create</button>
                     <br />
                     <br />
                 </div>

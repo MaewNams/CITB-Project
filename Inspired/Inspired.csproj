@@ -193,6 +193,7 @@
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Breed.cs" />
     <Compile Include="Models\Cat.cs" />
+    <Compile Include="Models\Catadoption.cs" />
     <Compile Include="Models\Catbreed.cs" />
     <Compile Include="Models\Catcoatcolor.cs" />
     <Compile Include="Models\Catdiary.cs" />
