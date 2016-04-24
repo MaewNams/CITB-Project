@@ -43,7 +43,7 @@ namespace Inspired.Models
         public virtual Tail Tail { get; set; }
 
         [InverseProperty("Cat")]
-        public virtual Adoption Adoption { get; set; }
+        public virtual ICollection<Catadoption> Catadoptions { get; set; }
 
         [InverseProperty("Cat")]
         public virtual ICollection<Catbreed> Catbreeds { get; set; }

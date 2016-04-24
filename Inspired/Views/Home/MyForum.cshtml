@@ -7,12 +7,7 @@
 
 
 <div class="ui page centered celled grid">
-
-
-
     <div class="ui left aligned basic segment" style="width:70%;padding-left:0px;padding-right:0px;padding-top:0px">
-
-
         <div class="ui left close rail" style="width:30%">
             <div class=" ui orange vertical fluid tabular menu">
                 <a href="/Home/Index" class=" contropanel_menu item">
@@ -52,20 +47,13 @@
                 <a href="/Home/CatTimeline" class=" contropanel_menu item">
                     Cat's Timeline
                 </a>
-                <a href="/Home/MyForum" class=" contropanel_menu item active">
+                <a href="/Home/MyForum/All" class=" contropanel_menu item active">
                     My forum
                 </a>
                 <a href="/Home/Profile" class=" contropanel_menu item">
                     Profile
                 </a>
             </div>
-
-
-
-
-
-
-
         </div>
 
 
@@ -81,11 +69,10 @@
                 </div>
 
             </div>
-
-
         </div>
+
         <div class="ui secondary pointing menu" id="Forum_Type">
-            <a value="all" class="item myforum">
+            <a data-type="All" class="item myforum AllLink">
                 All
             </a>
             @{
@@ -94,48 +81,66 @@
             @if (topictype != null && topictype.Count > 0)
             {
                 foreach (var type in topictype)
-                {                 
-                        var TempClassName = type.name + "Link";
-                    <a data-type="@type.name" class="item myforum ABCD @TempClassName">
+                {
+                    var TempClassName = type.name + "Link";
+                    <a data-type="@type.name" class="item myforum @TempClassName">
                         @type.name
                     </a>
                 }
             }
-            @if (ViewData["Type"].ToString().Equals("Adoption"))
+            @if (ViewData["Type"] != null)
             {
-                <div id="AdoptionActive" data-status="1"></div>
+                if (ViewData["Type"].ToString().Equals("Adoption"))
+                {
+                    <div id="AdoptionActive" data-status="1"></div>
+                }
+                else if (ViewData["Type"].ToString().Equals("Discussion"))
+                {
+                    <div id="DiscussionActive" data-status="1"></div>
+                }
+                else if (ViewData["Type"].ToString().Equals("Findowner"))
+                {
+                    <div id="FindownerActive" data-status="1"></div>
+                }
+                else if (ViewData["Type"].ToString().Equals("Lostcat"))
+                {
+                    <div id="LostcatActive" data-status="1"></div>
+                }
+                else if (ViewData["Type"].ToString().Equals("SOS"))
+                {
+                    <div id="SOSActive" data-status="1"></div>
+                }
+                else
+                {
+                    <div id="AllActive" data-status="1"></div>
+                }
             }
-            @if (ViewData["Type"].ToString().Equals("Discussion"))
-            {
-                <div id="DiscussionActive" data-status="1"></div>
-            }
-            @if (ViewData["Type"].ToString().Equals("Findowner"))
-            {
-                <div id="FindownerActive" data-status="1"></div>
-            }
-            @if (ViewData["Type"].ToString().Equals("Lostcat"))
-            {
-                <div id="LostcatActive" data-status="1"></div>
-            }
-            @if (ViewData["Type"].ToString().Equals("SOS"))
-            {
-                <div id="SOSActive" data-status="1"></div>
-            }
+           
 
 
         </div>
         <div class="ui segment">
             <table class="ui very basic table">
                 <tbody>
+@{
+    List<Topic> mytopic = (List<Topic>)ViewData["AllTopic"];
+}
+@if (mytopic != null && mytopic.Count >= 1)
+{
+    foreach (var topic in mytopic)
+    {
                     <tr class="top aligned">
                         <td class="nine wide" style="padding-left:15px">
+
                             <div class="item">
                                 <div class="content">
-                                    <a class="header" style="font-family:Montserrat;font-size:16px">12 Years a Slave</a>
+                                    <a class="header" style="font-family:Montserrat;font-size:16px">@topic.name</a>
                                     <div class="extra" style="padding-top:5px;font-size:14px;color:darkgrey !important">
-                                        View | Comment
+                                      @topic.Topictype.name
                                         <br />
-                                        time: |
+                                          View @topic.views | Comment
+                                        <br />
+                                        time: | @topic.timestamp
 
                                     </div>
 
@@ -150,8 +155,10 @@
                             <button class="ui red button">
                                 Delete
                             </button>
-                    </tr>
-
+                    
+                            </tr>
+    }
+}
                 </tbody>
             </table>
         </div>
