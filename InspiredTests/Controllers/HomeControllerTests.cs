@@ -167,14 +167,14 @@ namespace Inspired.Controllers.Tests
             Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
 
-        [TestMethod()]
-        public void MyForumTest()
-        {
-            var controller = new HomeController();
-            var result = controller.MyForum();
-            Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(ViewResult));
-        }
+        //[TestMethod()]
+        //public void MyForumTest()
+        //{
+        //    var controller = new HomeController();
+        //    var result = controller.MyForum();
+        //    Assert.IsNotNull(result);
+        //    Assert.IsInstanceOfType(result, typeof(ViewResult));
+        //}
 
         [TestMethod()]
         public void ProfileTest()
