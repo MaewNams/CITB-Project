@@ -30,6 +30,7 @@ namespace Inspired.Controllers
         // GET: Forums
         public ActionResult Index()
         {
+            ViewData["Alltopic"] = db.Topic.OrderBy(b => b.name).ToList<Topic>();
             return View();
         }
 
@@ -74,6 +75,7 @@ namespace Inspired.Controllers
             newTopic.userid = userid;
             newTopic.topictypeid = typeid;
             newTopic.timestamp = DateTime.Now;
+            newTopic.views = 0;
             newTopic.detail = Request.Unvalidated["detail"].ToString();
             db.Topic.Add(newTopic);
             db.SaveChanges();
@@ -141,9 +143,15 @@ namespace Inspired.Controllers
                 db.Catadoption.Add(catadoption);
                 db.SaveChanges();
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("MyForum", "Home");
         }
 
+
+        public ActionResult Detail(int? topicid)
+        {
+            Topic topic = db.Topic.Find(topicid);
+            return View(topic);
+        }
 
         public ActionResult AdoptionForm()
         {

@@ -113,7 +113,43 @@ namespace Inspired.Controllers
             Account user = db.Account.Find(userid);
             ViewData["Type"] = type;
             ViewData["TopicType"] = db.Topictype.Where(c => c.usertypeid == user.usertypeid).OrderBy(c => c.name).ToList<Topictype>();
-            ViewData["AllTopic"] = db.Topic.Where(at => at.userid == userid).ToList<Topic>();
+            if (type == "All")
+            {
+                ViewData["Topic"] = db.Topic.Where(at => at.userid == userid).ToList<Topic>();
+            }
+            if (type == "Article")
+            {
+                ViewData["Topic"] = db.Topic.Where(at => at.userid == userid && at.Topictype.name == "Article").ToList<Topic>();
+            }
+            if (type == "News")
+            {
+                ViewData["Topic"] = db.Topic.Where(at => at.userid == userid && at.Topictype.name == "News").ToList<Topic>();
+            }
+            if (type == "Adoption")
+            {
+                ViewData["Topic"] = db.Topic.Where(at => at.userid == userid && at.Topictype.name == "Adoption").ToList<Topic>();
+            }
+            if (type == "Lostcat")
+            {
+                ViewData["Topic"] = db.Topic.Where(at => at.userid == userid && at.Topictype.name == "Lostcat").ToList<Topic>();
+            }
+            if (type == "Findowner")
+            {
+                ViewData["Topic"] = db.Topic.Where(at => at.userid == userid && at.Topictype.name == "Findowner").ToList<Topic>();
+            }
+            if (type == "Discussion")
+            {
+                ViewData["Topic"] = db.Topic.Where(at => at.userid == userid && at.Topictype.name == "Discussion").ToList<Topic>();
+            }
+            if (type == "Tip")
+            {
+                ViewData["Topic"] = db.Topic.Where(at => at.userid == userid && at.Topictype.name == "Tip").ToList<Topic>();
+            }
+            if (type == "SOS")
+            {
+                ViewData["Topic"] = db.Topic.Where(at => at.userid == userid && at.Topictype.name == "SOS").ToList<Topic>();
+            }
+
             return View();
         }
 

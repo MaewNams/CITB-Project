@@ -16,13 +16,20 @@
 
             <table class="ui very basic selectable table">
                 <tbody >
+@{
+    List<Topic> alltopic = (List<Topic>)ViewData["AllTopic"];
+}
+@if (alltopic != null && alltopic.Count >= 1)
+{
+    foreach (var topic in alltopic)
+    {
                     <tr class="top aligned" style="cursor:pointer">
                         <td class="eleven wide" style="padding-left:15px">
                             <div class="item">
                                 <div class="content">
-                                    <a class="header" style="font-family:Montserrat;font-size:16px">12 Years a Slave</a>
+                                    <a class="header" style="font-family:Montserrat;font-size:16px">@topic.name</a>
                                     <div class="extra" style="padding-top:5px;font-size:14px;color:darkgrey !important">
-                                      time: | by <text style="color:gray;font-weight:bold">usename</text>
+                                      time: @topic.timestamp | by <text style="color:gray;font-weight:bold">@topic.Account.username</text>
                                     </div>
                                 </div>
                             </div>
@@ -30,7 +37,7 @@
                         <td class="two wide">
                             <div class="ui mini statistic">
                                 <div class="value" style="font-size:16px!important;font-weight:bold">
-                                    2
+                                    @topic.views
                                 </div>
                                 <div class="label">
                                     <text style="font-size:12px!important;color:darkgray!important">
@@ -52,42 +59,9 @@
                             </div>
                         </td>
                     </tr>
-                    <tr class="top aligned" style="cursor:pointer">
-                        <td class="eleven wide" style="padding-left:15px">
-                            <div class="item">
-                                <div class="content">
-                                    <a class="header" style="font-family:Montserrat;font-size:16px">12 Years a Slave</a>
-                                    <div class="extra" style="padding-top:5px;font-size:14px;color:darkgrey !important">
-                                        time: | by <text style="color:gray;font-weight:bold">usename</text>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="two wide">
-                            <div class="ui mini statistic">
-                                <div class="value" style="font-size:16px!important;font-weight:bold;">
-                                    2
-                                </div>
-                                <div class="label">
-                                    <text style="font-size:12px!important;color:darkgray!important">
-                                        Views
-                                    </text>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="two wide">
-                            <div class="ui mini statistic">
-                                <div class="value" style="font-size:16px!important;font-weight:bold">
-                                    2
-                                </div>
-                                <div class="label">
-                                    <text style="font-size:12px!important;color:darkgray!important">
-                                        Comments
-                                    </text>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
+    }
+}
+                 
                 </tbody>
             </table>
         </div>
